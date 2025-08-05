@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+
+website:
+  title: "Breast Cancer Subtype"
+  search: true
+  page-navigation: true
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+
+format:
+  html:
+    code-link: true
+    theme: cosmo
+    toc: true
+    toc-location: left
+
+execute:
+  freeze: auto
+  cache: true
+  tidy: true
