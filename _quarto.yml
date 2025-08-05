@@ -12,15 +12,32 @@ website:
     left:
       - text: Home
         href: index.qmd
+    tools:
+      - icon: github
+        href: https://github.com/marconotaro/cancer-subtypes
 
 format:
   html:
     code-link: true
-    theme: cosmo
+    theme: 
+      light: cosmo
+      dark: superhero
     toc: true
     toc-location: left
+    toc-depth: 4
+    code-fold: false
+    code-tools: true
+    embed-resources: false
 
 execute:
   freeze: auto
   cache: true
   tidy: true
+  echo: true
+  message: false
+  warning: false
+  fig-align: center
+  fig-width: 10
+  fig-height: 8
+  fig-dpi: 300
+  dev: png
