@@ -69,10 +69,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fc4b90b7f881223d2cff442049f60ca0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-fc4b90b7f881223d2cff442049f60ca0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c3d6d62566e6c391e02babdfcd2ca1f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-fc4b90b7f881223d2cff442049f60ca0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -105,7 +109,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
 <script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 </head>
-<body class="floating nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
@@ -127,6 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+    <a href="https://github.com/marconotaro/cancer-subtypes" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -701,6 +869,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1153,547 +1334,527 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Identification of breast cancer subtypes"</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Marco Notaro"</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 4</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: false</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: true</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co">  freeze: auto</span></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co">  fig-align: center</span></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co">  fig-width: 10</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co">  fig-height: 8</span></span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co">  fig-dpi: 300</span></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co">  dev: png</span></span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="do">## set a global seed</span></span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">08012025</span>)</span>
-<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="do">## set a global seed</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">08012025</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rtsne)</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(uwot)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RANN)</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PCAtools)</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aims </span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>The goal of this report is to identify breast cancer subtypes by using a graph-based approach. To this end, I built a K-nearest neighbor (KNN) graph, where each node is a patient connected to its nearest neighbors, in the high-dimensional space (i.e. I used the top 25 principal components and the top 3000 variable genes). Edges between patients are weighted based on the Jaccard similarity, the higher the weight the larger is their overlap in their local neighborhoods. I then applied the Louvain algorithm to identify patient communities, where patients in the same group are more strongly connected to each others compared to those in different groups (on the basis of gene expression profiles). Finally, I visualized the cluster distribution with t-SNE and UMAP and I labeled patients on the basis of status of 5 biomarkers (estrogen receptor (ER), progesterone receptor (PgR), human epidermal growth factor receptor 2 (HER2), Ki67, and Nottingham histologic grade (NHG)) to see if there are associations between patients communities and biomarker status.</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>Due to the presence of missing values (NA) in biomarker status (see <span class="co">[</span><span class="ot">Biomarkers Annotation</span><span class="co">](#bioanno)</span>), I explore these scenarios:</span>
 <span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rtsne)</span>
-<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(uwot)</span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RANN)</span>
-<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PCAtools)</span>
-<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a> A) Clustering of all 3273 patients and annotation according to PAM50 subtypes (consensus histopathology labels​) provided in the metadata</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a> B) Clustering of patients with complete annotations for all 5 biomarkers (1373 patients)</span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a> C) Clustering of patients separately for each biomarker (excluding NA)</span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>For each clustering scenario, I considered the top 3000 genes that exhibit the highest patient-to-patient variation in the dataset (i.e, those genes that are highly expressed in some patients, and lowly expressed in others).</span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results</span></span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>Overall, the analysis suggests that patients stratify according to the 5 biomarkers, in particular according to ER and PgR status.</span>
 <span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aims </span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading data</span></span>
 <span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>The goal of this report is to identify breast cancer subtypes by using a graph-based approach. To this end, I built a K-nearest neighbor (KNN) graph, where each node is a patient connected to its nearest neighbors, in the high-dimensional space (i.e. I used the top 25 principal components and the top 3000 variable genes). Edges between patients are weighted based on the Jaccard similarity, the higher the weight the larger is their overlap in their local neighborhoods. I then applied the Louvain algorithm to identify patient communities, where patients in the same group are more strongly connected to each others compared to those in different groups (on the basis of gene expression profiles). Finally, I visualized the cluster distribution with t-SNE and UMAP and I labeled patients on the basis of status of 5 biomarkers (estrogen receptor (ER), progesterone receptor (PgR), human epidermal growth factor receptor 2 (HER2), Ki67, and Nottingham histologic grade (NHG)) to see if there are associations between patients communities and biomarker status.</span>
-<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
-<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>Due to the presence of missing values (NA) in biomarker status (see <span class="co">[</span><span class="ot">Biomarkers Annotation</span><span class="co">](#bioanno)</span>), I explore these scenarios:</span>
-<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a> A) Clustering of all 3273 patients and annotation according to PAM50 subtypes (consensus histopathology labels​) provided in the metadata</span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>gexp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>  <span class="st">'data/gene_expression_profile.csv.gz'</span>,</span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>()</span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a> B) Clustering of patients with complete annotations for all 5 biomarkers (1373 patients)</span>
-<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a> C) Clustering of patients separately for each biomarker (excluding NA)</span>
-<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>For each clustering scenario, I considered the top 3000 genes that exhibit the highest patient-to-patient variation in the dataset (i.e, those genes that are highly expressed in some patients, and lowly expressed in others).</span>
-<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results</span></span>
-<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>Overall, the analysis suggests that patients stratify according to the 5 biomarkers, in particular according to ER and PgR status.</span>
-<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading data</span></span>
-<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>gexp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a>  <span class="st">'data/gene_expression_profile.csv.gz'</span>,</span>
-<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>()</span>
-<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'data/metadata.csv'</span>, <span class="at">col_types =</span> <span class="fu">cols</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sampleID =</span> values, <span class="at">sampleName =</span> ind) <span class="sc">|&gt;</span></span>
-<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sampleID <span class="sc">%in%</span> <span class="fu">names</span>(gexp)) <span class="sc">|&gt;</span></span>
-<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">er_status =</span> <span class="fu">factor</span>(er_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"ER-"</span>, <span class="st">"ER+"</span>)),</span>
-<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">pgr_status =</span> <span class="fu">factor</span>(pgr_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"PgR-"</span>, <span class="st">"PgR+"</span>)),</span>
-<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">her2_status =</span> <span class="fu">factor</span>(her2_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"HER2-"</span>, <span class="st">"HER2+"</span>)),</span>
-<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">ki67_status =</span> <span class="fu">factor</span>(ki67_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Ki67-"</span>, <span class="st">"Ki67+"</span>)),</span>
-<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">overall_survival_event =</span> <span class="fu">factor</span>(overall_survival_event, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no survival"</span>, <span class="st">"survival"</span>)),</span>
-<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">endocrine_treated =</span> <span class="fu">factor</span>(endocrine_treated, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no treated"</span>, <span class="st">"treated"</span>)),</span>
-<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">chemo_treated =</span> <span class="fu">factor</span>(chemo_treated, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no treated"</span>, <span class="st">"treated"</span>)),</span>
-<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">lymph_node_group =</span> <span class="fu">factor</span>(lymph_node_group),</span>
-<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">lymph_node_status =</span> <span class="fu">factor</span>(lymph_node_status),</span>
-<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">pam50_subtype =</span> <span class="fu">factor</span>(pam50_subtype),</span>
-<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">nhg =</span> <span class="fu">factor</span>(nhg)</span>
-<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a>md <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span> </span>
-<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)</span>
-<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a>mx <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
-<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(genes, <span class="fu">rownames</span>(md)) <span class="sc">|&gt;</span></span>
-<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>)</span>
-<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a><span class="fu">### Biomarkers Annotation {#bioanno}</span></span>
-<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>Percentage of patients with a given annotation is reported for each biomarker.</span>
-<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a>meta_long <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span></span>
-<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(er_status, pgr_status, her2_status, ki67_status, nhg) <span class="sc">|&gt;</span></span>
-<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"biomarker"</span>, <span class="at">values_to =</span> <span class="st">"status"</span>)</span>
-<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a>df_counts <span class="ot">&lt;-</span> meta_long <span class="sc">|&gt;</span></span>
-<span id="cb18-124"><a href="#cb18-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(biomarker, status) <span class="sc">|&gt;</span></span>
-<span id="cb18-125"><a href="#cb18-125" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(biomarker) <span class="sc">|&gt;</span></span>
-<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'data/metadata.csv'</span>, <span class="at">col_types =</span> <span class="fu">cols</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sampleID =</span> values, <span class="at">sampleName =</span> ind) <span class="sc">|&gt;</span></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sampleID <span class="sc">%in%</span> <span class="fu">names</span>(gexp)) <span class="sc">|&gt;</span></span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">er_status =</span> <span class="fu">factor</span>(er_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"ER-"</span>, <span class="st">"ER+"</span>)),</span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">pgr_status =</span> <span class="fu">factor</span>(pgr_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"PgR-"</span>, <span class="st">"PgR+"</span>)),</span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">her2_status =</span> <span class="fu">factor</span>(her2_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"HER2-"</span>, <span class="st">"HER2+"</span>)),</span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">ki67_status =</span> <span class="fu">factor</span>(ki67_status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Ki67-"</span>, <span class="st">"Ki67+"</span>)),</span>
+<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">overall_survival_event =</span> <span class="fu">factor</span>(overall_survival_event, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no survival"</span>, <span class="st">"survival"</span>)),</span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">endocrine_treated =</span> <span class="fu">factor</span>(endocrine_treated, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no treated"</span>, <span class="st">"treated"</span>)),</span>
+<span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">chemo_treated =</span> <span class="fu">factor</span>(chemo_treated, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no treated"</span>, <span class="st">"treated"</span>)),</span>
+<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">lymph_node_group =</span> <span class="fu">factor</span>(lymph_node_group),</span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">lymph_node_status =</span> <span class="fu">factor</span>(lymph_node_status),</span>
+<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">pam50_subtype =</span> <span class="fu">factor</span>(pam50_subtype),</span>
+<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">nhg =</span> <span class="fu">factor</span>(nhg)</span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a>md <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span> </span>
+<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)</span>
+<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a>mx <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
+<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(genes, <span class="fu">rownames</span>(md)) <span class="sc">|&gt;</span></span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>)</span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### Biomarkers Annotation {#bioanno}</span></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>Percentage of patients with a given annotation is reported for each biomarker.</span>
+<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a>meta_long <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(er_status, pgr_status, her2_status, ki67_status, nhg) <span class="sc">|&gt;</span></span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"biomarker"</span>, <span class="at">values_to =</span> <span class="st">"status"</span>)</span>
+<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a>df_counts <span class="ot">&lt;-</span> meta_long <span class="sc">|&gt;</span></span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(biomarker, status) <span class="sc">|&gt;</span></span>
+<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(biomarker) <span class="sc">|&gt;</span></span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_counts, <span class="fu">aes</span>(<span class="at">x =</span> biomarker, <span class="at">y =</span> perc, <span class="at">fill =</span> status)) <span class="sc">+</span></span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(perc, <span class="at">accuracy =</span> <span class="dv">1</span>)),</span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>)) <span class="sc">+</span></span>
+<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-124"><a href="#cb18-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-125"><a href="#cb18-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### Functions</span></span>
+<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a>Functions used to build the pipeline.</span>
 <span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_counts, <span class="fu">aes</span>(<span class="at">x =</span> biomarker, <span class="at">y =</span> perc, <span class="at">fill =</span> status)) <span class="sc">+</span></span>
-<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb18-131"><a href="#cb18-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(perc, <span class="at">accuracy =</span> <span class="dv">1</span>)),</span>
-<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>)</span>
-<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-135"><a href="#cb18-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>)) <span class="sc">+</span></span>
-<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb18-140"><a href="#cb18-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb18-141"><a href="#cb18-141" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb18-142"><a href="#cb18-142" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-143"><a href="#cb18-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a><span class="fu">### Functions</span></span>
+<span id="cb18-131"><a href="#cb18-131" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a>top_genes <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, <span class="at">n_top =</span> <span class="dv">500</span>){</span>
+<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a>  <span class="co"># use smallest between n_top and number of genes</span></span>
+<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>  n_top <span class="ot">&lt;-</span> <span class="fu">min</span>(n_top, <span class="fu">nrow</span>(mat))</span>
+<span id="cb18-135"><a href="#cb18-135" aria-hidden="true" tabindex="-1"></a>  <span class="co"># order by decreasing gene variance and slice</span></span>
+<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a>  rv <span class="ot">&lt;-</span> matrixStats<span class="sc">::</span><span class="fu">rowVars</span>(<span class="fu">as.matrix</span>(mat))</span>
+<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a>  select_n <span class="ot">&lt;-</span> <span class="fu">order</span>(rv, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="fu">seq_len</span>(n_top)]</span>
+<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a>  mat <span class="ot">&lt;-</span> mat[select_n, ]</span>
+<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(mat)</span>
+<span id="cb18-140"><a href="#cb18-140" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-141"><a href="#cb18-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-142"><a href="#cb18-142" aria-hidden="true" tabindex="-1"></a>get_pc <span class="ot">&lt;-</span> <span class="cf">function</span>(mx, md){</span>
+<span id="cb18-143"><a href="#cb18-143" aria-hidden="true" tabindex="-1"></a>  pc <span class="ot">&lt;-</span> PCAtools<span class="sc">::</span><span class="fu">pca</span>(mx, <span class="at">metadata =</span> md, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>, <span class="at">removeVar =</span> <span class="fl">0.1</span>)</span>
+<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(pc)</span>
+<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb18-146"><a href="#cb18-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-147"><a href="#cb18-147" aria-hidden="true" tabindex="-1"></a>Functions used to build the pipeline.</span>
-<span id="cb18-148"><a href="#cb18-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a>top_genes <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, <span class="at">n_top =</span> <span class="dv">500</span>){</span>
-<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a>  <span class="co"># use smallest between n_top and number of genes</span></span>
-<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a>  n_top <span class="ot">&lt;-</span> <span class="fu">min</span>(n_top, <span class="fu">nrow</span>(mat))</span>
-<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>  <span class="co"># order by decreasing gene variance and slice</span></span>
-<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a>  rv <span class="ot">&lt;-</span> matrixStats<span class="sc">::</span><span class="fu">rowVars</span>(<span class="fu">as.matrix</span>(mat))</span>
-<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a>  select_n <span class="ot">&lt;-</span> <span class="fu">order</span>(rv, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="fu">seq_len</span>(n_top)]</span>
-<span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a>  mat <span class="ot">&lt;-</span> mat[select_n, ]</span>
-<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(mat)</span>
-<span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a>get_pc <span class="ot">&lt;-</span> <span class="cf">function</span>(mx, md){</span>
-<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a>  pc <span class="ot">&lt;-</span> PCAtools<span class="sc">::</span><span class="fu">pca</span>(mx, <span class="at">metadata =</span> md, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>, <span class="at">removeVar =</span> <span class="fl">0.1</span>)</span>
-<span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(pc)</span>
-<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a>build_graph <span class="ot">&lt;-</span> <span class="cf">function</span>(pc, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>){</span>
-<span id="cb18-168"><a href="#cb18-168" aria-hidden="true" tabindex="-1"></a>  <span class="do">## pc space</span></span>
-<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a>  pcm <span class="ot">&lt;-</span> pc<span class="sc">$</span>rotated[, <span class="dv">1</span><span class="sc">:</span>npc]</span>
+<span id="cb18-147"><a href="#cb18-147" aria-hidden="true" tabindex="-1"></a>build_graph <span class="ot">&lt;-</span> <span class="cf">function</span>(pc, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>){</span>
+<span id="cb18-148"><a href="#cb18-148" aria-hidden="true" tabindex="-1"></a>  <span class="do">## pc space</span></span>
+<span id="cb18-149"><a href="#cb18-149" aria-hidden="true" tabindex="-1"></a>  pcm <span class="ot">&lt;-</span> pc<span class="sc">$</span>rotated[, <span class="dv">1</span><span class="sc">:</span>npc]</span>
+<span id="cb18-150"><a href="#cb18-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a>  <span class="co"># find k-nearest neighbors</span></span>
+<span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a>  knn_result <span class="ot">&lt;-</span> RANN<span class="sc">::</span><span class="fu">nn2</span>(pcm, <span class="at">k =</span> k)</span>
+<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a>  knn_idx <span class="ot">&lt;-</span> knn_result<span class="sc">$</span>nn.idx</span>
+<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>  <span class="co"># store sparse matrix triplets (i, j, value)</span></span>
+<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a>  i_indices <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a>  j_indices <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a>  values <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a>  npat <span class="ot">&lt;-</span> <span class="fu">nrow</span>(pcm)</span>
+<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adj &lt;- matrix(0, npat, npat)</span></span>
+<span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>npat){</span>
+<span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> knn_idx[i, ]){</span>
+<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (i <span class="sc">!=</span> j){ <span class="do">## avoid self-loop</span></span>
+<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a>        neighbors_i <span class="ot">&lt;-</span> knn_idx[i,]</span>
+<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a>        neighbors_j <span class="ot">&lt;-</span> knn_idx[j,]</span>
+<span id="cb18-168"><a href="#cb18-168" aria-hidden="true" tabindex="-1"></a>        jaccard_sim <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">intersect</span>(neighbors_i, neighbors_j)) <span class="sc">/</span> </span>
+<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">length</span>(<span class="fu">union</span>(neighbors_i, neighbors_j)) <span class="do">## union takes unique values</span></span>
 <span id="cb18-170"><a href="#cb18-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a>  <span class="co"># find k-nearest neighbors</span></span>
-<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a>  knn_result <span class="ot">&lt;-</span> RANN<span class="sc">::</span><span class="fu">nn2</span>(pcm, <span class="at">k =</span> k)</span>
-<span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a>  knn_idx <span class="ot">&lt;-</span> knn_result<span class="sc">$</span>nn.idx</span>
-<span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb18-175"><a href="#cb18-175" aria-hidden="true" tabindex="-1"></a>  <span class="co"># store sparse matrix triplets (i, j, value)</span></span>
-<span id="cb18-176"><a href="#cb18-176" aria-hidden="true" tabindex="-1"></a>  i_indices <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb18-177"><a href="#cb18-177" aria-hidden="true" tabindex="-1"></a>  j_indices <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb18-178"><a href="#cb18-178" aria-hidden="true" tabindex="-1"></a>  values <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb18-179"><a href="#cb18-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-180"><a href="#cb18-180" aria-hidden="true" tabindex="-1"></a>  npat <span class="ot">&lt;-</span> <span class="fu">nrow</span>(pcm)</span>
-<span id="cb18-181"><a href="#cb18-181" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adj &lt;- matrix(0, npat, npat)</span></span>
-<span id="cb18-182"><a href="#cb18-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-183"><a href="#cb18-183" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>npat){</span>
-<span id="cb18-184"><a href="#cb18-184" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> knn_idx[i, ]){</span>
-<span id="cb18-185"><a href="#cb18-185" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (i <span class="sc">!=</span> j){ <span class="do">## avoid self-loop</span></span>
-<span id="cb18-186"><a href="#cb18-186" aria-hidden="true" tabindex="-1"></a>        neighbors_i <span class="ot">&lt;-</span> knn_idx[i,]</span>
-<span id="cb18-187"><a href="#cb18-187" aria-hidden="true" tabindex="-1"></a>        neighbors_j <span class="ot">&lt;-</span> knn_idx[j,]</span>
-<span id="cb18-188"><a href="#cb18-188" aria-hidden="true" tabindex="-1"></a>        jaccard_sim <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">intersect</span>(neighbors_i, neighbors_j)) <span class="sc">/</span> </span>
-<span id="cb18-189"><a href="#cb18-189" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">length</span>(<span class="fu">union</span>(neighbors_i, neighbors_j)) <span class="do">## union takes unique values</span></span>
-<span id="cb18-190"><a href="#cb18-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-191"><a href="#cb18-191" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store indices and values for sparse matrix</span></span>
-<span id="cb18-192"><a href="#cb18-192" aria-hidden="true" tabindex="-1"></a>        i_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(i_indices, i)</span>
-<span id="cb18-193"><a href="#cb18-193" aria-hidden="true" tabindex="-1"></a>        j_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(j_indices, j)</span>
-<span id="cb18-194"><a href="#cb18-194" aria-hidden="true" tabindex="-1"></a>        values <span class="ot">&lt;-</span> <span class="fu">c</span>(values, jaccard_sim)</span>
-<span id="cb18-195"><a href="#cb18-195" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb18-196"><a href="#cb18-196" aria-hidden="true" tabindex="-1"></a>        <span class="co"># dense matrix </span></span>
-<span id="cb18-197"><a href="#cb18-197" aria-hidden="true" tabindex="-1"></a>        <span class="co"># adjt[i, j] &lt;- jaccard_sim</span></span>
-<span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create sparse matrix using triplet format</span></span>
-<span id="cb18-203"><a href="#cb18-203" aria-hidden="true" tabindex="-1"></a>  adj <span class="ot">&lt;-</span> <span class="fu">sparseMatrix</span>(<span class="at">i =</span> i_indices, <span class="at">j =</span> j_indices, <span class="at">x =</span> values, <span class="at">dims =</span> <span class="fu">c</span>(npat, npat))</span>
-<span id="cb18-204"><a href="#cb18-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-205"><a href="#cb18-205" aria-hidden="true" tabindex="-1"></a>  <span class="co"># build graph</span></span>
-<span id="cb18-206"><a href="#cb18-206" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">graph_from_adjacency_matrix</span>(adj,</span>
-<span id="cb18-207"><a href="#cb18-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">mode =</span> <span class="st">"max"</span>, <span class="do">## preserve the strongest connections, same of adj &lt;- pmax(adj, t(adj))</span></span>
-<span id="cb18-208"><a href="#cb18-208" aria-hidden="true" tabindex="-1"></a>    <span class="at">weighted =</span> <span class="cn">TRUE</span></span>
-<span id="cb18-209"><a href="#cb18-209" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-210"><a href="#cb18-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(g)</span>
-<span id="cb18-211"><a href="#cb18-211" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-212"><a href="#cb18-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-213"><a href="#cb18-213" aria-hidden="true" tabindex="-1"></a>find_clusters <span class="ot">&lt;-</span> <span class="cf">function</span>(g, mx, <span class="at">resolution =</span> <span class="dv">1</span>){</span>
-<span id="cb18-214"><a href="#cb18-214" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Louvain algorithm for community detection</span></span>
-<span id="cb18-215"><a href="#cb18-215" aria-hidden="true" tabindex="-1"></a>  louvain_communities <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g, <span class="at">resolution =</span> resolution)</span>
+<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store indices and values for sparse matrix</span></span>
+<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a>        i_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(i_indices, i)</span>
+<span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a>        j_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(j_indices, j)</span>
+<span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a>        values <span class="ot">&lt;-</span> <span class="fu">c</span>(values, jaccard_sim)</span>
+<span id="cb18-175"><a href="#cb18-175" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-176"><a href="#cb18-176" aria-hidden="true" tabindex="-1"></a>        <span class="co"># dense matrix </span></span>
+<span id="cb18-177"><a href="#cb18-177" aria-hidden="true" tabindex="-1"></a>        <span class="co"># adjt[i, j] &lt;- jaccard_sim</span></span>
+<span id="cb18-178"><a href="#cb18-178" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb18-179"><a href="#cb18-179" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-180"><a href="#cb18-180" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb18-181"><a href="#cb18-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-182"><a href="#cb18-182" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create sparse matrix using triplet format</span></span>
+<span id="cb18-183"><a href="#cb18-183" aria-hidden="true" tabindex="-1"></a>  adj <span class="ot">&lt;-</span> <span class="fu">sparseMatrix</span>(<span class="at">i =</span> i_indices, <span class="at">j =</span> j_indices, <span class="at">x =</span> values, <span class="at">dims =</span> <span class="fu">c</span>(npat, npat))</span>
+<span id="cb18-184"><a href="#cb18-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-185"><a href="#cb18-185" aria-hidden="true" tabindex="-1"></a>  <span class="co"># build graph</span></span>
+<span id="cb18-186"><a href="#cb18-186" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">graph_from_adjacency_matrix</span>(adj,</span>
+<span id="cb18-187"><a href="#cb18-187" aria-hidden="true" tabindex="-1"></a>    <span class="at">mode =</span> <span class="st">"max"</span>, <span class="do">## preserve the strongest connections, same of adj &lt;- pmax(adj, t(adj))</span></span>
+<span id="cb18-188"><a href="#cb18-188" aria-hidden="true" tabindex="-1"></a>    <span class="at">weighted =</span> <span class="cn">TRUE</span></span>
+<span id="cb18-189"><a href="#cb18-189" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-190"><a href="#cb18-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(g)</span>
+<span id="cb18-191"><a href="#cb18-191" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-192"><a href="#cb18-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-193"><a href="#cb18-193" aria-hidden="true" tabindex="-1"></a>find_clusters <span class="ot">&lt;-</span> <span class="cf">function</span>(g, mx, <span class="at">resolution =</span> <span class="dv">1</span>){</span>
+<span id="cb18-194"><a href="#cb18-194" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Louvain algorithm for community detection</span></span>
+<span id="cb18-195"><a href="#cb18-195" aria-hidden="true" tabindex="-1"></a>  louvain_communities <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g, <span class="at">resolution =</span> resolution)</span>
+<span id="cb18-196"><a href="#cb18-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-197"><a href="#cb18-197" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cluster assignment</span></span>
+<span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a>  clusters <span class="ot">&lt;-</span> <span class="fu">membership</span>(louvain_communities)</span>
+<span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(clusters)</span>
+<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-203"><a href="#cb18-203" aria-hidden="true" tabindex="-1"></a><span class="do">## umap wrapper</span></span>
+<span id="cb18-204"><a href="#cb18-204" aria-hidden="true" tabindex="-1"></a>umap <span class="ot">&lt;-</span> <span class="cf">function</span>(mx, ...){</span>
+<span id="cb18-205"><a href="#cb18-205" aria-hidden="true" tabindex="-1"></a>  defaults <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb18-206"><a href="#cb18-206" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_components =</span> <span class="dv">2</span>,</span>
+<span id="cb18-207"><a href="#cb18-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_neighbors =</span> <span class="dv">20</span>,     <span class="do">## as perplexity in t-SNE</span></span>
+<span id="cb18-208"><a href="#cb18-208" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_dist =</span> <span class="fl">0.1</span>,       <span class="do">## how tightly points cluster together</span></span>
+<span id="cb18-209"><a href="#cb18-209" aria-hidden="true" tabindex="-1"></a>    <span class="at">metric =</span> <span class="st">"euclidean"</span>,</span>
+<span id="cb18-210"><a href="#cb18-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">spread =</span> <span class="dv">1</span>,           <span class="do">## global structure preservation</span></span>
+<span id="cb18-211"><a href="#cb18-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_threads =</span> <span class="dv">10</span></span>
+<span id="cb18-212"><a href="#cb18-212" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-213"><a href="#cb18-213" aria-hidden="true" tabindex="-1"></a>  user_args <span class="ot">&lt;-</span> <span class="fu">modifyList</span>(defaults, <span class="fu">list</span>(...))</span>
+<span id="cb18-214"><a href="#cb18-214" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">exec</span>(uwot<span class="sc">::</span>umap, <span class="at">X =</span> <span class="fu">t</span>(mx), <span class="sc">!!!</span>user_args)</span>
+<span id="cb18-215"><a href="#cb18-215" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb18-216"><a href="#cb18-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-217"><a href="#cb18-217" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cluster assignment</span></span>
-<span id="cb18-218"><a href="#cb18-218" aria-hidden="true" tabindex="-1"></a>  clusters <span class="ot">&lt;-</span> <span class="fu">membership</span>(louvain_communities)</span>
-<span id="cb18-219"><a href="#cb18-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-220"><a href="#cb18-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(clusters)</span>
-<span id="cb18-221"><a href="#cb18-221" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-222"><a href="#cb18-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-223"><a href="#cb18-223" aria-hidden="true" tabindex="-1"></a><span class="do">## umap wrapper</span></span>
-<span id="cb18-224"><a href="#cb18-224" aria-hidden="true" tabindex="-1"></a>umap <span class="ot">&lt;-</span> <span class="cf">function</span>(mx, ...){</span>
-<span id="cb18-225"><a href="#cb18-225" aria-hidden="true" tabindex="-1"></a>  defaults <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb18-226"><a href="#cb18-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_components =</span> <span class="dv">2</span>,</span>
-<span id="cb18-227"><a href="#cb18-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_neighbors =</span> <span class="dv">20</span>,     <span class="do">## as perplexity in t-SNE</span></span>
-<span id="cb18-228"><a href="#cb18-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_dist =</span> <span class="fl">0.1</span>,       <span class="do">## how tightly points cluster together</span></span>
-<span id="cb18-229"><a href="#cb18-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">metric =</span> <span class="st">"euclidean"</span>,</span>
-<span id="cb18-230"><a href="#cb18-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">spread =</span> <span class="dv">1</span>,           <span class="do">## global structure preservation</span></span>
-<span id="cb18-231"><a href="#cb18-231" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_threads =</span> <span class="dv">10</span></span>
-<span id="cb18-232"><a href="#cb18-232" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-233"><a href="#cb18-233" aria-hidden="true" tabindex="-1"></a>  user_args <span class="ot">&lt;-</span> <span class="fu">modifyList</span>(defaults, <span class="fu">list</span>(...))</span>
-<span id="cb18-234"><a href="#cb18-234" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">exec</span>(uwot<span class="sc">::</span>umap, <span class="at">X =</span> <span class="fu">t</span>(mx), <span class="sc">!!!</span>user_args)</span>
-<span id="cb18-235"><a href="#cb18-235" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-236"><a href="#cb18-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-237"><a href="#cb18-237" aria-hidden="true" tabindex="-1"></a><span class="do">## tsne wrapper</span></span>
-<span id="cb18-238"><a href="#cb18-238" aria-hidden="true" tabindex="-1"></a>tsne <span class="ot">&lt;-</span> <span class="cf">function</span>(mx, ...){</span>
-<span id="cb18-239"><a href="#cb18-239" aria-hidden="true" tabindex="-1"></a>  defaults <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb18-240"><a href="#cb18-240" aria-hidden="true" tabindex="-1"></a>    <span class="at">dims =</span> <span class="dv">2</span>,</span>
-<span id="cb18-241"><a href="#cb18-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">perplexity =</span> <span class="dv">20</span>,</span>
-<span id="cb18-242"><a href="#cb18-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_threads =</span> <span class="dv">10</span></span>
-<span id="cb18-243"><a href="#cb18-243" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-244"><a href="#cb18-244" aria-hidden="true" tabindex="-1"></a>  user_args <span class="ot">&lt;-</span> <span class="fu">modifyList</span>(defaults, <span class="fu">list</span>(...))</span>
-<span id="cb18-245"><a href="#cb18-245" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">exec</span>(Rtsne<span class="sc">::</span>Rtsne, <span class="at">X =</span> <span class="fu">t</span>(mx), <span class="sc">!!!</span>user_args)</span>
-<span id="cb18-246"><a href="#cb18-246" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-247"><a href="#cb18-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-248"><a href="#cb18-248" aria-hidden="true" tabindex="-1"></a>join_results <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, pc, clusters){</span>
-<span id="cb18-249"><a href="#cb18-249" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.list</span>(tib)){ <span class="do">## tsne returns a list ..</span></span>
-<span id="cb18-250"><a href="#cb18-250" aria-hidden="true" tabindex="-1"></a>    restib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb18-251"><a href="#cb18-251" aria-hidden="true" tabindex="-1"></a>      <span class="at">sample =</span> <span class="fu">rownames</span>(pc<span class="sc">$</span>rotated),</span>
-<span id="cb18-252"><a href="#cb18-252" aria-hidden="true" tabindex="-1"></a>      <span class="at">cluster =</span> <span class="fu">as.factor</span>(clusters),</span>
-<span id="cb18-253"><a href="#cb18-253" aria-hidden="true" tabindex="-1"></a>      <span class="at">tsne1 =</span> tib<span class="sc">$</span>Y[, <span class="dv">1</span>],</span>
-<span id="cb18-254"><a href="#cb18-254" aria-hidden="true" tabindex="-1"></a>      <span class="at">tsne2 =</span> tib<span class="sc">$</span>Y[, <span class="dv">2</span>]) <span class="sc">|&gt;</span></span>
-<span id="cb18-255"><a href="#cb18-255" aria-hidden="true" tabindex="-1"></a>      <span class="fu">left_join</span>(meta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'sample'</span> <span class="ot">=</span> <span class="st">'sampleID'</span>))</span>
-<span id="cb18-256"><a href="#cb18-256" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{ <span class="do">## .. umap a dataframe</span></span>
-<span id="cb18-257"><a href="#cb18-257" aria-hidden="true" tabindex="-1"></a>    restib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb18-258"><a href="#cb18-258" aria-hidden="true" tabindex="-1"></a>      <span class="at">sample =</span> <span class="fu">rownames</span>(pc<span class="sc">$</span>rotated),</span>
-<span id="cb18-259"><a href="#cb18-259" aria-hidden="true" tabindex="-1"></a>      <span class="at">cluster =</span> <span class="fu">as.factor</span>(clusters),</span>
-<span id="cb18-260"><a href="#cb18-260" aria-hidden="true" tabindex="-1"></a>      <span class="at">umap1 =</span> tib[, <span class="dv">1</span>],</span>
-<span id="cb18-261"><a href="#cb18-261" aria-hidden="true" tabindex="-1"></a>      <span class="at">umap2 =</span> tib[, <span class="dv">2</span>]) <span class="sc">|&gt;</span></span>
-<span id="cb18-262"><a href="#cb18-262" aria-hidden="true" tabindex="-1"></a>      <span class="fu">left_join</span>(meta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'sample'</span> <span class="ot">=</span> <span class="st">'sampleID'</span>))</span>
-<span id="cb18-263"><a href="#cb18-263" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb18-264"><a href="#cb18-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(restib)</span>
-<span id="cb18-265"><a href="#cb18-265" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-266"><a href="#cb18-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-267"><a href="#cb18-267" aria-hidden="true" tabindex="-1"></a>plot_clusters <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">cluster =</span> <span class="st">'cluster'</span>, <span class="at">animate =</span> <span class="cn">FALSE</span>){</span>
-<span id="cb18-268"><a href="#cb18-268" aria-hidden="true" tabindex="-1"></a>  dim1 <span class="ot">&lt;-</span> <span class="fu">colnames</span>(tib)[<span class="dv">3</span>]</span>
-<span id="cb18-269"><a href="#cb18-269" aria-hidden="true" tabindex="-1"></a>  dim2 <span class="ot">&lt;-</span> <span class="fu">colnames</span>(tib)[<span class="dv">4</span>]</span>
-<span id="cb18-270"><a href="#cb18-270" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb18-271"><a href="#cb18-271" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(tib, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">!!</span><span class="fu">sym</span>(dim1), <span class="at">y =</span> <span class="sc">!!</span><span class="fu">sym</span>(dim2), <span class="at">color =</span> <span class="sc">!!</span><span class="fu">sym</span>(cluster))) <span class="sc">+</span></span>
-<span id="cb18-272"><a href="#cb18-272" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb18-273"><a href="#cb18-273" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_replace</span>(cluster, <span class="st">'_'</span>, <span class="st">' '</span>), <span class="at">x =</span> dim1, <span class="at">y =</span> dim2) <span class="sc">+</span></span>
-<span id="cb18-274"><a href="#cb18-274" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb18-275"><a href="#cb18-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-276"><a href="#cb18-276" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span>animate <span class="sc">&amp;</span> cluster <span class="sc">==</span> <span class="st">'cluster'</span>){</span>
-<span id="cb18-277"><a href="#cb18-277" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate cluster centroids for label positioning</span></span>
-<span id="cb18-278"><a href="#cb18-278" aria-hidden="true" tabindex="-1"></a>    cluster_centers <span class="ot">&lt;-</span> tib <span class="sc">|&gt;</span></span>
-<span id="cb18-279"><a href="#cb18-279" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(cluster)) <span class="sc">|&gt;</span></span>
-<span id="cb18-280"><a href="#cb18-280" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(</span>
-<span id="cb18-281"><a href="#cb18-281" aria-hidden="true" tabindex="-1"></a>        <span class="at">x_center =</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(dim1), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb18-282"><a href="#cb18-282" aria-hidden="true" tabindex="-1"></a>        <span class="at">y_center =</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(dim2), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb18-283"><a href="#cb18-283" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb18-284"><a href="#cb18-284" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb18-285"><a href="#cb18-285" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb18-286"><a href="#cb18-286" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
-<span id="cb18-287"><a href="#cb18-287" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_text_repel</span>(</span>
-<span id="cb18-288"><a href="#cb18-288" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> cluster_centers,</span>
-<span id="cb18-289"><a href="#cb18-289" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> x_center, <span class="at">y =</span> y_center, <span class="at">label =</span> <span class="sc">!!</span><span class="fu">sym</span>(cluster)),</span>
-<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">8</span>,</span>
-<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a>        <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
-<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a>        <span class="at">vjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a>        <span class="at">hjust =</span> <span class="fl">0.5</span></span>
-<span id="cb18-295"><a href="#cb18-295" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb18-296"><a href="#cb18-296" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb18-297"><a href="#cb18-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
-<span id="cb18-298"><a href="#cb18-298" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-299"><a href="#cb18-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-300"><a href="#cb18-300" aria-hidden="true" tabindex="-1"></a>formatter <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">digits =</span> <span class="dv">3</span>){</span>
-<span id="cb18-301"><a href="#cb18-301" aria-hidden="true" tabindex="-1"></a>  tib <span class="sc">|&gt;</span> </span>
-<span id="cb18-302"><a href="#cb18-302" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), </span>
-<span id="cb18-303"><a href="#cb18-303" aria-hidden="true" tabindex="-1"></a>           <span class="sc">~</span><span class="fu">format</span>(., <span class="at">scientific =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> digits)))</span>
-<span id="cb18-304"><a href="#cb18-304" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-305"><a href="#cb18-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-306"><a href="#cb18-306" aria-hidden="true" tabindex="-1"></a>datatable <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">row2display =</span> <span class="dv">10</span>) {</span>
-<span id="cb18-307"><a href="#cb18-307" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">nrow</span>(tib) <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
-<span id="cb18-308"><a href="#cb18-308" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(tib,</span>
-<span id="cb18-309"><a href="#cb18-309" aria-hidden="true" tabindex="-1"></a>      <span class="at">rownames   =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb18-310"><a href="#cb18-310" aria-hidden="true" tabindex="-1"></a>      <span class="at">options    =</span> <span class="fu">list</span>(</span>
-<span id="cb18-311"><a href="#cb18-311" aria-hidden="true" tabindex="-1"></a>        <span class="at">dom =</span> <span class="st">"Bfrtip"</span>,</span>
-<span id="cb18-312"><a href="#cb18-312" aria-hidden="true" tabindex="-1"></a>        <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb18-313"><a href="#cb18-313" aria-hidden="true" tabindex="-1"></a>        <span class="at">pageLength =</span> row2display</span>
-<span id="cb18-314"><a href="#cb18-314" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb18-315"><a href="#cb18-315" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb18-316"><a href="#cb18-316" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb18-317"><a href="#cb18-317" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"No results"</span>)</span>
-<span id="cb18-318"><a href="#cb18-318" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb18-319"><a href="#cb18-319" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-320"><a href="#cb18-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-321"><a href="#cb18-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-322"><a href="#cb18-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### A. Clustering all the patients</span></span>
-<span id="cb18-323"><a href="#cb18-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-326"><a href="#cb18-326" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-327"><a href="#cb18-327" aria-hidden="true" tabindex="-1"></a>mxtop <span class="ot">&lt;-</span> <span class="fu">top_genes</span>(mx, <span class="at">n_top =</span> <span class="dv">3000</span>)</span>
-<span id="cb18-328"><a href="#cb18-328" aria-hidden="true" tabindex="-1"></a>pc <span class="ot">&lt;-</span> <span class="fu">get_pc</span>(mxtop, md)</span>
-<span id="cb18-329"><a href="#cb18-329" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">build_graph</span>(pc, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>)</span>
-<span id="cb18-330"><a href="#cb18-330" aria-hidden="true" tabindex="-1"></a>cls <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g, mxtop, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
-<span id="cb18-331"><a href="#cb18-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-332"><a href="#cb18-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-333"><a href="#cb18-333" aria-hidden="true" tabindex="-1"></a><span class="fu">#### t-SNE </span></span>
-<span id="cb18-334"><a href="#cb18-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-337"><a href="#cb18-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-338"><a href="#cb18-338" aria-hidden="true" tabindex="-1"></a>tsneres <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
-<span id="cb18-339"><a href="#cb18-339" aria-hidden="true" tabindex="-1"></a>tsnetib <span class="ot">&lt;-</span> <span class="fu">join_results</span>(tsneres, pc, cls)</span>
+<span id="cb18-217"><a href="#cb18-217" aria-hidden="true" tabindex="-1"></a><span class="do">## tsne wrapper</span></span>
+<span id="cb18-218"><a href="#cb18-218" aria-hidden="true" tabindex="-1"></a>tsne <span class="ot">&lt;-</span> <span class="cf">function</span>(mx, ...){</span>
+<span id="cb18-219"><a href="#cb18-219" aria-hidden="true" tabindex="-1"></a>  defaults <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb18-220"><a href="#cb18-220" aria-hidden="true" tabindex="-1"></a>    <span class="at">dims =</span> <span class="dv">2</span>,</span>
+<span id="cb18-221"><a href="#cb18-221" aria-hidden="true" tabindex="-1"></a>    <span class="at">perplexity =</span> <span class="dv">20</span>,</span>
+<span id="cb18-222"><a href="#cb18-222" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_threads =</span> <span class="dv">10</span></span>
+<span id="cb18-223"><a href="#cb18-223" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-224"><a href="#cb18-224" aria-hidden="true" tabindex="-1"></a>  user_args <span class="ot">&lt;-</span> <span class="fu">modifyList</span>(defaults, <span class="fu">list</span>(...))</span>
+<span id="cb18-225"><a href="#cb18-225" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">exec</span>(Rtsne<span class="sc">::</span>Rtsne, <span class="at">X =</span> <span class="fu">t</span>(mx), <span class="sc">!!!</span>user_args)</span>
+<span id="cb18-226"><a href="#cb18-226" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-227"><a href="#cb18-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-228"><a href="#cb18-228" aria-hidden="true" tabindex="-1"></a>join_results <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, pc, clusters){</span>
+<span id="cb18-229"><a href="#cb18-229" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.list</span>(tib)){ <span class="do">## tsne returns a list ..</span></span>
+<span id="cb18-230"><a href="#cb18-230" aria-hidden="true" tabindex="-1"></a>    restib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb18-231"><a href="#cb18-231" aria-hidden="true" tabindex="-1"></a>      <span class="at">sample =</span> <span class="fu">rownames</span>(pc<span class="sc">$</span>rotated),</span>
+<span id="cb18-232"><a href="#cb18-232" aria-hidden="true" tabindex="-1"></a>      <span class="at">cluster =</span> <span class="fu">as.factor</span>(clusters),</span>
+<span id="cb18-233"><a href="#cb18-233" aria-hidden="true" tabindex="-1"></a>      <span class="at">tsne1 =</span> tib<span class="sc">$</span>Y[, <span class="dv">1</span>],</span>
+<span id="cb18-234"><a href="#cb18-234" aria-hidden="true" tabindex="-1"></a>      <span class="at">tsne2 =</span> tib<span class="sc">$</span>Y[, <span class="dv">2</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb18-235"><a href="#cb18-235" aria-hidden="true" tabindex="-1"></a>      <span class="fu">left_join</span>(meta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'sample'</span> <span class="ot">=</span> <span class="st">'sampleID'</span>))</span>
+<span id="cb18-236"><a href="#cb18-236" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{ <span class="do">## .. umap a dataframe</span></span>
+<span id="cb18-237"><a href="#cb18-237" aria-hidden="true" tabindex="-1"></a>    restib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb18-238"><a href="#cb18-238" aria-hidden="true" tabindex="-1"></a>      <span class="at">sample =</span> <span class="fu">rownames</span>(pc<span class="sc">$</span>rotated),</span>
+<span id="cb18-239"><a href="#cb18-239" aria-hidden="true" tabindex="-1"></a>      <span class="at">cluster =</span> <span class="fu">as.factor</span>(clusters),</span>
+<span id="cb18-240"><a href="#cb18-240" aria-hidden="true" tabindex="-1"></a>      <span class="at">umap1 =</span> tib[, <span class="dv">1</span>],</span>
+<span id="cb18-241"><a href="#cb18-241" aria-hidden="true" tabindex="-1"></a>      <span class="at">umap2 =</span> tib[, <span class="dv">2</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb18-242"><a href="#cb18-242" aria-hidden="true" tabindex="-1"></a>      <span class="fu">left_join</span>(meta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'sample'</span> <span class="ot">=</span> <span class="st">'sampleID'</span>))</span>
+<span id="cb18-243"><a href="#cb18-243" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb18-244"><a href="#cb18-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(restib)</span>
+<span id="cb18-245"><a href="#cb18-245" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-246"><a href="#cb18-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-247"><a href="#cb18-247" aria-hidden="true" tabindex="-1"></a>plot_clusters <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">cluster =</span> <span class="st">'cluster'</span>, <span class="at">animate =</span> <span class="cn">FALSE</span>){</span>
+<span id="cb18-248"><a href="#cb18-248" aria-hidden="true" tabindex="-1"></a>  dim1 <span class="ot">&lt;-</span> <span class="fu">colnames</span>(tib)[<span class="dv">3</span>]</span>
+<span id="cb18-249"><a href="#cb18-249" aria-hidden="true" tabindex="-1"></a>  dim2 <span class="ot">&lt;-</span> <span class="fu">colnames</span>(tib)[<span class="dv">4</span>]</span>
+<span id="cb18-250"><a href="#cb18-250" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-251"><a href="#cb18-251" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(tib, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">!!</span><span class="fu">sym</span>(dim1), <span class="at">y =</span> <span class="sc">!!</span><span class="fu">sym</span>(dim2), <span class="at">color =</span> <span class="sc">!!</span><span class="fu">sym</span>(cluster))) <span class="sc">+</span></span>
+<span id="cb18-252"><a href="#cb18-252" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb18-253"><a href="#cb18-253" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_replace</span>(cluster, <span class="st">'_'</span>, <span class="st">' '</span>), <span class="at">x =</span> dim1, <span class="at">y =</span> dim2) <span class="sc">+</span></span>
+<span id="cb18-254"><a href="#cb18-254" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb18-255"><a href="#cb18-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-256"><a href="#cb18-256" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span>animate <span class="sc">&amp;</span> cluster <span class="sc">==</span> <span class="st">'cluster'</span>){</span>
+<span id="cb18-257"><a href="#cb18-257" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate cluster centroids for label positioning</span></span>
+<span id="cb18-258"><a href="#cb18-258" aria-hidden="true" tabindex="-1"></a>    cluster_centers <span class="ot">&lt;-</span> tib <span class="sc">|&gt;</span></span>
+<span id="cb18-259"><a href="#cb18-259" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(cluster)) <span class="sc">|&gt;</span></span>
+<span id="cb18-260"><a href="#cb18-260" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(</span>
+<span id="cb18-261"><a href="#cb18-261" aria-hidden="true" tabindex="-1"></a>        <span class="at">x_center =</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(dim1), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb18-262"><a href="#cb18-262" aria-hidden="true" tabindex="-1"></a>        <span class="at">y_center =</span> <span class="fu">mean</span>(<span class="sc">!!</span><span class="fu">sym</span>(dim2), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb18-263"><a href="#cb18-263" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb18-264"><a href="#cb18-264" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-265"><a href="#cb18-265" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-266"><a href="#cb18-266" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb18-267"><a href="#cb18-267" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_text_repel</span>(</span>
+<span id="cb18-268"><a href="#cb18-268" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> cluster_centers,</span>
+<span id="cb18-269"><a href="#cb18-269" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> x_center, <span class="at">y =</span> y_center, <span class="at">label =</span> <span class="sc">!!</span><span class="fu">sym</span>(cluster)),</span>
+<span id="cb18-270"><a href="#cb18-270" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb18-271"><a href="#cb18-271" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">8</span>,</span>
+<span id="cb18-272"><a href="#cb18-272" aria-hidden="true" tabindex="-1"></a>        <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb18-273"><a href="#cb18-273" aria-hidden="true" tabindex="-1"></a>        <span class="at">vjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb18-274"><a href="#cb18-274" aria-hidden="true" tabindex="-1"></a>        <span class="at">hjust =</span> <span class="fl">0.5</span></span>
+<span id="cb18-275"><a href="#cb18-275" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-276"><a href="#cb18-276" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb18-277"><a href="#cb18-277" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb18-278"><a href="#cb18-278" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-279"><a href="#cb18-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-280"><a href="#cb18-280" aria-hidden="true" tabindex="-1"></a>formatter <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">digits =</span> <span class="dv">3</span>){</span>
+<span id="cb18-281"><a href="#cb18-281" aria-hidden="true" tabindex="-1"></a>  tib <span class="sc">|&gt;</span> </span>
+<span id="cb18-282"><a href="#cb18-282" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), </span>
+<span id="cb18-283"><a href="#cb18-283" aria-hidden="true" tabindex="-1"></a>           <span class="sc">~</span><span class="fu">format</span>(., <span class="at">scientific =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> digits)))</span>
+<span id="cb18-284"><a href="#cb18-284" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-285"><a href="#cb18-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-286"><a href="#cb18-286" aria-hidden="true" tabindex="-1"></a>datatable <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">row2display =</span> <span class="dv">10</span>) {</span>
+<span id="cb18-287"><a href="#cb18-287" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">nrow</span>(tib) <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb18-288"><a href="#cb18-288" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(tib,</span>
+<span id="cb18-289"><a href="#cb18-289" aria-hidden="true" tabindex="-1"></a>      <span class="at">rownames   =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a>      <span class="at">options    =</span> <span class="fu">list</span>(</span>
+<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a>        <span class="at">dom =</span> <span class="st">"Bfrtip"</span>,</span>
+<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a>        <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a>        <span class="at">pageLength =</span> row2display</span>
+<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb18-295"><a href="#cb18-295" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-296"><a href="#cb18-296" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb18-297"><a href="#cb18-297" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"No results"</span>)</span>
+<span id="cb18-298"><a href="#cb18-298" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb18-299"><a href="#cb18-299" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-300"><a href="#cb18-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-301"><a href="#cb18-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-302"><a href="#cb18-302" aria-hidden="true" tabindex="-1"></a><span class="fu">### A. Clustering all the patients</span></span>
+<span id="cb18-303"><a href="#cb18-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-306"><a href="#cb18-306" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-307"><a href="#cb18-307" aria-hidden="true" tabindex="-1"></a>mxtop <span class="ot">&lt;-</span> <span class="fu">top_genes</span>(mx, <span class="at">n_top =</span> <span class="dv">3000</span>)</span>
+<span id="cb18-308"><a href="#cb18-308" aria-hidden="true" tabindex="-1"></a>pc <span class="ot">&lt;-</span> <span class="fu">get_pc</span>(mxtop, md)</span>
+<span id="cb18-309"><a href="#cb18-309" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">build_graph</span>(pc, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>)</span>
+<span id="cb18-310"><a href="#cb18-310" aria-hidden="true" tabindex="-1"></a>cls <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g, mxtop, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
+<span id="cb18-311"><a href="#cb18-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-312"><a href="#cb18-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-313"><a href="#cb18-313" aria-hidden="true" tabindex="-1"></a><span class="fu">#### t-SNE </span></span>
+<span id="cb18-314"><a href="#cb18-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-317"><a href="#cb18-317" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-318"><a href="#cb18-318" aria-hidden="true" tabindex="-1"></a>tsneres <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
+<span id="cb18-319"><a href="#cb18-319" aria-hidden="true" tabindex="-1"></a>tsnetib <span class="ot">&lt;-</span> <span class="fu">join_results</span>(tsneres, pc, cls)</span>
+<span id="cb18-320"><a href="#cb18-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-321"><a href="#cb18-321" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, <span class="st">'pam50_subtype'</span>)</span>
+<span id="cb18-322"><a href="#cb18-322" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(tsnetib, .x))</span>
+<span id="cb18-323"><a href="#cb18-323" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb18-324"><a href="#cb18-324" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-325"><a href="#cb18-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-326"><a href="#cb18-326" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UMAP </span></span>
+<span id="cb18-327"><a href="#cb18-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-330"><a href="#cb18-330" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-331"><a href="#cb18-331" aria-hidden="true" tabindex="-1"></a>umapres <span class="ot">&lt;-</span> <span class="fu">umap</span>(mxtop, <span class="at">n_neighbors =</span> <span class="dv">20</span>, <span class="at">spread =</span> <span class="dv">1</span>)</span>
+<span id="cb18-332"><a href="#cb18-332" aria-hidden="true" tabindex="-1"></a>umaptib <span class="ot">&lt;-</span> <span class="fu">join_results</span>(umapres, pc, cls)</span>
+<span id="cb18-333"><a href="#cb18-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-334"><a href="#cb18-334" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, <span class="st">'pam50_subtype'</span>)</span>
+<span id="cb18-335"><a href="#cb18-335" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(umaptib, .x))</span>
+<span id="cb18-336"><a href="#cb18-336" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb18-337"><a href="#cb18-337" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-338"><a href="#cb18-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-339"><a href="#cb18-339" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Patient cluster assignment</span></span>
 <span id="cb18-340"><a href="#cb18-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-341"><a href="#cb18-341" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, <span class="st">'pam50_subtype'</span>)</span>
-<span id="cb18-342"><a href="#cb18-342" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(tsnetib, .x))</span>
-<span id="cb18-343"><a href="#cb18-343" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb18-344"><a href="#cb18-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UMAP </span></span>
-<span id="cb18-347"><a href="#cb18-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-350"><a href="#cb18-350" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-351"><a href="#cb18-351" aria-hidden="true" tabindex="-1"></a>umapres <span class="ot">&lt;-</span> <span class="fu">umap</span>(mxtop, <span class="at">n_neighbors =</span> <span class="dv">20</span>, <span class="at">spread =</span> <span class="dv">1</span>)</span>
-<span id="cb18-352"><a href="#cb18-352" aria-hidden="true" tabindex="-1"></a>umaptib <span class="ot">&lt;-</span> <span class="fu">join_results</span>(umapres, pc, cls)</span>
-<span id="cb18-353"><a href="#cb18-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-354"><a href="#cb18-354" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, <span class="st">'pam50_subtype'</span>)</span>
-<span id="cb18-355"><a href="#cb18-355" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(umaptib, .x))</span>
-<span id="cb18-356"><a href="#cb18-356" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb18-357"><a href="#cb18-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-358"><a href="#cb18-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-359"><a href="#cb18-359" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Patient cluster assignment</span></span>
+<span id="cb18-341"><a href="#cb18-341" aria-hidden="true" tabindex="-1"></a>The table below shows the obtained cluster assignment for each patient.</span>
+<span id="cb18-342"><a href="#cb18-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a>tsnetib <span class="sc">|&gt;</span> </span>
+<span id="cb18-347"><a href="#cb18-347" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(umaptib, <span class="at">by =</span> <span class="st">'sample'</span>, <span class="at">suffix=</span><span class="fu">c</span>(<span class="st">'_tsne'</span>, <span class="st">'_umap'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-348"><a href="#cb18-348" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sample, sampleName_tsne, cluster_tsne, </span>
+<span id="cb18-349"><a href="#cb18-349" aria-hidden="true" tabindex="-1"></a>  tsne1, tsne2, umap1, umap2, </span>
+<span id="cb18-350"><a href="#cb18-350" aria-hidden="true" tabindex="-1"></a>  tumor_size_tsne, lymph_node_group_tsne, </span>
+<span id="cb18-351"><a href="#cb18-351" aria-hidden="true" tabindex="-1"></a>  lymph_node_status_tsne, er_status_tsne, </span>
+<span id="cb18-352"><a href="#cb18-352" aria-hidden="true" tabindex="-1"></a>  pgr_status_tsne, her2_status_tsne,           </span>
+<span id="cb18-353"><a href="#cb18-353" aria-hidden="true" tabindex="-1"></a>  ki67_status_tsne, nhg_tsne, </span>
+<span id="cb18-354"><a href="#cb18-354" aria-hidden="true" tabindex="-1"></a>  overall_survival_days_tsne, overall_survival_event_tsne,</span>
+<span id="cb18-355"><a href="#cb18-355" aria-hidden="true" tabindex="-1"></a>  endocrine_treated_tsne, chemo_treated_tsne) <span class="sc">|&gt;</span> </span>
+<span id="cb18-356"><a href="#cb18-356" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">str_remove</span>(.x, <span class="st">"_tsne$"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-357"><a href="#cb18-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatter</span>() <span class="sc">|&gt;</span></span>
+<span id="cb18-358"><a href="#cb18-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span>
+<span id="cb18-359"><a href="#cb18-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-360"><a href="#cb18-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-361"><a href="#cb18-361" aria-hidden="true" tabindex="-1"></a>The table below shows the obtained cluster assignment for each patient.</span>
+<span id="cb18-361"><a href="#cb18-361" aria-hidden="true" tabindex="-1"></a><span class="fu">### B. Clustering of patients with complete annotations for all 5 biomarkers</span></span>
 <span id="cb18-362"><a href="#cb18-362" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-365"><a href="#cb18-365" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-366"><a href="#cb18-366" aria-hidden="true" tabindex="-1"></a>tsnetib <span class="sc">|&gt;</span> </span>
-<span id="cb18-367"><a href="#cb18-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(umaptib, <span class="at">by =</span> <span class="st">'sample'</span>, <span class="at">suffix=</span><span class="fu">c</span>(<span class="st">'_tsne'</span>, <span class="st">'_umap'</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-368"><a href="#cb18-368" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sample, sampleName_tsne, cluster_tsne, </span>
-<span id="cb18-369"><a href="#cb18-369" aria-hidden="true" tabindex="-1"></a>  tsne1, tsne2, umap1, umap2, </span>
-<span id="cb18-370"><a href="#cb18-370" aria-hidden="true" tabindex="-1"></a>  tumor_size_tsne, lymph_node_group_tsne, </span>
-<span id="cb18-371"><a href="#cb18-371" aria-hidden="true" tabindex="-1"></a>  lymph_node_status_tsne, er_status_tsne, </span>
-<span id="cb18-372"><a href="#cb18-372" aria-hidden="true" tabindex="-1"></a>  pgr_status_tsne, her2_status_tsne,           </span>
-<span id="cb18-373"><a href="#cb18-373" aria-hidden="true" tabindex="-1"></a>  ki67_status_tsne, nhg_tsne, </span>
-<span id="cb18-374"><a href="#cb18-374" aria-hidden="true" tabindex="-1"></a>  overall_survival_days_tsne, overall_survival_event_tsne,</span>
-<span id="cb18-375"><a href="#cb18-375" aria-hidden="true" tabindex="-1"></a>  endocrine_treated_tsne, chemo_treated_tsne) <span class="sc">|&gt;</span> </span>
-<span id="cb18-376"><a href="#cb18-376" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">str_remove</span>(.x, <span class="st">"_tsne$"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb18-377"><a href="#cb18-377" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatter</span>() <span class="sc">|&gt;</span></span>
-<span id="cb18-378"><a href="#cb18-378" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span>
-<span id="cb18-379"><a href="#cb18-379" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-380"><a href="#cb18-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-381"><a href="#cb18-381" aria-hidden="true" tabindex="-1"></a><span class="fu">### B. Clustering of patients with complete annotations for all 5 biomarkers</span></span>
-<span id="cb18-382"><a href="#cb18-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-385"><a href="#cb18-385" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-386"><a href="#cb18-386" aria-hidden="true" tabindex="-1"></a><span class="do">## reduce dataset to complete cases </span></span>
-<span id="cb18-387"><a href="#cb18-387" aria-hidden="true" tabindex="-1"></a>md_complete <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span></span>
-<span id="cb18-388"><a href="#cb18-388" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(er_status)   <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(pgr_status) <span class="sc">&amp;</span> </span>
-<span id="cb18-389"><a href="#cb18-389" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(her2_status) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(ki67_status) <span class="sc">&amp;</span></span>
-<span id="cb18-390"><a href="#cb18-390" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(nhg)) <span class="sc">|&gt;</span></span>
-<span id="cb18-391"><a href="#cb18-391" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)       </span>
-<span id="cb18-392"><a href="#cb18-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-393"><a href="#cb18-393" aria-hidden="true" tabindex="-1"></a>mx_complete <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
-<span id="cb18-394"><a href="#cb18-394" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(genes, <span class="fu">rownames</span>(md_complete)) <span class="sc">|&gt;</span></span>
-<span id="cb18-395"><a href="#cb18-395" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>)</span>
-<span id="cb18-396"><a href="#cb18-396" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-397"><a href="#cb18-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-400"><a href="#cb18-400" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-401"><a href="#cb18-401" aria-hidden="true" tabindex="-1"></a><span class="do">## run pipeline</span></span>
-<span id="cb18-402"><a href="#cb18-402" aria-hidden="true" tabindex="-1"></a>mxtop_complete <span class="ot">&lt;-</span> <span class="fu">top_genes</span>(mx_complete, <span class="at">n_top =</span> <span class="dv">3000</span>)</span>
-<span id="cb18-403"><a href="#cb18-403" aria-hidden="true" tabindex="-1"></a>pc_complete <span class="ot">&lt;-</span> <span class="fu">get_pc</span>(mxtop_complete, md_complete)</span>
-<span id="cb18-404"><a href="#cb18-404" aria-hidden="true" tabindex="-1"></a>g_complete <span class="ot">&lt;-</span> <span class="fu">build_graph</span>(pc_complete, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>)</span>
-<span id="cb18-405"><a href="#cb18-405" aria-hidden="true" tabindex="-1"></a>cls_complete <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g_complete, mxtop_complete, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
-<span id="cb18-406"><a href="#cb18-406" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-407"><a href="#cb18-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-408"><a href="#cb18-408" aria-hidden="true" tabindex="-1"></a><span class="fu">#### t-SNE</span></span>
-<span id="cb18-409"><a href="#cb18-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-412"><a href="#cb18-412" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-413"><a href="#cb18-413" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 15</span></span>
-<span id="cb18-414"><a href="#cb18-414" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 15</span></span>
-<span id="cb18-415"><a href="#cb18-415" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, <span class="st">'er_status'</span>, <span class="st">'pgr_status'</span>, <span class="st">'her2_status'</span>, <span class="st">'ki67_status'</span>, <span class="st">'nhg'</span>)</span>
-<span id="cb18-416"><a href="#cb18-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-417"><a href="#cb18-417" aria-hidden="true" tabindex="-1"></a><span class="do">## tsne</span></span>
-<span id="cb18-418"><a href="#cb18-418" aria-hidden="true" tabindex="-1"></a>tsneres_complete <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop_complete, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
-<span id="cb18-419"><a href="#cb18-419" aria-hidden="true" tabindex="-1"></a>tsnetib_complete <span class="ot">&lt;-</span> <span class="fu">join_results</span>(tsneres_complete, pc_complete, cls_complete)</span>
+<span id="cb18-366"><a href="#cb18-366" aria-hidden="true" tabindex="-1"></a><span class="do">## reduce dataset to complete cases </span></span>
+<span id="cb18-367"><a href="#cb18-367" aria-hidden="true" tabindex="-1"></a>md_complete <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span></span>
+<span id="cb18-368"><a href="#cb18-368" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(er_status)   <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(pgr_status) <span class="sc">&amp;</span> </span>
+<span id="cb18-369"><a href="#cb18-369" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(her2_status) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(ki67_status) <span class="sc">&amp;</span></span>
+<span id="cb18-370"><a href="#cb18-370" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(nhg)) <span class="sc">|&gt;</span></span>
+<span id="cb18-371"><a href="#cb18-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)       </span>
+<span id="cb18-372"><a href="#cb18-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-373"><a href="#cb18-373" aria-hidden="true" tabindex="-1"></a>mx_complete <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
+<span id="cb18-374"><a href="#cb18-374" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(genes, <span class="fu">rownames</span>(md_complete)) <span class="sc">|&gt;</span></span>
+<span id="cb18-375"><a href="#cb18-375" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>)</span>
+<span id="cb18-376"><a href="#cb18-376" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-377"><a href="#cb18-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-380"><a href="#cb18-380" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-381"><a href="#cb18-381" aria-hidden="true" tabindex="-1"></a><span class="do">## run pipeline</span></span>
+<span id="cb18-382"><a href="#cb18-382" aria-hidden="true" tabindex="-1"></a>mxtop_complete <span class="ot">&lt;-</span> <span class="fu">top_genes</span>(mx_complete, <span class="at">n_top =</span> <span class="dv">3000</span>)</span>
+<span id="cb18-383"><a href="#cb18-383" aria-hidden="true" tabindex="-1"></a>pc_complete <span class="ot">&lt;-</span> <span class="fu">get_pc</span>(mxtop_complete, md_complete)</span>
+<span id="cb18-384"><a href="#cb18-384" aria-hidden="true" tabindex="-1"></a>g_complete <span class="ot">&lt;-</span> <span class="fu">build_graph</span>(pc_complete, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>)</span>
+<span id="cb18-385"><a href="#cb18-385" aria-hidden="true" tabindex="-1"></a>cls_complete <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g_complete, mxtop_complete, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
+<span id="cb18-386"><a href="#cb18-386" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-387"><a href="#cb18-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-388"><a href="#cb18-388" aria-hidden="true" tabindex="-1"></a><span class="fu">#### t-SNE</span></span>
+<span id="cb18-389"><a href="#cb18-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-392"><a href="#cb18-392" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-393"><a href="#cb18-393" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 15</span></span>
+<span id="cb18-394"><a href="#cb18-394" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 15</span></span>
+<span id="cb18-395"><a href="#cb18-395" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, <span class="st">'er_status'</span>, <span class="st">'pgr_status'</span>, <span class="st">'her2_status'</span>, <span class="st">'ki67_status'</span>, <span class="st">'nhg'</span>)</span>
+<span id="cb18-396"><a href="#cb18-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-397"><a href="#cb18-397" aria-hidden="true" tabindex="-1"></a><span class="do">## tsne</span></span>
+<span id="cb18-398"><a href="#cb18-398" aria-hidden="true" tabindex="-1"></a>tsneres_complete <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop_complete, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
+<span id="cb18-399"><a href="#cb18-399" aria-hidden="true" tabindex="-1"></a>tsnetib_complete <span class="ot">&lt;-</span> <span class="fu">join_results</span>(tsneres_complete, pc_complete, cls_complete)</span>
+<span id="cb18-400"><a href="#cb18-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-401"><a href="#cb18-401" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(tsnetib_complete, .x))</span>
+<span id="cb18-402"><a href="#cb18-402" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb18-403"><a href="#cb18-403" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-404"><a href="#cb18-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-405"><a href="#cb18-405" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UMAP</span></span>
+<span id="cb18-406"><a href="#cb18-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-409"><a href="#cb18-409" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-410"><a href="#cb18-410" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 15</span></span>
+<span id="cb18-411"><a href="#cb18-411" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 15</span></span>
+<span id="cb18-412"><a href="#cb18-412" aria-hidden="true" tabindex="-1"></a>umapres_complete <span class="ot">&lt;-</span> <span class="fu">umap</span>(mxtop_complete, <span class="at">n_neighbors =</span> <span class="dv">20</span>, <span class="at">spread =</span> <span class="dv">1</span>)</span>
+<span id="cb18-413"><a href="#cb18-413" aria-hidden="true" tabindex="-1"></a>umaptib_complete <span class="ot">&lt;-</span> <span class="fu">join_results</span>(umapres_complete, pc_complete, cls_complete)</span>
+<span id="cb18-414"><a href="#cb18-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-415"><a href="#cb18-415" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(umaptib_complete, .x))</span>
+<span id="cb18-416"><a href="#cb18-416" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb18-417"><a href="#cb18-417" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-418"><a href="#cb18-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-419"><a href="#cb18-419" aria-hidden="true" tabindex="-1"></a><span class="fu">### C. Clustering of patients separately for each biomarker</span></span>
 <span id="cb18-420"><a href="#cb18-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-421"><a href="#cb18-421" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(tsnetib_complete, .x))</span>
-<span id="cb18-422"><a href="#cb18-422" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb18-423"><a href="#cb18-423" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-424"><a href="#cb18-424" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-425"><a href="#cb18-425" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UMAP</span></span>
-<span id="cb18-426"><a href="#cb18-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-429"><a href="#cb18-429" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-430"><a href="#cb18-430" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 15</span></span>
-<span id="cb18-431"><a href="#cb18-431" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 15</span></span>
-<span id="cb18-432"><a href="#cb18-432" aria-hidden="true" tabindex="-1"></a>umapres_complete <span class="ot">&lt;-</span> <span class="fu">umap</span>(mxtop_complete, <span class="at">n_neighbors =</span> <span class="dv">20</span>, <span class="at">spread =</span> <span class="dv">1</span>)</span>
-<span id="cb18-433"><a href="#cb18-433" aria-hidden="true" tabindex="-1"></a>umaptib_complete <span class="ot">&lt;-</span> <span class="fu">join_results</span>(umapres_complete, pc_complete, cls_complete)</span>
-<span id="cb18-434"><a href="#cb18-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-435"><a href="#cb18-435" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(umaptib_complete, .x))</span>
-<span id="cb18-436"><a href="#cb18-436" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb18-437"><a href="#cb18-437" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-438"><a href="#cb18-438" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-439"><a href="#cb18-439" aria-hidden="true" tabindex="-1"></a><span class="fu">### C. Clustering of patients separately for each biomarker</span></span>
-<span id="cb18-440"><a href="#cb18-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-443"><a href="#cb18-443" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-444"><a href="#cb18-444" aria-hidden="true" tabindex="-1"></a>biomarkers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'er_status'</span>, <span class="st">'pgr_status'</span>, <span class="st">'her2_status'</span>, <span class="st">'ki67_status'</span>, <span class="st">'nhg'</span>)</span>
-<span id="cb18-445"><a href="#cb18-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-446"><a href="#cb18-446" aria-hidden="true" tabindex="-1"></a>tsnetib_bm <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb18-447"><a href="#cb18-447" aria-hidden="true" tabindex="-1"></a>umaptib_bm <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb18-448"><a href="#cb18-448" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-449"><a href="#cb18-449" aria-hidden="true" tabindex="-1"></a>ptsne <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb18-450"><a href="#cb18-450" aria-hidden="true" tabindex="-1"></a>pumap <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb18-423"><a href="#cb18-423" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-424"><a href="#cb18-424" aria-hidden="true" tabindex="-1"></a>biomarkers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'er_status'</span>, <span class="st">'pgr_status'</span>, <span class="st">'her2_status'</span>, <span class="st">'ki67_status'</span>, <span class="st">'nhg'</span>)</span>
+<span id="cb18-425"><a href="#cb18-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-426"><a href="#cb18-426" aria-hidden="true" tabindex="-1"></a>tsnetib_bm <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb18-427"><a href="#cb18-427" aria-hidden="true" tabindex="-1"></a>umaptib_bm <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb18-428"><a href="#cb18-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-429"><a href="#cb18-429" aria-hidden="true" tabindex="-1"></a>ptsne <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb18-430"><a href="#cb18-430" aria-hidden="true" tabindex="-1"></a>pumap <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb18-431"><a href="#cb18-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-432"><a href="#cb18-432" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(biomarker <span class="cf">in</span> biomarkers){</span>
+<span id="cb18-433"><a href="#cb18-433" aria-hidden="true" tabindex="-1"></a>  <span class="do">## remove not annotated patients</span></span>
+<span id="cb18-434"><a href="#cb18-434" aria-hidden="true" tabindex="-1"></a>  md_bm <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span></span>
+<span id="cb18-435"><a href="#cb18-435" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(biomarker))) <span class="sc">|&gt;</span></span>
+<span id="cb18-436"><a href="#cb18-436" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)</span>
+<span id="cb18-437"><a href="#cb18-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-438"><a href="#cb18-438" aria-hidden="true" tabindex="-1"></a>  mx_bm <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
+<span id="cb18-439"><a href="#cb18-439" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(genes, <span class="fu">rownames</span>(md_bm)) <span class="sc">|&gt;</span></span>
+<span id="cb18-440"><a href="#cb18-440" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>)</span>
+<span id="cb18-441"><a href="#cb18-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-442"><a href="#cb18-442" aria-hidden="true" tabindex="-1"></a>  <span class="do">## clustering</span></span>
+<span id="cb18-443"><a href="#cb18-443" aria-hidden="true" tabindex="-1"></a>  mxtop_bm <span class="ot">&lt;-</span> <span class="fu">top_genes</span>(mx_bm, <span class="at">n_top =</span> <span class="dv">3000</span>)</span>
+<span id="cb18-444"><a href="#cb18-444" aria-hidden="true" tabindex="-1"></a>  pc_bm <span class="ot">&lt;-</span> <span class="fu">get_pc</span>(mxtop_bm, md_bm)</span>
+<span id="cb18-445"><a href="#cb18-445" aria-hidden="true" tabindex="-1"></a>  g_bm <span class="ot">&lt;-</span> <span class="fu">build_graph</span>(pc_bm, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>)</span>
+<span id="cb18-446"><a href="#cb18-446" aria-hidden="true" tabindex="-1"></a>  cls_bm <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g_bm, mxtop_bm, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
+<span id="cb18-447"><a href="#cb18-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-448"><a href="#cb18-448" aria-hidden="true" tabindex="-1"></a>  <span class="do">## save results</span></span>
+<span id="cb18-449"><a href="#cb18-449" aria-hidden="true" tabindex="-1"></a>  tsneres_bm <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop_bm, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
+<span id="cb18-450"><a href="#cb18-450" aria-hidden="true" tabindex="-1"></a>  tsnetib_bm[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">join_results</span>(tsneres_bm, pc_bm, cls_bm)</span>
 <span id="cb18-451"><a href="#cb18-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-452"><a href="#cb18-452" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(biomarker <span class="cf">in</span> biomarkers){</span>
-<span id="cb18-453"><a href="#cb18-453" aria-hidden="true" tabindex="-1"></a>  <span class="do">## remove not annotated patients</span></span>
-<span id="cb18-454"><a href="#cb18-454" aria-hidden="true" tabindex="-1"></a>  md_bm <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span></span>
-<span id="cb18-455"><a href="#cb18-455" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="sc">!!</span><span class="fu">sym</span>(biomarker))) <span class="sc">|&gt;</span></span>
-<span id="cb18-456"><a href="#cb18-456" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)</span>
-<span id="cb18-457"><a href="#cb18-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-458"><a href="#cb18-458" aria-hidden="true" tabindex="-1"></a>  mx_bm <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
-<span id="cb18-459"><a href="#cb18-459" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(genes, <span class="fu">rownames</span>(md_bm)) <span class="sc">|&gt;</span></span>
-<span id="cb18-460"><a href="#cb18-460" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>)</span>
-<span id="cb18-461"><a href="#cb18-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-462"><a href="#cb18-462" aria-hidden="true" tabindex="-1"></a>  <span class="do">## clustering</span></span>
-<span id="cb18-463"><a href="#cb18-463" aria-hidden="true" tabindex="-1"></a>  mxtop_bm <span class="ot">&lt;-</span> <span class="fu">top_genes</span>(mx_bm, <span class="at">n_top =</span> <span class="dv">3000</span>)</span>
-<span id="cb18-464"><a href="#cb18-464" aria-hidden="true" tabindex="-1"></a>  pc_bm <span class="ot">&lt;-</span> <span class="fu">get_pc</span>(mxtop_bm, md_bm)</span>
-<span id="cb18-465"><a href="#cb18-465" aria-hidden="true" tabindex="-1"></a>  g_bm <span class="ot">&lt;-</span> <span class="fu">build_graph</span>(pc_bm, <span class="at">npc =</span> <span class="dv">25</span>, <span class="at">k =</span> <span class="dv">20</span>)</span>
-<span id="cb18-466"><a href="#cb18-466" aria-hidden="true" tabindex="-1"></a>  cls_bm <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g_bm, mxtop_bm, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
-<span id="cb18-467"><a href="#cb18-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-468"><a href="#cb18-468" aria-hidden="true" tabindex="-1"></a>  <span class="do">## save results</span></span>
-<span id="cb18-469"><a href="#cb18-469" aria-hidden="true" tabindex="-1"></a>  tsneres_bm <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop_bm, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
-<span id="cb18-470"><a href="#cb18-470" aria-hidden="true" tabindex="-1"></a>  tsnetib_bm[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">join_results</span>(tsneres_bm, pc_bm, cls_bm)</span>
+<span id="cb18-452"><a href="#cb18-452" aria-hidden="true" tabindex="-1"></a>  umapres_bm <span class="ot">&lt;-</span> <span class="fu">umap</span>(mxtop_bm,  <span class="at">n_neighbors =</span> <span class="dv">20</span>)</span>
+<span id="cb18-453"><a href="#cb18-453" aria-hidden="true" tabindex="-1"></a>  umaptib_bm[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">join_results</span>(umapres_bm, pc_bm, cls_bm)</span>
+<span id="cb18-454"><a href="#cb18-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-455"><a href="#cb18-455" aria-hidden="true" tabindex="-1"></a>  vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, biomarker)</span>
+<span id="cb18-456"><a href="#cb18-456" aria-hidden="true" tabindex="-1"></a>  ptsne[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(tsnetib_bm[[biomarker]], .x))</span>
+<span id="cb18-457"><a href="#cb18-457" aria-hidden="true" tabindex="-1"></a>  pumap[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(umaptib_bm[[biomarker]], .x))</span>
+<span id="cb18-458"><a href="#cb18-458" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-459"><a href="#cb18-459" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-460"><a href="#cb18-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-461"><a href="#cb18-461" aria-hidden="true" tabindex="-1"></a><span class="fu">#### t-SNE</span></span>
+<span id="cb18-462"><a href="#cb18-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-465"><a href="#cb18-465" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-466"><a href="#cb18-466" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 20</span></span>
+<span id="cb18-467"><a href="#cb18-467" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 20</span></span>
+<span id="cb18-468"><a href="#cb18-468" aria-hidden="true" tabindex="-1"></a>pwrap <span class="ot">&lt;-</span> <span class="fu">map</span>(ptsne, <span class="sc">~</span>.x[[<span class="dv">1</span>]] <span class="sc">+</span> .x[[<span class="dv">2</span>]])</span>
+<span id="cb18-469"><a href="#cb18-469" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(pwrap, <span class="at">ncol =</span> <span class="dv">1</span>)</span>
+<span id="cb18-470"><a href="#cb18-470" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-471"><a href="#cb18-471" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-472"><a href="#cb18-472" aria-hidden="true" tabindex="-1"></a>  umapres_bm <span class="ot">&lt;-</span> <span class="fu">umap</span>(mxtop_bm,  <span class="at">n_neighbors =</span> <span class="dv">20</span>)</span>
-<span id="cb18-473"><a href="#cb18-473" aria-hidden="true" tabindex="-1"></a>  umaptib_bm[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">join_results</span>(umapres_bm, pc_bm, cls_bm)</span>
-<span id="cb18-474"><a href="#cb18-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-475"><a href="#cb18-475" aria-hidden="true" tabindex="-1"></a>  vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'cluster'</span>, biomarker)</span>
-<span id="cb18-476"><a href="#cb18-476" aria-hidden="true" tabindex="-1"></a>  ptsne[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(tsnetib_bm[[biomarker]], .x))</span>
-<span id="cb18-477"><a href="#cb18-477" aria-hidden="true" tabindex="-1"></a>  pumap[[biomarker]] <span class="ot">&lt;-</span> <span class="fu">map</span>(vars, <span class="sc">~</span><span class="fu">plot_clusters</span>(umaptib_bm[[biomarker]], .x))</span>
-<span id="cb18-478"><a href="#cb18-478" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-479"><a href="#cb18-479" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-480"><a href="#cb18-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-481"><a href="#cb18-481" aria-hidden="true" tabindex="-1"></a><span class="fu">#### t-SNE</span></span>
+<span id="cb18-472"><a href="#cb18-472" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UMAP</span></span>
+<span id="cb18-473"><a href="#cb18-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-476"><a href="#cb18-476" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-477"><a href="#cb18-477" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 20</span></span>
+<span id="cb18-478"><a href="#cb18-478" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 20</span></span>
+<span id="cb18-479"><a href="#cb18-479" aria-hidden="true" tabindex="-1"></a>pwrap <span class="ot">&lt;-</span> <span class="fu">map</span>(pumap, <span class="sc">~</span>.x[[<span class="dv">1</span>]] <span class="sc">+</span> .x[[<span class="dv">2</span>]])</span>
+<span id="cb18-480"><a href="#cb18-480" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(pwrap, <span class="at">ncol =</span> <span class="dv">1</span>)</span>
+<span id="cb18-481"><a href="#cb18-481" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-482"><a href="#cb18-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-485"><a href="#cb18-485" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-486"><a href="#cb18-486" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 20</span></span>
-<span id="cb18-487"><a href="#cb18-487" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 20</span></span>
-<span id="cb18-488"><a href="#cb18-488" aria-hidden="true" tabindex="-1"></a>pwrap <span class="ot">&lt;-</span> <span class="fu">map</span>(ptsne, <span class="sc">~</span>.x[[<span class="dv">1</span>]] <span class="sc">+</span> .x[[<span class="dv">2</span>]])</span>
-<span id="cb18-489"><a href="#cb18-489" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(pwrap, <span class="at">ncol =</span> <span class="dv">1</span>)</span>
-<span id="cb18-490"><a href="#cb18-490" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-491"><a href="#cb18-491" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-492"><a href="#cb18-492" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UMAP</span></span>
-<span id="cb18-493"><a href="#cb18-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-496"><a href="#cb18-496" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-497"><a href="#cb18-497" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 20</span></span>
-<span id="cb18-498"><a href="#cb18-498" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 20</span></span>
-<span id="cb18-499"><a href="#cb18-499" aria-hidden="true" tabindex="-1"></a>pwrap <span class="ot">&lt;-</span> <span class="fu">map</span>(pumap, <span class="sc">~</span>.x[[<span class="dv">1</span>]] <span class="sc">+</span> .x[[<span class="dv">2</span>]])</span>
-<span id="cb18-500"><a href="#cb18-500" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(pwrap, <span class="at">ncol =</span> <span class="dv">1</span>)</span>
-<span id="cb18-501"><a href="#cb18-501" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-502"><a href="#cb18-502" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-503"><a href="#cb18-503" aria-hidden="true" tabindex="-1"></a><span class="fu">### Clustering at different resolutions</span></span>
-<span id="cb18-504"><a href="#cb18-504" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-505"><a href="#cb18-505" aria-hidden="true" tabindex="-1"></a>Clusters detected at each resolutions are marked in different colors. Patients in the community colored in red tend to cluster together at different resolutions, suggesting that patients within this community are strongly connected (similar expression profiles).</span>
-<span id="cb18-506"><a href="#cb18-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-509"><a href="#cb18-509" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-510"><a href="#cb18-510" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 8</span></span>
-<span id="cb18-511"><a href="#cb18-511" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 8</span></span>
+<span id="cb18-483"><a href="#cb18-483" aria-hidden="true" tabindex="-1"></a><span class="fu">### Clustering at different resolutions</span></span>
+<span id="cb18-484"><a href="#cb18-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-485"><a href="#cb18-485" aria-hidden="true" tabindex="-1"></a>Clusters detected at each resolutions are marked in different colors. Patients in the community colored in red tend to cluster together at different resolutions, suggesting that patients within this community are strongly connected (similar expression profiles).</span>
+<span id="cb18-486"><a href="#cb18-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-489"><a href="#cb18-489" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-490"><a href="#cb18-490" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 8</span></span>
+<span id="cb18-491"><a href="#cb18-491" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 8</span></span>
+<span id="cb18-492"><a href="#cb18-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-493"><a href="#cb18-493" aria-hidden="true" tabindex="-1"></a><span class="co"># loop for resolutions</span></span>
+<span id="cb18-494"><a href="#cb18-494" aria-hidden="true" tabindex="-1"></a>resolutions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>, <span class="dv">1</span>, <span class="fl">1.5</span>)</span>
+<span id="cb18-495"><a href="#cb18-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-496"><a href="#cb18-496" aria-hidden="true" tabindex="-1"></a>tsne_tune <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(resolutions, <span class="cf">function</span>(resolution){</span>
+<span id="cb18-497"><a href="#cb18-497" aria-hidden="true" tabindex="-1"></a>  cls <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g, mxtop, <span class="at">resolution =</span> resolution) </span>
+<span id="cb18-498"><a href="#cb18-498" aria-hidden="true" tabindex="-1"></a>  tsne <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop, <span class="at">dims =</span> <span class="dv">2</span>, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
+<span id="cb18-499"><a href="#cb18-499" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb18-500"><a href="#cb18-500" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample =</span> <span class="fu">colnames</span>(mxtop),</span>
+<span id="cb18-501"><a href="#cb18-501" aria-hidden="true" tabindex="-1"></a>    <span class="at">cluster =</span> <span class="fu">as.factor</span>(cls),</span>
+<span id="cb18-502"><a href="#cb18-502" aria-hidden="true" tabindex="-1"></a>    <span class="at">tsne1 =</span> tsne<span class="sc">$</span>Y[, <span class="dv">1</span>],</span>
+<span id="cb18-503"><a href="#cb18-503" aria-hidden="true" tabindex="-1"></a>    <span class="at">tsne2 =</span> tsne<span class="sc">$</span>Y[, <span class="dv">2</span>],</span>
+<span id="cb18-504"><a href="#cb18-504" aria-hidden="true" tabindex="-1"></a>    <span class="at">resolution =</span> resolution,</span>
+<span id="cb18-505"><a href="#cb18-505" aria-hidden="true" tabindex="-1"></a>    <span class="at">ncl =</span> <span class="fu">length</span>(<span class="fu">unique</span>(cls)) <span class="do">## number of clusters at a given resolution</span></span>
+<span id="cb18-506"><a href="#cb18-506" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-507"><a href="#cb18-507" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(meta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'sample'</span> <span class="ot">=</span> <span class="st">'sampleID'</span>))</span>
+<span id="cb18-508"><a href="#cb18-508" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb18-509"><a href="#cb18-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-510"><a href="#cb18-510" aria-hidden="true" tabindex="-1"></a><span class="co"># {unique(tsne_tune$ncl[tsne_tune$resolution == closest_state])}</span></span>
+<span id="cb18-511"><a href="#cb18-511" aria-hidden="true" tabindex="-1"></a>ncl_lookup <span class="ot">&lt;-</span> tsne_tune <span class="sc">|&gt;</span> <span class="fu">distinct</span>(resolution, ncl) <span class="sc">|&gt;</span> <span class="fu">deframe</span>()</span>
 <span id="cb18-512"><a href="#cb18-512" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-513"><a href="#cb18-513" aria-hidden="true" tabindex="-1"></a><span class="co"># loop for resolutions</span></span>
-<span id="cb18-514"><a href="#cb18-514" aria-hidden="true" tabindex="-1"></a>resolutions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>, <span class="dv">1</span>, <span class="fl">1.5</span>)</span>
-<span id="cb18-515"><a href="#cb18-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-516"><a href="#cb18-516" aria-hidden="true" tabindex="-1"></a>tsne_tune <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(resolutions, <span class="cf">function</span>(resolution){</span>
-<span id="cb18-517"><a href="#cb18-517" aria-hidden="true" tabindex="-1"></a>  cls <span class="ot">&lt;-</span> <span class="fu">find_clusters</span>(g, mxtop, <span class="at">resolution =</span> resolution) </span>
-<span id="cb18-518"><a href="#cb18-518" aria-hidden="true" tabindex="-1"></a>  tsne <span class="ot">&lt;-</span> <span class="fu">tsne</span>(mxtop, <span class="at">dims =</span> <span class="dv">2</span>, <span class="at">perplexity =</span> <span class="dv">20</span>)</span>
-<span id="cb18-519"><a href="#cb18-519" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb18-520"><a href="#cb18-520" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample =</span> <span class="fu">colnames</span>(mxtop),</span>
-<span id="cb18-521"><a href="#cb18-521" aria-hidden="true" tabindex="-1"></a>    <span class="at">cluster =</span> <span class="fu">as.factor</span>(cls),</span>
-<span id="cb18-522"><a href="#cb18-522" aria-hidden="true" tabindex="-1"></a>    <span class="at">tsne1 =</span> tsne<span class="sc">$</span>Y[, <span class="dv">1</span>],</span>
-<span id="cb18-523"><a href="#cb18-523" aria-hidden="true" tabindex="-1"></a>    <span class="at">tsne2 =</span> tsne<span class="sc">$</span>Y[, <span class="dv">2</span>],</span>
-<span id="cb18-524"><a href="#cb18-524" aria-hidden="true" tabindex="-1"></a>    <span class="at">resolution =</span> resolution,</span>
-<span id="cb18-525"><a href="#cb18-525" aria-hidden="true" tabindex="-1"></a>    <span class="at">ncl =</span> <span class="fu">length</span>(<span class="fu">unique</span>(cls)) <span class="do">## number of clusters at a given resolution</span></span>
-<span id="cb18-526"><a href="#cb18-526" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb18-527"><a href="#cb18-527" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(meta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'sample'</span> <span class="ot">=</span> <span class="st">'sampleID'</span>))</span>
-<span id="cb18-528"><a href="#cb18-528" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb18-529"><a href="#cb18-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-530"><a href="#cb18-530" aria-hidden="true" tabindex="-1"></a><span class="co"># {unique(tsne_tune$ncl[tsne_tune$resolution == closest_state])}</span></span>
-<span id="cb18-531"><a href="#cb18-531" aria-hidden="true" tabindex="-1"></a>ncl_lookup <span class="ot">&lt;-</span> tsne_tune <span class="sc">|&gt;</span> <span class="fu">distinct</span>(resolution, ncl) <span class="sc">|&gt;</span> <span class="fu">deframe</span>()</span>
+<span id="cb18-513"><a href="#cb18-513" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">plot_clusters</span>(tsne_tune, <span class="at">cluster =</span> <span class="st">'cluster'</span>, <span class="at">animate =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb18-514"><a href="#cb18-514" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theme(legend.position="none") +</span></span>
+<span id="cb18-515"><a href="#cb18-515" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Resolution: {closest_state} | Clusters: {ncl_lookup[as.character(closest_state)]}"</span>) <span class="sc">+</span></span>
+<span id="cb18-516"><a href="#cb18-516" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(resolution, <span class="at">transition_length =</span> <span class="dv">5</span>, <span class="at">state_length =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb18-517"><a href="#cb18-517" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">"linear"</span>)</span>
+<span id="cb18-518"><a href="#cb18-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-519"><a href="#cb18-519" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(</span>
+<span id="cb18-520"><a href="#cb18-520" aria-hidden="true" tabindex="-1"></a>  plot,</span>
+<span id="cb18-521"><a href="#cb18-521" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">8</span>,</span>
+<span id="cb18-522"><a href="#cb18-522" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">6</span>,</span>
+<span id="cb18-523"><a href="#cb18-523" aria-hidden="true" tabindex="-1"></a>  <span class="at">res =</span> <span class="dv">100</span>,</span>
+<span id="cb18-524"><a href="#cb18-524" aria-hidden="true" tabindex="-1"></a>  <span class="at">nframes =</span> <span class="dv">300</span>,</span>
+<span id="cb18-525"><a href="#cb18-525" aria-hidden="true" tabindex="-1"></a>  <span class="at">fps =</span> <span class="dv">30</span>,</span>
+<span id="cb18-526"><a href="#cb18-526" aria-hidden="true" tabindex="-1"></a>  <span class="at">device =</span> <span class="st">"ragg_png"</span>,</span>
+<span id="cb18-527"><a href="#cb18-527" aria-hidden="true" tabindex="-1"></a>  <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>()</span>
+<span id="cb18-528"><a href="#cb18-528" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-529"><a href="#cb18-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-530"><a href="#cb18-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-531"><a href="#cb18-531" aria-hidden="true" tabindex="-1"></a>When specifically coloring patients based on ER status, we observe that the expression profiles of ER- patients cluster well. Furthermore, it is worth noting that the status of some patients within this cluster is unknown (gray patients). These might be considered as ER- patients since they cluster strongly with patients annotated as ER-.</span>
 <span id="cb18-532"><a href="#cb18-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-533"><a href="#cb18-533" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">plot_clusters</span>(tsne_tune, <span class="at">cluster =</span> <span class="st">'cluster'</span>, <span class="at">animate =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb18-534"><a href="#cb18-534" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theme(legend.position="none") +</span></span>
-<span id="cb18-535"><a href="#cb18-535" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Resolution: {closest_state} | Clusters: {ncl_lookup[as.character(closest_state)]}"</span>) <span class="sc">+</span></span>
-<span id="cb18-536"><a href="#cb18-536" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(resolution, <span class="at">transition_length =</span> <span class="dv">5</span>, <span class="at">state_length =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb18-537"><a href="#cb18-537" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">"linear"</span>)</span>
+<span id="cb18-535"><a href="#cb18-535" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-536"><a href="#cb18-536" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 8</span></span>
+<span id="cb18-537"><a href="#cb18-537" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 8</span></span>
 <span id="cb18-538"><a href="#cb18-538" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-539"><a href="#cb18-539" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(</span>
-<span id="cb18-540"><a href="#cb18-540" aria-hidden="true" tabindex="-1"></a>  plot,</span>
-<span id="cb18-541"><a href="#cb18-541" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">8</span>,</span>
-<span id="cb18-542"><a href="#cb18-542" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">6</span>,</span>
-<span id="cb18-543"><a href="#cb18-543" aria-hidden="true" tabindex="-1"></a>  <span class="at">res =</span> <span class="dv">100</span>,</span>
-<span id="cb18-544"><a href="#cb18-544" aria-hidden="true" tabindex="-1"></a>  <span class="at">nframes =</span> <span class="dv">300</span>,</span>
-<span id="cb18-545"><a href="#cb18-545" aria-hidden="true" tabindex="-1"></a>  <span class="at">fps =</span> <span class="dv">30</span>,</span>
-<span id="cb18-546"><a href="#cb18-546" aria-hidden="true" tabindex="-1"></a>  <span class="at">device =</span> <span class="st">"ragg_png"</span>,</span>
-<span id="cb18-547"><a href="#cb18-547" aria-hidden="true" tabindex="-1"></a>  <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>()</span>
-<span id="cb18-548"><a href="#cb18-548" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-549"><a href="#cb18-549" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-550"><a href="#cb18-550" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-551"><a href="#cb18-551" aria-hidden="true" tabindex="-1"></a>When specifically coloring patients based on ER status, we observe that the expression profiles of ER- patients cluster well. Furthermore, it is worth noting that the status of some patients within this cluster is unknown (gray patients). These might be considered as ER- patients since they cluster strongly with patients annotated as ER-.</span>
-<span id="cb18-552"><a href="#cb18-552" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-555"><a href="#cb18-555" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-556"><a href="#cb18-556" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 8</span></span>
-<span id="cb18-557"><a href="#cb18-557" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 8</span></span>
-<span id="cb18-558"><a href="#cb18-558" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-559"><a href="#cb18-559" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">plot_clusters</span>(tsne_tune, <span class="at">cluster =</span> <span class="st">'er_status'</span>, <span class="at">animate =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb18-560"><a href="#cb18-560" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Resolution: {closest_state} | Clusters: {ncl_lookup[as.character(closest_state)]}"</span>) <span class="sc">+</span></span>
-<span id="cb18-561"><a href="#cb18-561" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(resolution, <span class="at">transition_length =</span> <span class="dv">5</span>, <span class="at">state_length =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb18-562"><a href="#cb18-562" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">"linear"</span>)</span>
+<span id="cb18-539"><a href="#cb18-539" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">plot_clusters</span>(tsne_tune, <span class="at">cluster =</span> <span class="st">'er_status'</span>, <span class="at">animate =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb18-540"><a href="#cb18-540" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Resolution: {closest_state} | Clusters: {ncl_lookup[as.character(closest_state)]}"</span>) <span class="sc">+</span></span>
+<span id="cb18-541"><a href="#cb18-541" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(resolution, <span class="at">transition_length =</span> <span class="dv">5</span>, <span class="at">state_length =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb18-542"><a href="#cb18-542" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">"linear"</span>)</span>
+<span id="cb18-543"><a href="#cb18-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-544"><a href="#cb18-544" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(</span>
+<span id="cb18-545"><a href="#cb18-545" aria-hidden="true" tabindex="-1"></a>  plot,</span>
+<span id="cb18-546"><a href="#cb18-546" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">8</span>,</span>
+<span id="cb18-547"><a href="#cb18-547" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">6</span>,</span>
+<span id="cb18-548"><a href="#cb18-548" aria-hidden="true" tabindex="-1"></a>  <span class="at">res =</span> <span class="dv">100</span>,</span>
+<span id="cb18-549"><a href="#cb18-549" aria-hidden="true" tabindex="-1"></a>  <span class="at">nframes =</span> <span class="dv">300</span>,</span>
+<span id="cb18-550"><a href="#cb18-550" aria-hidden="true" tabindex="-1"></a>  <span class="at">fps =</span> <span class="dv">30</span>,</span>
+<span id="cb18-551"><a href="#cb18-551" aria-hidden="true" tabindex="-1"></a>  <span class="at">device =</span> <span class="st">"ragg_png"</span>,</span>
+<span id="cb18-552"><a href="#cb18-552" aria-hidden="true" tabindex="-1"></a>  <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>()</span>
+<span id="cb18-553"><a href="#cb18-553" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-554"><a href="#cb18-554" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-555"><a href="#cb18-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-556"><a href="#cb18-556" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusions</span></span>
+<span id="cb18-557"><a href="#cb18-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-558"><a href="#cb18-558" aria-hidden="true" tabindex="-1"></a>I identified breast cancer subtypes based on gene expression data via a graph-based approach. Two main distinct clusters of patients are detected. The smaller cluster is enriched for ER- patients and likely represent the most aggressive expression profile (basal PAM50 subtype, e.g. G3, PgR-, ER-, HER-).</span>
+<span id="cb18-559"><a href="#cb18-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-560"><a href="#cb18-560" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next step</span></span>
+<span id="cb18-561"><a href="#cb18-561" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-562"><a href="#cb18-562" aria-hidden="true" tabindex="-1"></a>Cluster assignment can be used as features in a supervised learning approach to predict biomarker status (such as random forest, support vector machine, label propagation). Furthermore, we can use LLMs to further validate biological insights using AI-powered tools tailored for bioinformatics resources such as <span class="co">[</span><span class="ot">ExpasyGPT</span><span class="co">](https://www.expasy.org/chat)</span>.</span>
 <span id="cb18-563"><a href="#cb18-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-564"><a href="#cb18-564" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(</span>
-<span id="cb18-565"><a href="#cb18-565" aria-hidden="true" tabindex="-1"></a>  plot,</span>
-<span id="cb18-566"><a href="#cb18-566" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">8</span>,</span>
-<span id="cb18-567"><a href="#cb18-567" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">6</span>,</span>
-<span id="cb18-568"><a href="#cb18-568" aria-hidden="true" tabindex="-1"></a>  <span class="at">res =</span> <span class="dv">100</span>,</span>
-<span id="cb18-569"><a href="#cb18-569" aria-hidden="true" tabindex="-1"></a>  <span class="at">nframes =</span> <span class="dv">300</span>,</span>
-<span id="cb18-570"><a href="#cb18-570" aria-hidden="true" tabindex="-1"></a>  <span class="at">fps =</span> <span class="dv">30</span>,</span>
-<span id="cb18-571"><a href="#cb18-571" aria-hidden="true" tabindex="-1"></a>  <span class="at">device =</span> <span class="st">"ragg_png"</span>,</span>
-<span id="cb18-572"><a href="#cb18-572" aria-hidden="true" tabindex="-1"></a>  <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>()</span>
-<span id="cb18-573"><a href="#cb18-573" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-574"><a href="#cb18-574" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-575"><a href="#cb18-575" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-576"><a href="#cb18-576" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusions</span></span>
-<span id="cb18-577"><a href="#cb18-577" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-578"><a href="#cb18-578" aria-hidden="true" tabindex="-1"></a>I identified breast cancer subtypes based on gene expression data via a graph-based approach. Two main distinct clusters of patients are detected. The smaller cluster is enriched for ER- patients and likely represent the most aggressive expression profile (basal PAM50 subtype, e.g. G3, PgR-, ER-, HER-).</span>
-<span id="cb18-579"><a href="#cb18-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-580"><a href="#cb18-580" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next step</span></span>
-<span id="cb18-581"><a href="#cb18-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-582"><a href="#cb18-582" aria-hidden="true" tabindex="-1"></a>Cluster assignment can be used as features in a supervised learning approach to predict biomarker status (such as random forest, support vector machine, label propagation). Furthermore, we can use LLMs to further validate biological insights using AI-powered tools tailored for bioinformatics resources such as <span class="co">[</span><span class="ot">ExpasyGPT</span><span class="co">](https://www.expasy.org/chat)</span>.</span>
-<span id="cb18-583"><a href="#cb18-583" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
