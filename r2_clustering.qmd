@@ -507,8 +507,8 @@ animate(
   res = 100,
   nframes = 300,
   fps = 30,
-  device = "ragg_png"#,
-  # renderer = gifski_renderer(file = "tsne-clusters.gif")
+  device = "ragg_png",
+  renderer = gifski_renderer()
 )
 ```
 
@@ -530,8 +530,8 @@ animate(
   res = 100,
   nframes = 300,
   fps = 30,
-  device = "ragg_png"#,
-  #renderer = gifski_renderer(file = "tsne-erstatus.gif")
+  device = "ragg_png",
+  renderer = gifski_renderer()
 )
 ```
 
