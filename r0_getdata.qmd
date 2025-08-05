@@ -1,0 +1,91 @@
+---
+title: "Downloading GEO data"
+author: "Marco Notaro"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 4
+    code-fold: false
+    code-tools: true
+    theme: cosmo
+    embed-resources: false
+execute:
+  echo: true
+  message: false
+  warning: false
+  cache: true
+  freeze: auto
+  fig-align: center
+  fig-width: 10
+  fig-height: 8
+  fig-dpi: 300
+  dev: png
+---
+
+
+```{r}
+#| include: false
+
+library(GEOquery)
+library(tidyverse)
+```
+
+## Aims
+
+In this report, I download the 3409 breast cancer bulk RNA-seq samples and the corresponding clinical annotations, associated with the study: *Clinical Value of RNA Sequencing-Based Classifiers for Prediction of the Five Conventional Breast Cancer Biomarkers: A Report From the Population-Based Multicenter Sweden Cancerome Analysis Network—Breast Initiative* ([GSE96058](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96058)).
+
+
+### Get clinical features
+
+```{r}
+if(!dir.exists(here::here('data')))
+  dir.create(here::here('data'))
+```
+
+```{r}
+## get geo obj
+geo <- getGEO(GEO = "GSE96058", GSEMatrix = FALSE)
+
+## fetch metadata
+meta <- purrr::map(geo@gsms, ~.x@header$characteristics_ch1) |>
+  stack() |>
+  tidyr::separate(values, into = c("feature", "value"), sep= ": ") |>
+  tidyr::pivot_wider(names_from= feature, values_from = value) |>
+  janitor::clean_names()
+
+## map samples
+sample <- purrr::map(geo@gsms, ~.x@header$title) |>
+  stack() |>
+  as_tibble() |>
+  mutate(ind = as.character(ind))
+
+## store metadata
+meta <- left_join(sample, meta, by = 'ind') |>
+  write_csv(here::here("data/metadata.csv"))
+```
+
+### Get gene expression profiles
+
+```{r}
+success <- FALSE
+attempt <- 1
+while (!success && attempt <= 5) {
+  tryCatch({
+    getGEOSuppFiles("GSE96058", makeDirectory = FALSE,
+                    baseDir = here::here('data'),
+                    fetch_files = TRUE, filter_regex = 'gene_expression')
+    success <- TRUE
+    message("Download successful on attempt ", attempt)
+  }, error = function(e) {
+    message("Download failed on attempt ", attempt, ": ", e$message)
+    attempt <<- attempt + 1
+    Sys.sleep(5) # wait before retrying
+  })
+}
+if (!success)
+  stop(sprintf("Download failed after %s attempts", attempt))
+```
+
+
