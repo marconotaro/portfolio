@@ -3,9 +3,10 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+    - "*.ipynb"
 
 website:
-  title: "Breast Cancer Subtype"
+  # title: ""
   search: true
   page-navigation: true
   navbar:
@@ -14,7 +15,7 @@ website:
         href: index.qmd
     tools:
       - icon: github
-        href: https://github.com/marconotaro/cancer-subtypes
+        href: https://github.com/marconotaro/portfolio
 
 format:
   html:

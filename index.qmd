@@ -1,12 +1,28 @@
 ---
-title: "Home"
+title: "Personal Projects"
 author: "Marco Notaro"
 date: today
+format:
+  html:
+    code-tools: false
 ---
 
-This page contains the data analysis reports for the identification of breast cancer subtypes via a graph-based approach from a public bulk RNA-Seq patient cohort.
+## Genomics
+
+Identification of breast cancer subtypes via a graph-based approach from a public bulk RNA-Seq patient cohort.
 
 - [Getting data](r0_getdata.html)
 - [Exploratory data analysis and preprocessing](r1_eda.html)
 - [Clustering analysis](r2_clustering.html)
 
+
+## Deep Learning
+
+Predicting protein subcellular localization via a deep learning approach from aminoacid sequences.
+
+- [CNN vs FNN with PyTorch](cnn_vs_fnn.ipynb)
+
+
+## AI-powered tools
+
+- [Developing a RAG framework for bioinformatics applications](https://github.com/marconotaro/llm-sib)
