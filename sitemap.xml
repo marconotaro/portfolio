@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marconotaro.github.io/cancer-subtypes/r2_clustering.html</loc>
-    <lastmod>2025-08-19T09:08:37.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/cancer-subtypes/r0_getdata.html</loc>
-    <lastmod>2025-08-19T09:08:37.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/cancer-subtypes/index.html</loc>
-    <lastmod>2025-08-19T09:08:37.547Z</lastmod>
+    <loc>https://marconotaro.github.io/cancer-subtypes/cnn_vs_fnn.html</loc>
+    <lastmod>2025-08-19T09:55:29.184Z</lastmod>
   </url>
   <url>
     <loc>https://marconotaro.github.io/cancer-subtypes/r1_eda.html</loc>
-    <lastmod>2025-08-19T09:08:37.547Z</lastmod>
+    <lastmod>2025-08-19T09:36:56.016Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/cancer-subtypes/index.html</loc>
+    <lastmod>2025-08-19T12:13:59.173Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/cancer-subtypes/r0_getdata.html</loc>
+    <lastmod>2025-08-19T09:36:56.016Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/cancer-subtypes/r2_clustering.html</loc>
+    <lastmod>2025-08-19T09:36:56.016Z</lastmod>
   </url>
 </urlset>
