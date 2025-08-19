@@ -265,9 +265,15 @@ plot_clusters <- function(tib, cluster = 'cluster', animate = FALSE){
   return(p)
 }
 
-formatter <- function(tib, digits = 3){
+formatter <- function(tib, cols_to_format = "all", digits = 3){
+  selector <- if(length(cols_to_format) == 1 && cols_to_format == "all"){
+    where(is.numeric)
+  } else {
+    all_of(cols_to_format)
+  }
+
   tib |> 
-    mutate(across(where(is.numeric), 
+    mutate(across({{ selector }},
            ~format(., scientific = TRUE, digits = digits)))
 }
 
@@ -275,10 +281,18 @@ datatable <- function(tib, row2display = 10) {
   if(nrow(tib) > 0){
     DT::datatable(tib,
       rownames   = FALSE,
+      extensions = "Buttons",
       options    = list(
         dom = "Bfrtip",
         scrollX = TRUE,
-        pageLength = row2display
+        pageLength = row2display,
+        buttons = list(
+          list(
+            extend  = "collection",
+            buttons = c("csv", "excel"),
+            text    = "Download"
+          )
+        )
       )
     )
   }else{
@@ -334,7 +348,7 @@ tsnetib |>
   overall_survival_days_tsne, overall_survival_event_tsne,
   endocrine_treated_tsne, chemo_treated_tsne) |> 
   rename_with(~ str_remove(.x, "_tsne$")) |>
-  formatter() |>
+  formatter(cols_to_format = c("tsne1", "tsne2", "umap1", "umap2")) |>
   datatable()
 ```
 
