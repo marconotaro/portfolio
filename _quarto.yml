@@ -19,13 +19,14 @@ website:
 
 format:
   html:
-    code-link: true
+    respect-user-color-scheme: true
     theme: 
-      light: cosmo
-      dark: superhero
+      dark: darkly
+      light: flatly
     toc: true
     toc-location: left
     toc-depth: 4
+    code-link: true
     code-fold: false
     code-tools: true
     embed-resources: false
