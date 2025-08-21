@@ -9,20 +9,24 @@ format:
 
 ## Genomics
 
-Identification of breast cancer subtypes via a graph-based approach from a public bulk RNA-Seq patient cohort.
+- [Identification of breast cancer subtypes via a graph-based approach](cancer-subtypes.qmd)
 
-- [Getting data](r0_getdata.html)
-- [Exploratory data analysis and preprocessing](r1_eda.html)
-- [Clustering analysis](r2_clustering.html)
+## Machine learning
 
+- [Predicting viewer engagement with educational videos](ml-video.ipynb)
+- [Predicting salary and new connections from network data](ml-graph.ipynb)
 
 ## Deep Learning
 
-Predicting protein subcellular localization via a deep learning approach from aminoacid sequences.
-
-- [CNN vs FNN with PyTorch](cnn_vs_fnn.ipynb)
+- [Predicting protein subcellular localization from aminoacid sequences with PyTorch](cnn_vs_fnn.ipynb)
 
 
 ## AI-powered tools
 
 - [Developing a RAG framework for bioinformatics applications](https://github.com/marconotaro/llm-sib)
+
+
+## DataViz
+
+- [Visualize Michigan's temperature records](weather-records.ipynb)
+- [Visualize Detroit's sports teams win percentages](detroit-wiki.ipynb)
