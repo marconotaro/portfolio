@@ -1,7 +1,5 @@
 ---
 title: "Downloading GEO data"
-author: "Marco Notaro"
-date: today
 ---
 
 

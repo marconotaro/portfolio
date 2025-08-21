@@ -1,7 +1,5 @@
 ---
 title: "Identification of breast cancer subtypes"
-author: "Marco Notaro"
-date: today
 ---
 
 ```{r}
@@ -293,7 +291,9 @@ datatable <- function(tib, row2display = 10) {
             text    = "Download"
           )
         )
-      )
+      ),
+      class = "display",
+      style = "bootstrap"
     )
   }else{
     print("No results")

@@ -1,7 +1,5 @@
 ---
 title: "Exploratory data analysis: validation of technical replicates"
-author: "Marco Notaro"
-date: today
 ---
 
 ```{r}
