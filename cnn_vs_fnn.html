@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment for the SIB course: Diving into deep learning - theory and applications with PyTorch</title>
+<title>Predicting protein subcellular localizations based on sequence information</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,12 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fc4b90b7f881223d2cff442049f60ca0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-c3d6d62566e6c391e02babdfcd2ca1f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-fc4b90b7f881223d2cff442049f60ca0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4c5931b574047af1f75da836f6795c0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9c7b8fac256f71d548ed825c5e9e7f25.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -252,10 +250,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    const authorPrefersDark = true;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -266,6 +263,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -310,23 +315,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#loading-libraries" id="toc-loading-libraries" class="nav-link" data-scroll-target="#loading-libraries">Loading libraries</a></li>
   <li><a href="#loading-the-protein-sequences-and-labels" id="toc-loading-the-protein-sequences-and-labels" class="nav-link" data-scroll-target="#loading-the-protein-sequences-and-labels">Loading the protein sequences and labels</a></li>
   <li><a href="#defining-the-subcellular-localization" id="toc-defining-the-subcellular-localization" class="nav-link" data-scroll-target="#defining-the-subcellular-localization">Defining the subcellular localization</a></li>
-  <li><a href="#building-the-data-loaders" id="toc-building-the-data-loaders" class="nav-link" data-scroll-target="#building-the-data-loaders">Building the data loaders</a></li>
+  <li><a href="#building-the-data-loaders" id="toc-building-the-data-loaders" class="nav-link" data-scroll-target="#building-the-data-loaders">Building the data loaders</a>
+  <ul>
   <li><a href="#building-the-convolutional-neural-network-cnn" id="toc-building-the-convolutional-neural-network-cnn" class="nav-link" data-scroll-target="#building-the-convolutional-neural-network-cnn">Building the convolutional neural network (CNN)</a></li>
   <li><a href="#building-the-feedforward-neural-network-fnn" id="toc-building-the-feedforward-neural-network-fnn" class="nav-link" data-scroll-target="#building-the-feedforward-neural-network-fnn">Building the feedforward neural network (FNN)</a></li>
-  <li><a href="#trainingvalidation-and-plotting-functions" id="toc-trainingvalidation-and-plotting-functions" class="nav-link" data-scroll-target="#trainingvalidation-and-plotting-functions">Training/validation and plotting functions</a></li>
+  </ul></li>
+  <li><a href="#trainingvalidation-and-plotting-functions" id="toc-trainingvalidation-and-plotting-functions" class="nav-link" data-scroll-target="#trainingvalidation-and-plotting-functions">Training/validation and plotting functions</a>
+  <ul>
   <li><a href="#utility-functions" id="toc-utility-functions" class="nav-link" data-scroll-target="#utility-functions">Utility functions</a></li>
   <li><a href="#plotting-functions" id="toc-plotting-functions" class="nav-link" data-scroll-target="#plotting-functions">Plotting functions</a></li>
   <li><a href="#wrapper-function" id="toc-wrapper-function" class="nav-link" data-scroll-target="#wrapper-function">Wrapper function</a></li>
   <li><a href="#hyperparmeters" id="toc-hyperparmeters" class="nav-link" data-scroll-target="#hyperparmeters">Hyperparmeters</a></li>
-  <li><a href="#training-the-cnn" id="toc-training-the-cnn" class="nav-link" data-scroll-target="#training-the-cnn">Training the CNN</a></li>
+  </ul></li>
+  <li><a href="#training-the-cnn" id="toc-training-the-cnn" class="nav-link" data-scroll-target="#training-the-cnn">Training the CNN</a>
+  <ul>
   <li><a href="#evaluating-the-cnn" id="toc-evaluating-the-cnn" class="nav-link" data-scroll-target="#evaluating-the-cnn">Evaluating the CNN</a></li>
-  <li><a href="#training-the-fnn" id="toc-training-the-fnn" class="nav-link" data-scroll-target="#training-the-fnn">Training the FNN</a></li>
+  </ul></li>
+  <li><a href="#training-the-fnn" id="toc-training-the-fnn" class="nav-link" data-scroll-target="#training-the-fnn">Training the FNN</a>
+  <ul>
   <li><a href="#evaluating-the-fnn" id="toc-evaluating-the-fnn" class="nav-link" data-scroll-target="#evaluating-the-fnn">Evaluating the FNN</a></li>
+  </ul></li>
   <li><a href="#performance-comparison-cnn-vs-fnn" id="toc-performance-comparison-cnn-vs-fnn" class="nav-link" data-scroll-target="#performance-comparison-cnn-vs-fnn">Performance comparison: CNN vs FNN</a>
   <ul>
   <li><a href="#cnn" id="toc-cnn" class="nav-link" data-scroll-target="#cnn">CNN</a></li>
   <li><a href="#fnn" id="toc-fnn" class="nav-link" data-scroll-target="#fnn">FNN</a></li>
-  <li><a href="#accuracy-comparison" id="toc-accuracy-comparison" class="nav-link" data-scroll-target="#accuracy-comparison">Accuracy comparison</a></li>
+  </ul></li>
+  <li><a href="#accuracy-comparison" id="toc-accuracy-comparison" class="nav-link" data-scroll-target="#accuracy-comparison">Accuracy comparison</a>
+  <ul>
   <li><a href="#balanced-accuracy-comparison" id="toc-balanced-accuracy-comparison" class="nav-link" data-scroll-target="#balanced-accuracy-comparison">Balanced accuracy comparison</a></li>
   </ul></li>
   <li><a href="#conclusions-and-considerations" id="toc-conclusions-and-considerations" class="nav-link" data-scroll-target="#conclusions-and-considerations">Conclusions and considerations</a></li>
@@ -343,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignment for the SIB course: Diving into deep learning - theory and applications with PyTorch</h1>
+<h1 class="title">Predicting protein subcellular localizations based on sequence information</h1>
 </div>
 
 
@@ -360,25 +375,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>My solutions to the SIB course <a href="https://www.sib.swiss/training/course/20241108_DEEPP">Diving into deep learning - theory and applications with PyTorch</a> - held on 07-08 November 2024.</p>
-<section id="goal" class="level3">
-<h3 class="anchored" data-anchor-id="goal">Goal</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Data from the SIB course <a href="https://www.sib.swiss/training/course/20241108_DEEPP">Diving into deep learning - theory and applications with PyTorch</a>.</p>
+</div>
+</div>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
 <ul>
 <li>Implementing a convolutional neural network (CNN) to predict protein subcellular localization relying on sequence information</li>
 <li>Comparing the CNN with the feedforward neural network (FNN)</li>
 <li>Expected output: CNN should provide a performance improvement over FNN</li>
 </ul>
 </section>
-<section id="dataset-information" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-information">Dataset information</h3>
+<section id="dataset-information" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-information">Dataset information</h2>
 <ul>
 <li>The dataset is from https://academic.oup.com/bioinformatics/article/33/21/3387/3931857</li>
 <li>Each sequence is encoded as a matrix where each position is a row of size 20, for each possible amino acid</li>
 <li>The values within the matrix represent the amino acid frequency at the given position</li>
 </ul>
 </section>
-<section id="loading-libraries" class="level3">
-<h3 class="anchored" data-anchor-id="loading-libraries">Loading libraries</h3>
+<section id="loading-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="loading-libraries">Loading libraries</h2>
 <div id="654facc8-7578-450c-a0bf-116fceafa36a" class="cell" data-tags="[]" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -411,8 +438,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="loading-the-protein-sequences-and-labels" class="level3">
-<h3 class="anchored" data-anchor-id="loading-the-protein-sequences-and-labels">Loading the protein sequences and labels</h3>
+<section id="loading-the-protein-sequences-and-labels" class="level2">
+<h2 class="anchored" data-anchor-id="loading-the-protein-sequences-and-labels">Loading the protein sequences and labels</h2>
 <div id="0443bcd6-fa2a-412e-a9f9-f1ad2d224497" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## training data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> np.load(<span class="st">'data/reduced_train.npz'</span>)</span>
@@ -431,8 +458,8 @@ valid: (635, 400, 20)</code></pre>
 </div>
 </div>
 </section>
-<section id="defining-the-subcellular-localization" class="level3">
-<h3 class="anchored" data-anchor-id="defining-the-subcellular-localization">Defining the subcellular localization</h3>
+<section id="defining-the-subcellular-localization" class="level2">
+<h2 class="anchored" data-anchor-id="defining-the-subcellular-localization">Defining the subcellular localization</h2>
 <div id="c027e0fd-67e0-46a5-a905-b646c732c9f4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [<span class="st">'Nucleus'</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Cytoplasm'</span>,</span>
@@ -462,8 +489,8 @@ Target 9 Vacuole</code></pre>
 </div>
 </div>
 </section>
-<section id="building-the-data-loaders" class="level3">
-<h3 class="anchored" data-anchor-id="building-the-data-loaders">Building the data loaders</h3>
+<section id="building-the-data-loaders" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-data-loaders">Building the data loaders</h2>
 <div id="505cfefb-f7d3-4534-b9e3-5ba75ce8d4d3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -482,7 +509,6 @@ Target 9 Vacuole</code></pre>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(train_dataset, batch_size <span class="op">=</span> batch_size) </span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>valid_dataloader <span class="op">=</span> DataLoader(valid_dataset, batch_size <span class="op">=</span> batch_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 <section id="building-the-convolutional-neural-network-cnn" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-convolutional-neural-network-cnn">Building the convolutional neural network (CNN)</h3>
 <p>This CNN uses two convolutional layers with a 3x3 kernel and a ReLU activation, followed by max pooling to downsample the sequence length while preserving the feature dimension. The resulting features are flattened and fed into a fully connected layer, which maps the extracted features to the 10 subcellular localizations.</p>
@@ -630,8 +656,9 @@ Non-trainable params: 0
 </div>
 </div>
 </section>
-<section id="trainingvalidation-and-plotting-functions" class="level3">
-<h3 class="anchored" data-anchor-id="trainingvalidation-and-plotting-functions">Training/validation and plotting functions</h3>
+</section>
+<section id="trainingvalidation-and-plotting-functions" class="level2">
+<h2 class="anchored" data-anchor-id="trainingvalidation-and-plotting-functions">Training/validation and plotting functions</h2>
 <div id="a0f3dbcb-4307-439f-a846-a281a5ea3367" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train(dataloader, model, loss_fn, optimizer, echo<span class="op">=</span><span class="va">True</span>, echo_batch<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -685,7 +712,6 @@ Non-trainable params: 0
 <span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>  valid_loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 <section id="utility-functions" class="level3">
 <h3 class="anchored" data-anchor-id="utility-functions">Utility functions</h3>
 <div id="4c785d72-79f5-4a18-bde8-66b3f413088d" class="cell" data-execution_count="9">
@@ -840,8 +866,9 @@ Non-trainable params: 0
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>patience <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="training-the-cnn" class="level3">
-<h3 class="anchored" data-anchor-id="training-the-cnn">Training the CNN</h3>
+</section>
+<section id="training-the-cnn" class="level2">
+<h2 class="anchored" data-anchor-id="training-the-cnn">Training the CNN</h2>
 <div id="364f58ed-8a40-4512-978e-a1b5f05e2611" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1004,7 +1031,6 @@ CPU times: user 5h 28min 40s, sys: 1h 42min 51s, total: 7h 11min 32s
 Wall time: 1h 11min 58s</code></pre>
 </div>
 </div>
-</section>
 <section id="evaluating-the-cnn" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-the-cnn">Evaluating the CNN</h3>
 <div id="a07e86ef-f956-4a84-9ddf-63c4e02bbd92" class="cell" data-execution_count="14">
@@ -1018,8 +1044,9 @@ Wall time: 1h 11min 58s</code></pre>
 </div>
 </div>
 </section>
-<section id="training-the-fnn" class="level3">
-<h3 class="anchored" data-anchor-id="training-the-fnn">Training the FNN</h3>
+</section>
+<section id="training-the-fnn" class="level2">
+<h2 class="anchored" data-anchor-id="training-the-fnn">Training the FNN</h2>
 <div id="7f33d9f7-d439-4312-b688-ca0d1b027133" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1525,7 +1552,6 @@ CPU times: user 14min 53s, sys: 14.3 s, total: 15min 7s
 Wall time: 2min 31s</code></pre>
 </div>
 </div>
-</section>
 <section id="evaluating-the-fnn" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-the-fnn">Evaluating the FNN</h3>
 <div id="d1e043a1-92d9-4929-a5db-452e79c1054e" class="cell" data-execution_count="16">
@@ -1539,14 +1565,15 @@ Wall time: 2min 31s</code></pre>
 </div>
 </div>
 </section>
-<section id="performance-comparison-cnn-vs-fnn" class="level3">
-<h3 class="anchored" data-anchor-id="performance-comparison-cnn-vs-fnn">Performance comparison: CNN vs FNN</h3>
+</section>
+<section id="performance-comparison-cnn-vs-fnn" class="level2">
+<h2 class="anchored" data-anchor-id="performance-comparison-cnn-vs-fnn">Performance comparison: CNN vs FNN</h2>
 <div id="18b63a2b-d16b-4e5f-8214-f2c6f98679da" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>y_pred_cnn, y_cnn <span class="op">=</span> get_model_predictions_and_y(model_cnn, valid_dataloader)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y_pred_fnn, y_fnn <span class="op">=</span> get_model_predictions_and_y(model_fnn, valid_dataloader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="cnn" class="level4">
-<h4 class="anchored" data-anchor-id="cnn">CNN</h4>
+<section id="cnn" class="level3">
+<h3 class="anchored" data-anchor-id="cnn">CNN</h3>
 <div id="c9284804-1833-48fd-bd06-315523fa8c04" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_cnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1580,8 +1607,8 @@ Golgi apparatus       0.88      0.78      0.82        18
 </div>
 </div>
 </section>
-<section id="fnn" class="level4">
-<h4 class="anchored" data-anchor-id="fnn">FNN</h4>
+<section id="fnn" class="level3">
+<h3 class="anchored" data-anchor-id="fnn">FNN</h3>
 <div id="830c0964-9ce4-4662-ae6f-abe26e7c6209" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_fnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1615,8 +1642,9 @@ Golgi apparatus       0.68      0.72      0.70        18
 </div>
 </div>
 </section>
-<section id="accuracy-comparison" class="level4">
-<h4 class="anchored" data-anchor-id="accuracy-comparison">Accuracy comparison</h4>
+</section>
+<section id="accuracy-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="accuracy-comparison">Accuracy comparison</h2>
 <div id="6bc38c65-f863-4f01-9c3c-4d0d5e56e522" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">## other way of computing accuracy</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># from sklearn.metrics import confusion_matrix</span></span>
@@ -1638,9 +1666,8 @@ Golgi apparatus       0.68      0.72      0.70        18
 </div>
 </div>
 </div>
-</section>
-<section id="balanced-accuracy-comparison" class="level4">
-<h4 class="anchored" data-anchor-id="balanced-accuracy-comparison">Balanced accuracy comparison</h4>
+<section id="balanced-accuracy-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="balanced-accuracy-comparison">Balanced accuracy comparison</h3>
 <div id="5bf01bea-1f69-4603-9428-b8b00894efbb" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">## compute balanced accuracy over subcellular localizations (classes)</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1662,8 +1689,8 @@ Golgi apparatus       0.68      0.72      0.70        18
 </div>
 </section>
 </section>
-<section id="conclusions-and-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="conclusions-and-considerations">Conclusions and considerations</h3>
+<section id="conclusions-and-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions-and-considerations">Conclusions and considerations</h2>
 <ul>
 <li>CNN slightly outperforms FNN, but at a much higher computational cost: CNN took 12min while FNN took 10sec in current configuration</li>
 <li>Increasing the number of output channels (i.e.&nbsp;feature maps) boosts CNN performance, but at the cost of increased training time. For instance, a CNN with 80 output channels yielded an accuracy of around 0.82 after roughly 40 minutes of training (data not shown). <!-- - CNN performances have shown larger variation of accuracy in response to changes in Adam's learning rate compared to the FNN ones. --></li>
@@ -1809,7 +1836,7 @@ Golgi apparatus       0.68      0.72      0.70        18
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/marconotaro\.github\.io\/cancer-subtypes\/");
+        var filterRegex = new RegExp("https:\/\/marconotaro\.github\.io\/portfolio\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
