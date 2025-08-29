@@ -30,3 +30,9 @@ format:
 
 - [Visualize Michigan's temperature records](weather-records.ipynb)
 - [Visualize Detroit's sports teams win percentages](detroit-wiki.ipynb)
+
+
+## Software Libraries
+
+- [A meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data](https://hemdag.readthedocs.io/en/latest/)
+- [A Perl module to parse biomedical ontology and gene association data](https://obogaf-parser.readthedocs.io/en/latest/)
