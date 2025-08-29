@@ -210,6 +210,13 @@
     "text": "DataViz\n\nVisualize Michigan’s temperature records\nVisualize Detroit’s sports teams win percentages"
   },
   {
+    "objectID": "index.html#software-libraries",
+    "href": "index.html#software-libraries",
+    "title": "Personal Projects",
+    "section": "Software Libraries",
+    "text": "Software Libraries\n\nA meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data\nA Perl module to parse biomedical ontology and gene association data"
+  },
+  {
     "objectID": "cancer-subtypes.html",
     "href": "cancer-subtypes.html",
     "title": "Identification of breast cancer subtypes from a bulk RNA-Seq data via a graph-based approach",
