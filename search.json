@@ -172,14 +172,28 @@
     "href": "index.html",
     "title": "Personal Projects",
     "section": "",
-    "text": "Identification of breast cancer subtypes via a graph-based approach"
+    "text": "A meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data\nA Perl module to parse biomedical ontology and gene association data"
+  },
+  {
+    "objectID": "index.html#developed-software-libraries",
+    "href": "index.html#developed-software-libraries",
+    "title": "Personal Projects",
+    "section": "",
+    "text": "A meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data\nA Perl module to parse biomedical ontology and gene association data"
+  },
+  {
+    "objectID": "index.html#contribution-to-open-source-software-libraries",
+    "href": "index.html#contribution-to-open-source-software-libraries",
+    "title": "Personal Projects",
+    "section": "Contribution to open-source software libraries",
+    "text": "Contribution to open-source software libraries\n\nIntegration from scratch of nextflow pipelines in the SUSHI platform (ATAC-Seq and CUT&RUN)\nDeveloped a Ruby on Rails interface for CUT&RUN data analysis"
   },
   {
     "objectID": "index.html#genomics",
     "href": "index.html#genomics",
     "title": "Personal Projects",
-    "section": "",
-    "text": "Identification of breast cancer subtypes via a graph-based approach"
+    "section": "Genomics",
+    "text": "Genomics\n\nIdentification of breast cancer subtypes via a graph-based approach"
   },
   {
     "objectID": "index.html#machine-learning",
@@ -192,8 +206,8 @@
     "objectID": "index.html#deep-learning",
     "href": "index.html#deep-learning",
     "title": "Personal Projects",
-    "section": "Deep Learning",
-    "text": "Deep Learning\n\nPredicting protein subcellular localization from aminoacid sequences with PyTorch"
+    "section": "Deep learning",
+    "text": "Deep learning\n\nPredicting protein subcellular localization from aminoacid sequences with PyTorch"
   },
   {
     "objectID": "index.html#ai-powered-tools",
@@ -208,13 +222,6 @@
     "title": "Personal Projects",
     "section": "DataViz",
     "text": "DataViz\n\nVisualize Michigan’s temperature records\nVisualize Detroit’s sports teams win percentages"
-  },
-  {
-    "objectID": "index.html#software-libraries",
-    "href": "index.html#software-libraries",
-    "title": "Personal Projects",
-    "section": "Software Libraries",
-    "text": "Software Libraries\n\nA meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data\nA Perl module to parse biomedical ontology and gene association data"
   },
   {
     "objectID": "cancer-subtypes.html",
