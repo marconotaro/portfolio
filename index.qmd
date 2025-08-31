@@ -7,16 +7,30 @@ format:
     code-tools: false
 ---
 
+## Developed software libraries
+
+- [A meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data](https://hemdag.readthedocs.io/en/latest/)
+- [A Perl module to parse biomedical ontology and gene association data](https://obogaf-parser.readthedocs.io/en/latest/)
+
+
+## Contribution to open-source software libraries
+
+- [Integration from scratch of nextflow pipelines in the SUSHI platform (ATAC-Seq and CUT\&RUN)](https://github.com/uzh/ezRun/commits?author=marconotaro)
+- [Developed a Ruby on Rails interface for CUT&RUN data analysis](https://github.com/uzh/sushi/commits?author=marconotaro)
+
+
 ## Genomics
 
 - [Identification of breast cancer subtypes via a graph-based approach](cancer-subtypes.qmd)
+
 
 ## Machine learning
 
 - [Predicting viewer engagement with educational videos](ml-video.ipynb)
 - [Predicting salary and new connections from network data](ml-graph.ipynb)
 
-## Deep Learning
+
+## Deep learning
 
 - [Predicting protein subcellular localization from aminoacid sequences with PyTorch](cnn_vs_fnn.ipynb)
 
@@ -31,8 +45,3 @@ format:
 - [Visualize Michigan's temperature records](weather-records.ipynb)
 - [Visualize Detroit's sports teams win percentages](detroit-wiki.ipynb)
 
-
-## Software Libraries
-
-- [A meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data](https://hemdag.readthedocs.io/en/latest/)
-- [A Perl module to parse biomedical ontology and gene association data](https://obogaf-parser.readthedocs.io/en/latest/)
