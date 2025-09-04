@@ -406,7 +406,7 @@ Note
 </section>
 <section id="loading-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="loading-libraries">Loading libraries</h2>
-<div id="654facc8-7578-450c-a0bf-116fceafa36a" class="cell" data-tags="[]" data-execution_count="3">
+<div id="654facc8-7578-450c-a0bf-116fceafa36a" class="cell" data-tags="[]" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -424,15 +424,17 @@ Note
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pytorchtools <span class="im">import</span> EarlyStopping</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># get cpu, gpu or mps device for training</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> (</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cuda"</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> torch.cuda.is_available()</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="st">"mps"</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> torch.backends.mps.is_available()</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="st">"cpu"</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Using </span><span class="sc">{</span>device<span class="sc">}</span><span class="ss"> device"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># get cpu, gpu or mps device for training</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> (</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cuda"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> torch.cuda.is_available()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="st">"mps"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> torch.backends.mps.is_available()</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="st">"cpu"</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Using </span><span class="sc">{</span>device<span class="sc">}</span><span class="ss"> device"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Using cpu device</code></pre>
 </div>
@@ -440,7 +442,7 @@ Note
 </section>
 <section id="loading-the-protein-sequences-and-labels" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-protein-sequences-and-labels">Loading the protein sequences and labels</h2>
-<div id="0443bcd6-fa2a-412e-a9f9-f1ad2d224497" class="cell" data-execution_count="4">
+<div id="0443bcd6-fa2a-412e-a9f9-f1ad2d224497" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## training data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> np.load(<span class="st">'data/reduced_train.npz'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> train[<span class="st">'X_train'</span>]</span>
@@ -460,7 +462,7 @@ valid: (635, 400, 20)</code></pre>
 </section>
 <section id="defining-the-subcellular-localization" class="level2">
 <h2 class="anchored" data-anchor-id="defining-the-subcellular-localization">Defining the subcellular localization</h2>
-<div id="c027e0fd-67e0-46a5-a905-b646c732c9f4" class="cell" data-execution_count="4">
+<div id="c027e0fd-67e0-46a5-a905-b646c732c9f4" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [<span class="st">'Nucleus'</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Cytoplasm'</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Extracellular'</span>,</span>
@@ -491,7 +493,7 @@ Target 9 Vacuole</code></pre>
 </section>
 <section id="building-the-data-loaders" class="level2">
 <h2 class="anchored" data-anchor-id="building-the-data-loaders">Building the data loaders</h2>
-<div id="505cfefb-f7d3-4534-b9e3-5ba75ce8d4d3" class="cell" data-execution_count="5">
+<div id="505cfefb-f7d3-4534-b9e3-5ba75ce8d4d3" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># transform to torch tensor</span></span>
@@ -512,7 +514,7 @@ Target 9 Vacuole</code></pre>
 <section id="building-the-convolutional-neural-network-cnn" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-convolutional-neural-network-cnn">Building the convolutional neural network (CNN)</h3>
 <p>This CNN uses two convolutional layers with a 3x3 kernel and a ReLU activation, followed by max pooling to downsample the sequence length while preserving the feature dimension. The resulting features are flattened and fed into a fully connected layer, which maps the extracted features to the 10 subcellular localizations.</p>
-<div id="9a9b9275-bf8f-4129-9396-d4a2204354b9" class="cell" data-execution_count="6">
+<div id="9a9b9275-bf8f-4129-9396-d4a2204354b9" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProteinLoc_CNN(nn.Module):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, seq_len<span class="op">=</span><span class="dv">400</span>, n_feat<span class="op">=</span><span class="dv">20</span>, n_class<span class="op">=</span><span class="dv">10</span>, out_channels<span class="op">=</span><span class="dv">10</span>):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
@@ -593,7 +595,7 @@ Non-trainable params: 0
 <section id="building-the-feedforward-neural-network-fnn" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-feedforward-neural-network-fnn">Building the feedforward neural network (FNN)</h3>
 <p>Taken from the 2nd notebook of the course</p>
-<div id="2c8d43c5-53bb-4de6-bc8b-fe39ba05ee59" class="cell" data-execution_count="7">
+<div id="2c8d43c5-53bb-4de6-bc8b-fe39ba05ee59" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProteinLoc_FNN(torch.nn.Module):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span> , input_dim <span class="op">=</span> <span class="dv">8000</span>, </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                         hidden_dim <span class="op">=</span> [<span class="dv">80</span>],</span>
@@ -659,7 +661,7 @@ Non-trainable params: 0
 </section>
 <section id="trainingvalidation-and-plotting-functions" class="level2">
 <h2 class="anchored" data-anchor-id="trainingvalidation-and-plotting-functions">Training/validation and plotting functions</h2>
-<div id="a0f3dbcb-4307-439f-a846-a281a5ea3367" class="cell" data-execution_count="8">
+<div id="a0f3dbcb-4307-439f-a846-a281a5ea3367" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train(dataloader, model, loss_fn, optimizer, echo<span class="op">=</span><span class="va">True</span>, echo_batch<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> <span class="bu">len</span>(dataloader.dataset) <span class="co"># how many batches do we have</span></span>
@@ -714,7 +716,7 @@ Non-trainable params: 0
 </div>
 <section id="utility-functions" class="level3">
 <h3 class="anchored" data-anchor-id="utility-functions">Utility functions</h3>
-<div id="4c785d72-79f5-4a18-bde8-66b3f413088d" class="cell" data-execution_count="9">
+<div id="4c785d72-79f5-4a18-bde8-66b3f413088d" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## get predicted and target from the model</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_model_predictions_and_y(model, dataloader):</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    target <span class="op">=</span> np.array([], dtype<span class="op">=</span> <span class="st">'float32'</span>) <span class="co">## []</span></span>
@@ -732,12 +734,26 @@ Non-trainable params: 0
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_additional_scores(predicted, target):   </span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> { <span class="st">'balanced_accuracy'</span>: metrics.balanced_accuracy_score(target, predicted),</span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>             <span class="st">'accuracy'</span>: metrics.accuracy_score(target, predicted),</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>             <span class="st">'f1'</span>: metrics.f1_score(target, predicted, average <span class="op">=</span> <span class="st">'macro'</span>) }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>             <span class="st">'f1'</span>: metrics.f1_score(target, predicted, average <span class="op">=</span> <span class="st">'macro'</span>) }</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">## format elapsed time</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_time(seconds):</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> seconds <span class="op">&lt;</span> <span class="dv">60</span>:</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>seconds<span class="sc">:.2f}</span><span class="ss">s"</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> seconds <span class="op">&lt;</span> <span class="dv">3600</span>:</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>        minutes <span class="op">=</span> <span class="bu">int</span>(seconds <span class="op">//</span> <span class="dv">60</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>        remaining_seconds <span class="op">=</span> seconds <span class="op">%</span> <span class="dv">60</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>minutes<span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>remaining_seconds<span class="sc">:.2f}</span><span class="ss">s (</span><span class="sc">{</span>seconds<span class="sc">:.2f}</span><span class="ss">s)"</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        hours <span class="op">=</span> <span class="bu">int</span>(seconds <span class="op">//</span> <span class="dv">3600</span>)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>        remaining_minutes <span class="op">=</span> <span class="bu">int</span>((seconds <span class="op">%</span> <span class="dv">3600</span>)) <span class="op">//</span> <span class="dv">60</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>        remaining_seconds <span class="op">=</span> seconds <span class="op">%</span> <span class="dv">60</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>hours<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span>remaining_minutes<span class="sc">}</span><span class="ss">m and </span><span class="sc">{</span>remaining_seconds<span class="sc">:.2f}</span><span class="ss">s (</span><span class="sc">{</span>seconds<span class="sc">:.2f}</span><span class="ss">s)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="plotting-functions" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-functions">Plotting functions</h3>
-<div id="1af258c5-2727-46f7-9401-9b437558c78f" class="cell" data-execution_count="10">
+<div id="1af258c5-2727-46f7-9401-9b437558c78f" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## plot training metrics</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_training(train_scores, valid_scores):</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">8</span>))    </span>
@@ -789,7 +805,7 @@ Non-trainable params: 0
 <li><a href="https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html?highlight=dropout#early-stopping">early stopping</a> for regularization</li>
 </ul>
 <!-- We train the CNN and FNN using the default hyperparameters of the Adam optimizer ([link](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html)) -->
-<div id="e3bc5e27-3566-449d-9eb0-49771baa3405" class="cell" data-execution_count="11">
+<div id="e3bc5e27-3566-449d-9eb0-49771baa3405" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_ProteinLoc(model <span class="op">=</span> ProteinLoc_CNN().to(device), </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">3</span>, weight_decay<span class="op">=</span><span class="dv">0</span>, <span class="co">## default Adam parameters setting</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span><span class="dv">100</span>, patience<span class="op">=</span><span class="dv">25</span>):</span>
@@ -859,7 +875,7 @@ Non-trainable params: 0
 <section id="hyperparmeters" class="level3">
 <h3 class="anchored" data-anchor-id="hyperparmeters">Hyperparmeters</h3>
 <p>Hyperparmeters configuration used for training/testing all the models - for a fair comparison</p>
-<div id="33ceec55-6798-4b7e-9530-72a95e1a4f1d" class="cell">
+<div id="33ceec55-6798-4b7e-9530-72a95e1a4f1d" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> <span class="dv">500</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="dv">10</span><span class="op">**-</span><span class="dv">4</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>weight_decay <span class="op">=</span> <span class="dv">10</span><span class="op">**-</span><span class="dv">2</span></span>
@@ -869,176 +885,31 @@ Non-trainable params: 0
 </section>
 <section id="training-the-cnn" class="level2">
 <h2 class="anchored" data-anchor-id="training-the-cnn">Training the CNN</h2>
-<div id="364f58ed-8a40-4512-978e-a1b5f05e2611" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<div id="364f58ed-8a40-4512-978e-a1b5f05e2611" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>train_scores_cnn, valid_scores_cnn, model_cnn, CEloss_cnn, optimizer_cnn <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    train_ProteinLoc(ProteinLoc_CNN(seq_len<span class="op">=</span><span class="dv">400</span>, n_feat<span class="op">=</span><span class="dv">20</span>, n_class<span class="op">=</span><span class="dv">10</span>, out_channels<span class="op">=</span><span class="dv">40</span>).to(device),</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span>lr, weight_decay<span class="op">=</span>weight_decay,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span>epochs, patience<span class="op">=</span>patience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span>epochs, patience<span class="op">=</span>patience)<span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c64cecfc" class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>format_time(elapsed_time)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Epoch 10
-Train loss: 1.278552
-    Valid loss: 1.793025
-Epoch 20
-Train loss: 0.594917
-    Valid loss: 1.319517
-Epoch 30
-Train loss: 0.333948
-    Valid loss: 1.085360
-Epoch 40
-Train loss: 0.238646
-    Valid loss: 0.987021
-Epoch 50
-Train loss: 0.189067
-    Valid loss: 0.949180
-Epoch 60
-Train loss: 0.155821
-    Valid loss: 0.940055
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-Epoch 70
-Train loss: 0.132961
-    Valid loss: 0.945401
-EarlyStopping counter: 10 out of 100
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 15 out of 100
-EarlyStopping counter: 16 out of 100
-EarlyStopping counter: 17 out of 100
-EarlyStopping counter: 18 out of 100
-EarlyStopping counter: 19 out of 100
-Epoch 80
-Train loss: 0.115674
-    Valid loss: 0.955135
-EarlyStopping counter: 20 out of 100
-EarlyStopping counter: 21 out of 100
-EarlyStopping counter: 22 out of 100
-EarlyStopping counter: 23 out of 100
-EarlyStopping counter: 24 out of 100
-EarlyStopping counter: 25 out of 100
-EarlyStopping counter: 26 out of 100
-EarlyStopping counter: 27 out of 100
-EarlyStopping counter: 28 out of 100
-EarlyStopping counter: 29 out of 100
-Epoch 90
-Train loss: 0.101232
-    Valid loss: 0.964812
-EarlyStopping counter: 30 out of 100
-EarlyStopping counter: 31 out of 100
-EarlyStopping counter: 32 out of 100
-EarlyStopping counter: 33 out of 100
-EarlyStopping counter: 34 out of 100
-EarlyStopping counter: 35 out of 100
-EarlyStopping counter: 36 out of 100
-EarlyStopping counter: 37 out of 100
-EarlyStopping counter: 38 out of 100
-EarlyStopping counter: 39 out of 100
-Epoch 100
-Train loss: 0.088912
-    Valid loss: 0.973630
-EarlyStopping counter: 40 out of 100
-EarlyStopping counter: 41 out of 100
-EarlyStopping counter: 42 out of 100
-EarlyStopping counter: 43 out of 100
-EarlyStopping counter: 44 out of 100
-EarlyStopping counter: 45 out of 100
-EarlyStopping counter: 46 out of 100
-EarlyStopping counter: 47 out of 100
-EarlyStopping counter: 48 out of 100
-EarlyStopping counter: 49 out of 100
-Epoch 110
-Train loss: 0.078697
-    Valid loss: 0.981492
-EarlyStopping counter: 50 out of 100
-EarlyStopping counter: 51 out of 100
-EarlyStopping counter: 52 out of 100
-EarlyStopping counter: 53 out of 100
-EarlyStopping counter: 54 out of 100
-EarlyStopping counter: 55 out of 100
-EarlyStopping counter: 56 out of 100
-EarlyStopping counter: 57 out of 100
-EarlyStopping counter: 58 out of 100
-EarlyStopping counter: 59 out of 100
-Epoch 120
-Train loss: 0.070570
-    Valid loss: 0.988403
-EarlyStopping counter: 60 out of 100
-EarlyStopping counter: 61 out of 100
-EarlyStopping counter: 62 out of 100
-EarlyStopping counter: 63 out of 100
-EarlyStopping counter: 64 out of 100
-EarlyStopping counter: 65 out of 100
-EarlyStopping counter: 66 out of 100
-EarlyStopping counter: 67 out of 100
-EarlyStopping counter: 68 out of 100
-EarlyStopping counter: 69 out of 100
-Epoch 130
-Train loss: 0.064186
-    Valid loss: 0.994534
-EarlyStopping counter: 70 out of 100
-EarlyStopping counter: 71 out of 100
-EarlyStopping counter: 72 out of 100
-EarlyStopping counter: 73 out of 100
-EarlyStopping counter: 74 out of 100
-EarlyStopping counter: 75 out of 100
-EarlyStopping counter: 76 out of 100
-EarlyStopping counter: 77 out of 100
-EarlyStopping counter: 78 out of 100
-EarlyStopping counter: 79 out of 100
-Epoch 140
-Train loss: 0.059257
-    Valid loss: 0.999891
-EarlyStopping counter: 80 out of 100
-EarlyStopping counter: 81 out of 100
-EarlyStopping counter: 82 out of 100
-EarlyStopping counter: 83 out of 100
-EarlyStopping counter: 84 out of 100
-EarlyStopping counter: 85 out of 100
-EarlyStopping counter: 86 out of 100
-EarlyStopping counter: 87 out of 100
-EarlyStopping counter: 88 out of 100
-EarlyStopping counter: 89 out of 100
-Epoch 150
-Train loss: 0.055351
-    Valid loss: 1.004522
-EarlyStopping counter: 90 out of 100
-EarlyStopping counter: 91 out of 100
-EarlyStopping counter: 92 out of 100
-EarlyStopping counter: 93 out of 100
-EarlyStopping counter: 94 out of 100
-EarlyStopping counter: 95 out of 100
-EarlyStopping counter: 96 out of 100
-EarlyStopping counter: 97 out of 100
-EarlyStopping counter: 98 out of 100
-EarlyStopping counter: 99 out of 100
-Epoch 160
-Train loss: 0.052179
-    Valid loss: 1.008472
-EarlyStopping counter: 100 out of 100
-Early stopping
-Done!
-CPU times: user 5h 28min 40s, sys: 1h 42min 51s, total: 7h 11min 32s
-Wall time: 1h 11min 58s</code></pre>
+<pre><code>elapsed time: 44m 33.71s (2673.71s)</code></pre>
 </div>
 </div>
 <section id="evaluating-the-cnn" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-the-cnn">Evaluating the CNN</h3>
-<div id="a07e86ef-f956-4a84-9ddf-63c4e02bbd92" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_cnn, valid_scores_cnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a07e86ef-f956-4a84-9ddf-63c4e02bbd92" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_cnn, valid_scores_cnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="cnn_vs_fnn_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="cnn_vs_fnn_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1047,535 +918,28 @@ Wall time: 1h 11min 58s</code></pre>
 </section>
 <section id="training-the-fnn" class="level2">
 <h2 class="anchored" data-anchor-id="training-the-fnn">Training the FNN</h2>
-<div id="7f33d9f7-d439-4312-b688-ca0d1b027133" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>train_scores_fnn, valid_scores_fnn, model_fnn, CEloss_fnn, optimizer_fnn <span class="op">=</span> <span class="op">\</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    train_ProteinLoc(ProteinLoc_FNN(input_dim<span class="op">=</span><span class="dv">8000</span>, hidden_dim<span class="op">=</span>[<span class="dv">80</span>], output_dim<span class="op">=</span><span class="dv">10</span>, </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                    dropout_fraction<span class="op">=</span><span class="fl">0.25</span>).to(device),</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span>lr, weight_decay<span class="op">=</span>weight_decay,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span>epochs, patience<span class="op">=</span>patience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7f33d9f7-d439-4312-b688-ca0d1b027133" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>train_scores_fnn, valid_scores_fnn, model_fnn, CEloss_fnn, optimizer_fnn <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    train_ProteinLoc(ProteinLoc_FNN(input_dim<span class="op">=</span><span class="dv">8000</span>, hidden_dim<span class="op">=</span>[<span class="dv">80</span>], output_dim<span class="op">=</span><span class="dv">10</span>, </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                    dropout_fraction<span class="op">=</span><span class="fl">0.25</span>).to(device),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span>lr, weight_decay<span class="op">=</span>weight_decay,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span>epochs, patience<span class="op">=</span>patience)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8874981c" class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>format_time(elapsed_time)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Epoch 10
-Train loss: 1.721765
-    Valid loss: 2.017928
-Epoch 20
-Train loss: 1.237484
-    Valid loss: 1.800885
-Epoch 30
-Train loss: 0.955508
-    Valid loss: 1.631265
-Epoch 40
-Train loss: 0.783767
-    Valid loss: 1.508611
-Epoch 50
-Train loss: 0.655635
-    Valid loss: 1.418898
-Epoch 60
-Train loss: 0.552101
-    Valid loss: 1.354256
-Epoch 70
-Train loss: 0.512112
-    Valid loss: 1.313151
-EarlyStopping counter: 1 out of 100
-Epoch 80
-Train loss: 0.434766
-    Valid loss: 1.279691
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 90
-Train loss: 0.380775
-    Valid loss: 1.252143
-Epoch 100
-Train loss: 0.391283
-    Valid loss: 1.230097
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 110
-Train loss: 0.368573
-    Valid loss: 1.218942
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 120
-Train loss: 0.324602
-    Valid loss: 1.203767
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 130
-Train loss: 0.300448
-    Valid loss: 1.190869
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-Epoch 140
-Train loss: 0.299642
-    Valid loss: 1.181567
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-Epoch 150
-Train loss: 0.290868
-    Valid loss: 1.170999
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-Epoch 160
-Train loss: 0.264038
-    Valid loss: 1.166920
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-Epoch 170
-Train loss: 0.267423
-    Valid loss: 1.157207
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-Epoch 180
-Train loss: 0.262831
-    Valid loss: 1.154265
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 190
-Train loss: 0.254707
-    Valid loss: 1.158014
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-Epoch 200
-Train loss: 0.242801
-    Valid loss: 1.141612
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-Epoch 210
-Train loss: 0.236814
-    Valid loss: 1.145432
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 220
-Train loss: 0.236250
-    Valid loss: 1.137942
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 1 out of 100
-Epoch 230
-Train loss: 0.208718
-    Valid loss: 1.141708
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-Epoch 240
-Train loss: 0.217312
-    Valid loss: 1.137266
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-EarlyStopping counter: 10 out of 100
-Epoch 250
-Train loss: 0.211357
-    Valid loss: 1.130197
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-Epoch 260
-Train loss: 0.218220
-    Valid loss: 1.130170
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-EarlyStopping counter: 10 out of 100
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 15 out of 100
-Epoch 270
-Train loss: 0.180335
-    Valid loss: 1.132610
-EarlyStopping counter: 16 out of 100
-EarlyStopping counter: 17 out of 100
-EarlyStopping counter: 18 out of 100
-EarlyStopping counter: 19 out of 100
-EarlyStopping counter: 20 out of 100
-EarlyStopping counter: 21 out of 100
-EarlyStopping counter: 22 out of 100
-EarlyStopping counter: 23 out of 100
-EarlyStopping counter: 24 out of 100
-EarlyStopping counter: 25 out of 100
-Epoch 280
-Train loss: 0.197241
-    Valid loss: 1.128655
-EarlyStopping counter: 26 out of 100
-EarlyStopping counter: 27 out of 100
-EarlyStopping counter: 28 out of 100
-EarlyStopping counter: 29 out of 100
-EarlyStopping counter: 30 out of 100
-EarlyStopping counter: 31 out of 100
-EarlyStopping counter: 32 out of 100
-EarlyStopping counter: 33 out of 100
-EarlyStopping counter: 34 out of 100
-EarlyStopping counter: 35 out of 100
-Epoch 290
-Train loss: 0.182162
-    Valid loss: 1.127565
-EarlyStopping counter: 36 out of 100
-EarlyStopping counter: 37 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-Epoch 300
-Train loss: 0.187505
-    Valid loss: 1.124462
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-EarlyStopping counter: 10 out of 100
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 15 out of 100
-EarlyStopping counter: 16 out of 100
-Epoch 310
-Train loss: 0.206274
-    Valid loss: 1.127542
-EarlyStopping counter: 17 out of 100
-EarlyStopping counter: 18 out of 100
-EarlyStopping counter: 19 out of 100
-EarlyStopping counter: 20 out of 100
-EarlyStopping counter: 21 out of 100
-EarlyStopping counter: 22 out of 100
-EarlyStopping counter: 23 out of 100
-EarlyStopping counter: 24 out of 100
-EarlyStopping counter: 25 out of 100
-EarlyStopping counter: 26 out of 100
-Epoch 320
-Train loss: 0.171165
-    Valid loss: 1.126099
-EarlyStopping counter: 27 out of 100
-EarlyStopping counter: 28 out of 100
-EarlyStopping counter: 29 out of 100
-EarlyStopping counter: 30 out of 100
-EarlyStopping counter: 31 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-Epoch 330
-Train loss: 0.182406
-    Valid loss: 1.110636
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-Epoch 340
-Train loss: 0.182533
-    Valid loss: 1.117068
-EarlyStopping counter: 10 out of 100
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 15 out of 100
-EarlyStopping counter: 16 out of 100
-EarlyStopping counter: 17 out of 100
-EarlyStopping counter: 18 out of 100
-EarlyStopping counter: 19 out of 100
-Epoch 350
-Train loss: 0.169552
-    Valid loss: 1.113264
-EarlyStopping counter: 20 out of 100
-EarlyStopping counter: 21 out of 100
-EarlyStopping counter: 22 out of 100
-EarlyStopping counter: 23 out of 100
-EarlyStopping counter: 24 out of 100
-EarlyStopping counter: 25 out of 100
-EarlyStopping counter: 26 out of 100
-EarlyStopping counter: 27 out of 100
-EarlyStopping counter: 28 out of 100
-EarlyStopping counter: 29 out of 100
-Epoch 360
-Train loss: 0.176773
-    Valid loss: 1.122313
-EarlyStopping counter: 30 out of 100
-EarlyStopping counter: 31 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-Epoch 370
-Train loss: 0.172929
-    Valid loss: 1.117166
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-EarlyStopping counter: 10 out of 100
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 15 out of 100
-EarlyStopping counter: 16 out of 100
-EarlyStopping counter: 17 out of 100
-Epoch 380
-Train loss: 0.172954
-    Valid loss: 1.114234
-EarlyStopping counter: 18 out of 100
-EarlyStopping counter: 19 out of 100
-EarlyStopping counter: 20 out of 100
-EarlyStopping counter: 21 out of 100
-EarlyStopping counter: 22 out of 100
-EarlyStopping counter: 23 out of 100
-EarlyStopping counter: 24 out of 100
-EarlyStopping counter: 25 out of 100
-EarlyStopping counter: 26 out of 100
-EarlyStopping counter: 27 out of 100
-Epoch 390
-Train loss: 0.175194
-    Valid loss: 1.118202
-EarlyStopping counter: 28 out of 100
-EarlyStopping counter: 29 out of 100
-EarlyStopping counter: 30 out of 100
-EarlyStopping counter: 31 out of 100
-EarlyStopping counter: 32 out of 100
-EarlyStopping counter: 33 out of 100
-EarlyStopping counter: 34 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-Epoch 400
-Train loss: 0.163461
-    Valid loss: 1.115803
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-EarlyStopping counter: 8 out of 100
-EarlyStopping counter: 9 out of 100
-EarlyStopping counter: 10 out of 100
-EarlyStopping counter: 11 out of 100
-EarlyStopping counter: 12 out of 100
-Epoch 410
-Train loss: 0.167024
-    Valid loss: 1.111715
-EarlyStopping counter: 13 out of 100
-EarlyStopping counter: 14 out of 100
-EarlyStopping counter: 15 out of 100
-EarlyStopping counter: 16 out of 100
-EarlyStopping counter: 17 out of 100
-EarlyStopping counter: 18 out of 100
-EarlyStopping counter: 19 out of 100
-EarlyStopping counter: 20 out of 100
-EarlyStopping counter: 21 out of 100
-EarlyStopping counter: 22 out of 100
-Epoch 420
-Train loss: 0.172140
-    Valid loss: 1.122734
-EarlyStopping counter: 23 out of 100
-EarlyStopping counter: 24 out of 100
-EarlyStopping counter: 25 out of 100
-EarlyStopping counter: 26 out of 100
-EarlyStopping counter: 27 out of 100
-EarlyStopping counter: 28 out of 100
-EarlyStopping counter: 29 out of 100
-EarlyStopping counter: 30 out of 100
-EarlyStopping counter: 31 out of 100
-EarlyStopping counter: 32 out of 100
-Epoch 430
-Train loss: 0.177140
-    Valid loss: 1.111379
-EarlyStopping counter: 33 out of 100
-EarlyStopping counter: 34 out of 100
-EarlyStopping counter: 35 out of 100
-EarlyStopping counter: 36 out of 100
-EarlyStopping counter: 37 out of 100
-EarlyStopping counter: 38 out of 100
-EarlyStopping counter: 39 out of 100
-EarlyStopping counter: 40 out of 100
-EarlyStopping counter: 41 out of 100
-EarlyStopping counter: 42 out of 100
-Epoch 440
-Train loss: 0.170154
-    Valid loss: 1.116932
-EarlyStopping counter: 43 out of 100
-EarlyStopping counter: 44 out of 100
-EarlyStopping counter: 45 out of 100
-EarlyStopping counter: 46 out of 100
-EarlyStopping counter: 47 out of 100
-EarlyStopping counter: 48 out of 100
-EarlyStopping counter: 49 out of 100
-EarlyStopping counter: 50 out of 100
-EarlyStopping counter: 51 out of 100
-EarlyStopping counter: 52 out of 100
-Epoch 450
-Train loss: 0.161532
-    Valid loss: 1.122467
-EarlyStopping counter: 53 out of 100
-EarlyStopping counter: 54 out of 100
-EarlyStopping counter: 55 out of 100
-EarlyStopping counter: 56 out of 100
-EarlyStopping counter: 57 out of 100
-EarlyStopping counter: 58 out of 100
-EarlyStopping counter: 59 out of 100
-EarlyStopping counter: 60 out of 100
-EarlyStopping counter: 61 out of 100
-EarlyStopping counter: 62 out of 100
-Epoch 460
-Train loss: 0.175092
-    Valid loss: 1.114117
-EarlyStopping counter: 63 out of 100
-EarlyStopping counter: 64 out of 100
-EarlyStopping counter: 65 out of 100
-EarlyStopping counter: 66 out of 100
-EarlyStopping counter: 67 out of 100
-EarlyStopping counter: 68 out of 100
-EarlyStopping counter: 69 out of 100
-EarlyStopping counter: 70 out of 100
-EarlyStopping counter: 71 out of 100
-EarlyStopping counter: 72 out of 100
-Epoch 470
-Train loss: 0.175786
-    Valid loss: 1.114911
-EarlyStopping counter: 73 out of 100
-EarlyStopping counter: 74 out of 100
-EarlyStopping counter: 75 out of 100
-EarlyStopping counter: 76 out of 100
-EarlyStopping counter: 77 out of 100
-EarlyStopping counter: 78 out of 100
-EarlyStopping counter: 79 out of 100
-EarlyStopping counter: 80 out of 100
-EarlyStopping counter: 81 out of 100
-EarlyStopping counter: 82 out of 100
-Epoch 480
-Train loss: 0.150602
-    Valid loss: 1.113243
-EarlyStopping counter: 83 out of 100
-EarlyStopping counter: 84 out of 100
-EarlyStopping counter: 85 out of 100
-EarlyStopping counter: 86 out of 100
-EarlyStopping counter: 87 out of 100
-EarlyStopping counter: 88 out of 100
-EarlyStopping counter: 89 out of 100
-EarlyStopping counter: 90 out of 100
-EarlyStopping counter: 91 out of 100
-EarlyStopping counter: 92 out of 100
-Epoch 490
-Train loss: 0.171302
-    Valid loss: 1.115211
-EarlyStopping counter: 93 out of 100
-EarlyStopping counter: 94 out of 100
-EarlyStopping counter: 1 out of 100
-EarlyStopping counter: 2 out of 100
-EarlyStopping counter: 3 out of 100
-EarlyStopping counter: 4 out of 100
-EarlyStopping counter: 5 out of 100
-EarlyStopping counter: 6 out of 100
-EarlyStopping counter: 7 out of 100
-Epoch 500
-Train loss: 0.159058
-    Valid loss: 1.115464
-EarlyStopping counter: 8 out of 100
-Done!
-CPU times: user 14min 53s, sys: 14.3 s, total: 15min 7s
-Wall time: 2min 31s</code></pre>
+<pre><code>elapsed time: 1m 34.77s (94.77s)</code></pre>
 </div>
 </div>
 <section id="evaluating-the-fnn" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-the-fnn">Evaluating the FNN</h3>
-<div id="d1e043a1-92d9-4929-a5db-452e79c1054e" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_fnn, valid_scores_fnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="cnn_vs_fnn_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="performance-comparison-cnn-vs-fnn" class="level2">
-<h2 class="anchored" data-anchor-id="performance-comparison-cnn-vs-fnn">Performance comparison: CNN vs FNN</h2>
-<div id="18b63a2b-d16b-4e5f-8214-f2c6f98679da" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>y_pred_cnn, y_cnn <span class="op">=</span> get_model_predictions_and_y(model_cnn, valid_dataloader)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y_pred_fnn, y_fnn <span class="op">=</span> get_model_predictions_and_y(model_fnn, valid_dataloader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="cnn" class="level3">
-<h3 class="anchored" data-anchor-id="cnn">CNN</h3>
-<div id="c9284804-1833-48fd-bd06-315523fa8c04" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_cnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d1e043a1-92d9-4929-a5db-452e79c1054e" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_fnn, valid_scores_fnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1584,33 +948,18 @@ Wall time: 2min 31s</code></pre>
 </div>
 </div>
 </div>
-<div id="8865cace-c501-473d-8ded-f06442064064" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_cnn, target_names<span class="op">=</span>classes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                 precision    recall  f1-score   support
-
-        Nucleus       0.87      0.85      0.86        95
-      Cytoplasm       0.88      0.74      0.80       151
-  Extracellular       0.92      0.82      0.87       131
-  Mitochondrion       0.67      0.84      0.74        64
-  Cell membrane       0.78      0.91      0.84        69
-             ER       0.60      0.69      0.64        13
-    Chloroplast       0.84      0.80      0.82        60
-Golgi apparatus       0.88      0.78      0.82        18
-       Lysosome       0.78      0.74      0.76        19
-        Vacuole       0.37      0.73      0.49        15
-
-       accuracy                           0.81       635
-      macro avg       0.76      0.79      0.76       635
-   weighted avg       0.83      0.81      0.81       635
-</code></pre>
-</div>
-</div>
 </section>
-<section id="fnn" class="level3">
-<h3 class="anchored" data-anchor-id="fnn">FNN</h3>
-<div id="830c0964-9ce4-4662-ae6f-abe26e7c6209" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_fnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="performance-comparison-cnn-vs-fnn" class="level2">
+<h2 class="anchored" data-anchor-id="performance-comparison-cnn-vs-fnn">Performance comparison: CNN vs FNN</h2>
+<div id="18b63a2b-d16b-4e5f-8214-f2c6f98679da" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>y_pred_cnn, y_cnn <span class="op">=</span> get_model_predictions_and_y(model_cnn, valid_dataloader)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y_pred_fnn, y_fnn <span class="op">=</span> get_model_predictions_and_y(model_fnn, valid_dataloader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="cnn" class="level3">
+<h3 class="anchored" data-anchor-id="cnn">CNN</h3>
+<div id="c9284804-1833-48fd-bd06-315523fa8c04" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_cnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1619,45 +968,33 @@ Golgi apparatus       0.88      0.78      0.82        18
 </div>
 </div>
 </div>
-<div id="57afe9ab-a0ab-4b29-ab31-4f3ab6546106" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_fnn, target_names<span class="op">=</span>classes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8865cace-c501-473d-8ded-f06442064064" class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_cnn, target_names<span class="op">=</span>classes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 precision    recall  f1-score   support
 
-        Nucleus       0.80      0.82      0.81        95
-      Cytoplasm       0.77      0.83      0.80       151
-  Extracellular       0.87      0.87      0.87       131
-  Mitochondrion       0.71      0.86      0.78        64
-  Cell membrane       0.74      0.81      0.77        69
-             ER       0.50      0.15      0.24        13
-    Chloroplast       0.86      0.73      0.79        60
-Golgi apparatus       0.68      0.72      0.70        18
-       Lysosome       0.82      0.47      0.60        19
-        Vacuole       0.80      0.27      0.40        15
+        Nucleus       0.86      0.86      0.86        95
+      Cytoplasm       0.88      0.74      0.80       151
+  Extracellular       0.92      0.82      0.87       131
+  Mitochondrion       0.67      0.83      0.74        64
+  Cell membrane       0.79      0.91      0.85        69
+             ER       0.60      0.69      0.64        13
+    Chloroplast       0.85      0.78      0.82        60
+Golgi apparatus       0.81      0.72      0.76        18
+       Lysosome       0.79      0.79      0.79        19
+        Vacuole       0.37      0.73      0.49        15
 
-       accuracy                           0.79       635
-      macro avg       0.76      0.65      0.68       635
-   weighted avg       0.79      0.79      0.78       635
+       accuracy                           0.81       635
+      macro avg       0.75      0.79      0.76       635
+   weighted avg       0.83      0.81      0.81       635
 </code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="accuracy-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="accuracy-comparison">Accuracy comparison</h2>
-<div id="6bc38c65-f863-4f01-9c3c-4d0d5e56e522" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">## other way of computing accuracy</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># from sklearn.metrics import confusion_matrix</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cm_fnn = confusion_matrix(y_valid, y_pred_fnn)</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># accuracy_fnn = np.trace(cm_fnn) / np.sum(cm_fnn)</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>accuracy_cnn <span class="op">=</span> get_additional_scores(y_pred_cnn, y_cnn)[<span class="st">'accuracy'</span>]</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>accuracy_fnn <span class="op">=</span> get_additional_scores(y_pred_fnn, y_fnn)[<span class="st">'accuracy'</span>]</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co">## plot accuracy </span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>plot_accuracy(accuracy<span class="op">=</span>[accuracy_fnn, accuracy_cnn],</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span>[<span class="st">'FNN'</span>,<span class="st">'CNN'</span>],</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fnn" class="level3">
+<h3 class="anchored" data-anchor-id="fnn">FNN</h3>
+<div id="830c0964-9ce4-4662-ae6f-abe26e7c6209" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_fnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1666,23 +1003,70 @@ Golgi apparatus       0.68      0.72      0.70        18
 </div>
 </div>
 </div>
-<section id="balanced-accuracy-comparison" class="level3">
-<h3 class="anchored" data-anchor-id="balanced-accuracy-comparison">Balanced accuracy comparison</h3>
-<div id="5bf01bea-1f69-4603-9428-b8b00894efbb" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">## compute balanced accuracy over subcellular localizations (classes)</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>balanced_accuracy_cnn <span class="op">=</span> get_additional_scores(y_pred_cnn, y_cnn)[<span class="st">'balanced_accuracy'</span>]</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>balanced_accuracy_fnn <span class="op">=</span> get_additional_scores(y_pred_fnn, y_fnn)[<span class="st">'balanced_accuracy'</span>]</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">## plot accuracy</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">## note: p -&gt; padding and s -&gt; stride </span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plot_accuracy(accuracy<span class="op">=</span>[balanced_accuracy_fnn, balanced_accuracy_cnn],</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span>[<span class="st">'FNN'</span>,<span class="st">'CNN'</span>],</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Balanced accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="57afe9ab-a0ab-4b29-ab31-4f3ab6546106" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_fnn, target_names<span class="op">=</span>classes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 precision    recall  f1-score   support
+
+        Nucleus       0.82      0.81      0.81        95
+      Cytoplasm       0.76      0.84      0.80       151
+  Extracellular       0.87      0.87      0.87       131
+  Mitochondrion       0.75      0.83      0.79        64
+  Cell membrane       0.71      0.81      0.76        69
+             ER       0.50      0.15      0.24        13
+    Chloroplast       0.85      0.75      0.80        60
+Golgi apparatus       0.74      0.78      0.76        18
+       Lysosome       0.75      0.47      0.58        19
+        Vacuole       0.80      0.27      0.40        15
+
+       accuracy                           0.79       635
+      macro avg       0.75      0.66      0.68       635
+   weighted avg       0.79      0.79      0.78       635
+</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="accuracy-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="accuracy-comparison">Accuracy comparison</h2>
+<div id="6bc38c65-f863-4f01-9c3c-4d0d5e56e522" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">## other way of computing accuracy</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># from sklearn.metrics import confusion_matrix</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cm_fnn = confusion_matrix(y_valid, y_pred_fnn)</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># accuracy_fnn = np.trace(cm_fnn) / np.sum(cm_fnn)</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>accuracy_cnn <span class="op">=</span> get_additional_scores(y_pred_cnn, y_cnn)[<span class="st">'accuracy'</span>]</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>accuracy_fnn <span class="op">=</span> get_additional_scores(y_pred_fnn, y_fnn)[<span class="st">'accuracy'</span>]</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">## plot accuracy </span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>plot_accuracy(accuracy<span class="op">=</span>[accuracy_fnn, accuracy_cnn],</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span>[<span class="st">'FNN'</span>,<span class="st">'CNN'</span>],</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="cnn_vs_fnn_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="cnn_vs_fnn_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="balanced-accuracy-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="balanced-accuracy-comparison">Balanced accuracy comparison</h3>
+<div id="5bf01bea-1f69-4603-9428-b8b00894efbb" class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">## compute balanced accuracy over subcellular localizations (classes)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>balanced_accuracy_cnn <span class="op">=</span> get_additional_scores(y_pred_cnn, y_cnn)[<span class="st">'balanced_accuracy'</span>]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>balanced_accuracy_fnn <span class="op">=</span> get_additional_scores(y_pred_fnn, y_fnn)[<span class="st">'balanced_accuracy'</span>]</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">## plot accuracy</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">## note: p -&gt; padding and s -&gt; stride </span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>plot_accuracy(accuracy<span class="op">=</span>[balanced_accuracy_fnn, balanced_accuracy_cnn],</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span>[<span class="st">'FNN'</span>,<span class="st">'CNN'</span>],</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Balanced accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cnn_vs_fnn_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
