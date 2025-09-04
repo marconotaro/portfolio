@@ -301,7 +301,7 @@ datatable <- function(tib, row2display = 10) {
 }
 ```
 
-### A. Clustering all the patients
+### A. Clustering all patients
 
 ```{r}
 mxtop <- top_genes(mx, n_top = 3000)
@@ -340,13 +340,13 @@ The table below shows the obtained cluster assignment for each patient.
 tsnetib |> 
   left_join(umaptib, by = 'sample', suffix=c('_tsne', '_umap')) |>
   select(sample, sampleName_tsne, cluster_tsne, 
-  tsne1, tsne2, umap1, umap2, 
-  tumor_size_tsne, lymph_node_group_tsne, 
-  lymph_node_status_tsne, er_status_tsne, 
-  pgr_status_tsne, her2_status_tsne,           
-  ki67_status_tsne, nhg_tsne, 
-  overall_survival_days_tsne, overall_survival_event_tsne,
-  endocrine_treated_tsne, chemo_treated_tsne) |> 
+    tsne1, tsne2, umap1, umap2,
+    tumor_size_tsne, lymph_node_group_tsne,
+    lymph_node_status_tsne, er_status_tsne,
+    pgr_status_tsne, her2_status_tsne,
+    ki67_status_tsne, nhg_tsne, pam50_subtype_tsne,
+    overall_survival_days_tsne, overall_survival_event_tsne,
+    endocrine_treated_tsne, chemo_treated_tsne) |>
   rename_with(~ str_remove(.x, "_tsne$")) |>
   formatter(cols_to_format = c("tsne1", "tsne2", "umap1", "umap2")) |>
   datatable()
