@@ -7,4 +7,5 @@ format:
 
 - [Getting data](r0_getdata.qmd)
 - [Exploratory data analysis and preprocessing](r1_eda.qmd)
-- [Clustering analysis](r2_clustering.qmd)
+- [Clustering analysis - an in-house approach](r2_clustering.qmd)
+- [Clustering analysis - the Seurat way](r3_clustering_seurat.qmd)
