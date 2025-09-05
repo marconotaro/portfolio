@@ -13,6 +13,36 @@ website:
     left:
       - text: Home
         href: index.qmd
+      - text: "Software Library"
+        menu:
+          - href: "https://hemdag.readthedocs.io/en/latest/"
+            text: 'HEMDAG'
+          - href: "https://obogaf-parser.readthedocs.io/en/latest/"
+            text: "obogaf-parser"
+          - href: "https://github.com/uzh/ezRun/commits?author=marconotaro"
+            text: "Contribution to ezRun"
+          - href: "https://github.com/uzh/sushi/commits?author=marconotaro"
+            text: "Contribution to SUSHI"
+      - text: "Machine Learning"
+        menu:
+          - href: "cnn_vs_fnn.ipynb"
+            text: "Predicting protein localizations with pythorch"
+          - href: "ml-graph.ipynb"
+            text: "Predicting salary and new connections with scikit-learn"
+          - href: "ml-video.ipynb"
+            text: "Predicting viewer engagement with scikit-learn"
+      - text: "Genomics"
+        menu:
+          - href: "cancer-subtypes.qmd"
+            text: "Identification of breast cancer subtypes"
+      - text: "AI tools"
+        menu:
+          - href: "https://github.com/marconotaro/llm-sib"
+            text: "A RAG framework for bioinformatics applications"
+      - text: "Data Viz"
+        menu:
+          - href: "weather-records.ipynb"
+          - href: "detroit-wiki.ipynb"
     tools:
       - icon: github
         href: https://github.com/marconotaro/portfolio
@@ -20,7 +50,7 @@ website:
 format:
   html:
     respect-user-color-scheme: true
-    theme: 
+    theme:
       dark: darkly
       light: flatly
     toc: true
