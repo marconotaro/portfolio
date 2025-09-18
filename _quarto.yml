@@ -31,6 +31,8 @@ website:
             text: "Predicting salary and new connections with scikit-learn"
           - href: "ml-video.ipynb"
             text: "Predicting viewer engagement with scikit-learn"
+          - href: "r4_predict_erstatus.ipynb"
+            text: "Predicting biomarker status imputing missing values"
       - text: "Genomics"
         menu:
           - href: "cancer-subtypes.qmd"

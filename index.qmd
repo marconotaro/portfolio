@@ -28,6 +28,7 @@ format:
 
 - [Predicting viewer engagement with educational videos](ml-video.ipynb)
 - [Predicting salary and new connections from network data](ml-graph.ipynb)
+- [Predicting biomarker status imputing missing values](r4_predict_erstatus.ipynb)
 
 
 ## Deep learning
