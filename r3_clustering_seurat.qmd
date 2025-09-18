@@ -215,7 +215,7 @@ scplotter::CellDimPlot(
 
 Here we aim at finding markers that define clusters via differential expression. To this end we:
 
-- identify upregualted (positive) and dowregualted (negative) markers of the Basal cluster (cluster 5) compared to all the others; 
+- identify upregulated (positive) and downregulated (negative) markers of the Basal cluster (cluster 5) compared to all the others; 
 - identify up- and down-regulated markers for every cluster compared to all the others.
 
 Moreover, we visualize the gene expression profile of some breast cancer biomarkers taken from literature ([reference1](https://pmc.ncbi.nlm.nih.gov/articles/PMC7446376/) and [reference2](https://pmc.ncbi.nlm.nih.gov/articles/PMC3835118/))
@@ -407,8 +407,8 @@ stib |>
 
 As expected, the clustering results obtained with the Seurat workflow are consistent wih those shown in the report [Identification of breast cancer subtypes](r2_clustering.html).
 
-## Next steps 
+## Next step
 
-As the next step, the cluster assignment can be used to train supervised machine learning models to predict the ER status for those patients where the ER status is unknown.
+Cluster assignment can be used to train supervised machine learning models to predict the ER status for those patients where the ER status is unknown.
 
 
