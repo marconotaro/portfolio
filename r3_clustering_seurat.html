@@ -329,6 +329,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./ml-video.html">
  <span class="dropdown-text">Predicting viewer engagement with scikit-learn</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./r4_predict_erstatus.html">
+ <span class="dropdown-text">Predicting biomarker status imputing missing values</span></a>
+  </li>  
     </ul>
 </li>
   <li class="nav-item dropdown ">
@@ -397,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
   <li><a href="#check-cluster-assignment" id="toc-check-cluster-assignment" class="nav-link" data-scroll-target="#check-cluster-assignment">Check cluster assignment</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next steps</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
   </ul></nav>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -620,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="finding-differentially-expressed-biomarkers" class="level2"><h2 class="anchored" data-anchor-id="finding-differentially-expressed-biomarkers">Finding differentially expressed biomarkers</h2>
 <p>Here we aim at finding markers that define clusters via differential expression. To this end we:</p>
 <ul>
-<li>identify upregualted (positive) and dowregualted (negative) markers of the Basal cluster (cluster 5) compared to all the others;</li>
+<li>identify upregulated (positive) and downregulated (negative) markers of the Basal cluster (cluster 5) compared to all the others;</li>
 <li>identify up- and down-regulated markers for every cluster compared to all the others.</li>
 </ul>
 <p>Moreover, we visualize the gene expression profile of some breast cancer biomarkers taken from literature (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7446376/">reference1</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3835118/">reference2</a>)</p>
@@ -824,8 +828,8 @@ logical       3     298 </code></pre>
 </div>
 </section><section id="conclusion" class="level2"><h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>As expected, the clustering results obtained with the Seurat workflow are consistent wih those shown in the report <a href="r2_clustering.html">Identification of breast cancer subtypes</a>.</p>
-</section><section id="next-steps" class="level2"><h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
-<p>As the next step, the cluster assignment can be used to train supervised machine learning models to predict the ER status for those patients where the ER status is unknown.</p>
+</section><section id="next-step" class="level2"><h2 class="anchored" data-anchor-id="next-step">Next step</h2>
+<p>Cluster assignment can be used to train supervised machine learning models to predict the ER status for those patients where the ER status is unknown.</p>
 
 
 <!-- -->
@@ -1509,7 +1513,7 @@ logical       3     298 </code></pre>
 <span id="cb28-232"><a href="#cb28-232" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-233"><a href="#cb28-233" aria-hidden="true" tabindex="-1"></a>Here we aim at finding markers that define clusters via differential expression. To this end we:</span>
 <span id="cb28-234"><a href="#cb28-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-235"><a href="#cb28-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>identify upregualted (positive) and dowregualted (negative) markers of the Basal cluster (cluster 5) compared to all the others; </span>
+<span id="cb28-235"><a href="#cb28-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>identify upregulated (positive) and downregulated (negative) markers of the Basal cluster (cluster 5) compared to all the others; </span>
 <span id="cb28-236"><a href="#cb28-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>identify up- and down-regulated markers for every cluster compared to all the others.</span>
 <span id="cb28-237"><a href="#cb28-237" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-238"><a href="#cb28-238" aria-hidden="true" tabindex="-1"></a>Moreover, we visualize the gene expression profile of some breast cancer biomarkers taken from literature (<span class="co">[</span><span class="ot">reference1</span><span class="co">](https://pmc.ncbi.nlm.nih.gov/articles/PMC7446376/)</span> and <span class="co">[</span><span class="ot">reference2</span><span class="co">](https://pmc.ncbi.nlm.nih.gov/articles/PMC3835118/)</span>)</span>
@@ -1701,9 +1705,9 @@ logical       3     298 </code></pre>
 <span id="cb28-452"><a href="#cb28-452" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-453"><a href="#cb28-453" aria-hidden="true" tabindex="-1"></a>As expected, the clustering results obtained with the Seurat workflow are consistent wih those shown in the report <span class="co">[</span><span class="ot">Identification of breast cancer subtypes</span><span class="co">](r2_clustering.html)</span>.</span>
 <span id="cb28-454"><a href="#cb28-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-455"><a href="#cb28-455" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next steps </span></span>
+<span id="cb28-455"><a href="#cb28-455" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next step</span></span>
 <span id="cb28-456"><a href="#cb28-456" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-457"><a href="#cb28-457" aria-hidden="true" tabindex="-1"></a>As the next step, the cluster assignment can be used to train supervised machine learning models to predict the ER status for those patients where the ER status is unknown.</span>
+<span id="cb28-457"><a href="#cb28-457" aria-hidden="true" tabindex="-1"></a>Cluster assignment can be used to train supervised machine learning models to predict the ER status for those patients where the ER status is unknown.</span>
 <span id="cb28-458"><a href="#cb28-458" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
