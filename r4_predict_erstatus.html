@@ -806,43 +806,45 @@ Feature without missing values: ['age_at_diagnosis', 'pam50_subtype', 'overall_s
 </section>
 <section id="imputation-pipeline" class="level2">
 <h2 class="anchored" data-anchor-id="imputation-pipeline">Imputation pipeline</h2>
-<div id="cdf0e159" class="cell" data-execution_count="6">
+<div id="cdf0e159" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imputation_pipeline(X_train, classifier, nfeat <span class="op">=</span> <span class="dv">5</span>):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># identify feature type</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  categorical_features <span class="op">=</span> X_train.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>, <span class="st">'category'</span>]).columns.tolist()</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  numerical_features <span class="op">=</span> X_train.select_dtypes(include<span class="op">=</span>[<span class="st">'int64'</span>, <span class="st">'float64'</span>]).columns.tolist()</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># build imputation pipeline</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  categorical_imputer <span class="op">=</span> Pipeline(steps<span class="op">=</span>[</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'encoder'</span>, OrdinalEncoder()),</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'imputer'</span>, KNNImputer(n_neighbors<span class="op">=</span><span class="dv">50</span>))</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ])</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  numerical_imputer <span class="op">=</span> Pipeline(steps<span class="op">=</span>[</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'imputer'</span>, KNNImputer(n_neighbors<span class="op">=</span><span class="dv">20</span>)),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'scaler'</span>, StandardScaler())</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  ])</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  imputation <span class="op">=</span> ColumnTransformer(transformers<span class="op">=</span>[</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'categorical'</span>, categorical_imputer, categorical_features),</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'numerical'</span>, numerical_imputer, numerical_features)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  ])</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return pipeline</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Pipeline(steps<span class="op">=</span>[</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'imputation'</span>, imputation),</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'feature_selection'</span>, SelectKBest(mutual_info_classif, k<span class="op">=</span>nfeat)),</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'classifier'</span>, classifier)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  ])</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">## using smote instead of class_weight='balanced'</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from imblearn.over_sampling import SMOTE</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from imblearn.pipeline import Pipeline as ImbPipeline</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return ImbPipeline(steps=[</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   ('imputation', imputation),</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   ('smote', SMOTE(random_state=0)),  # add SMOTE after imputation</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   ('classifier', classifier)  # remove class_weight='balanced' from classifiers</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OrdinalEncoder: designed for feature encoding, accept 2d array (X,y)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># LabelEncoder: designed for target encoding, accept 1d array (y)</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  categorical_imputer <span class="op">=</span> Pipeline(steps<span class="op">=</span>[</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'encoder'</span>, OrdinalEncoder()),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'imputer'</span>, KNNImputer(n_neighbors<span class="op">=</span><span class="dv">50</span>))</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  ])</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  numerical_imputer <span class="op">=</span> Pipeline(steps<span class="op">=</span>[</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'imputer'</span>, KNNImputer(n_neighbors<span class="op">=</span><span class="dv">20</span>)),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'scaler'</span>, StandardScaler())</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  ])</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  imputation <span class="op">=</span> ColumnTransformer(transformers<span class="op">=</span>[</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'categorical'</span>, categorical_imputer, categorical_features),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'numerical'</span>, numerical_imputer, numerical_features)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  ])</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return pipeline</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Pipeline(steps<span class="op">=</span>[</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'imputation'</span>, imputation),</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'feature_selection'</span>, SelectKBest(mutual_info_classif, k<span class="op">=</span>nfeat)),</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'classifier'</span>, classifier)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  ])</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="co">## using smote instead of class_weight='balanced'</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from imblearn.over_sampling import SMOTE</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from imblearn.pipeline import Pipeline as ImbPipeline</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return ImbPipeline(steps=[</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   ('imputation', imputation),</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   ('smote', SMOTE(random_state=0)),  # add SMOTE after imputation</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   ('classifier', classifier)  # remove class_weight='balanced' from classifiers</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Utility function to format results</p>
 <div id="642721c9" class="cell" data-execution_count="7">
@@ -1886,7 +1888,7 @@ Wall time: 27.8 s</code></pre>
 </section>
 <section id="comparing-tuned-and-untuned-model" class="level3">
 <h3 class="anchored" data-anchor-id="comparing-tuned-and-untuned-model">Comparing tuned and untuned model</h3>
-<p>The tuned model sligthly outperformed the untuned one.</p>
+<p>The tuned model slightly outperformed the untuned one.</p>
 <div id="b338372d" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Default model parameters:"</span>, model_pipeline.named_steps[<span class="st">'classifier'</span>].get_params())</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Best tuned parameters:"</span>, best_model_lr.named_steps[<span class="st">'classifier'</span>].get_params())</span>
@@ -2548,7 +2550,7 @@ Wall time: 40.1 s</code></pre>
 <span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a><span class="co"># display(X_test_imputed[X_test.isnull().any(axis=1)])</span></span>
 <span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
 <span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a><span class="co">## complete dataset with the predicted ER staus and the imputed values.</span></span>
+<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a><span class="co">## complete dataset with the predicted ER status and the imputed values.</span></span>
 <span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a>pred_er <span class="op">=</span> results_svm[[<span class="st">'Predicted_ER_Status'</span>]].rename(columns<span class="op">=</span>{<span class="st">'Predicted_ER_Status'</span>: <span class="st">'er_status'</span>})</span>
 <span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a>pred_er.index.name <span class="op">=</span> <span class="st">'patient'</span></span>
 <span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a>X_test_complete <span class="op">=</span> pd.concat([X_test_imputed, pred_er], axis<span class="op">=</span><span class="dv">1</span>)</span>
