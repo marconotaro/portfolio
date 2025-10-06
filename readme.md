@@ -1,2 +1,2 @@
-This project lives at: https://marconotaro.github.io/portfolio/
+Project powered by [quarto](https://quarto.org/) and deployed at https://marconotaro.github.io/portfolio/
 
