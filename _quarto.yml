@@ -34,6 +34,8 @@ website:
             text: "Predicting viewer engagement with scikit-learn"
           - href: "r4_predict_erstatus.ipynb"
             text: "Predicting biomarker status imputing missing values"
+          - href: "predict-housing-prices.ipynb"
+            text: "Predicting housing prices in California"
       - text: "Genomics"
         menu:
           - href: "cancer-subtypes.qmd"
