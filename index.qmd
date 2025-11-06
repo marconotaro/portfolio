@@ -9,14 +9,14 @@ format:
 
 ## Developed software libraries
 
-- [HEMDAG: a meta-learning tool for predicting novel protein functions and novel associations between human genes and abnormal phenotype from bio-ontology data](https://hemdag.readthedocs.io/en/latest/)
-- [obogaf-parser: a Perl module to parse biomedical ontology and gene association data](https://obogaf-parser.readthedocs.io/en/latest/)
+- [HEMDAG: a meta-learning tool for predicting novel biomedical associations from ontology data](https://hemdag.readthedocs.io/en/latest/)
+- [obogaf-parser: a Perl module to parse biomedical ontology and gene association files](https://obogaf-parser.readthedocs.io/en/latest/)
 
 
 ## Contribution to open-source software libraries
 
-- [Contribution to the ezRun library: integration from scratch of nextflow pipelines in the SUSHI platform (ATAC-Seq and CUT\&RUN)](https://github.com/uzh/ezRun/commits?author=marconotaro)
-- [Contribution to the SUSHI library: developed a Ruby on Rails interface for CUT&RUN data analysis](https://github.com/uzh/sushi/commits?author=marconotaro)
+- [Integration of nextflow pipelines in the FGCZ's cloud platform SUSHI (ATAC-Seq and CUT\&RUN)](https://github.com/uzh/ezRun/commits?author=marconotaro)
+- [Development of a Ruby on Rails interface for CUT&RUN data analysis](https://github.com/uzh/sushi/commits?author=marconotaro)
 
 
 ## Genomics
@@ -43,6 +43,6 @@ format:
 
 ## DataViz
 
-- [Visualize Michigan's temperature records](weather-records.ipynb)
-- [Visualize Detroit's sports teams win percentages](detroit-wiki.ipynb)
+- [Visualization of Michigan's temperature records](weather-records.ipynb)
+- [Visualization of Detroit's sports teams win percentages](detroit-wiki.ipynb)
 
