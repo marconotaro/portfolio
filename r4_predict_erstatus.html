@@ -458,10 +458,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="workflow" class="level2">
 <h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
 <ul>
-<li><p>I applied three supervised learning method (logist regression, random forest, support vector machine) and optimized their hyperparameters using a grid search using balanced accurancy as evaluation metric.</p></li>
+<li><p>I compared three supervised learning method (logist regression, random forest, support vector machine) optimizing their hyperparameters using a grid search with balanced accuracy as evaluation metric.</p></li>
 <li><p>To handle missing data, I used the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html">KNNimputer</a>, which imputes values based on the nearest neighbors in the feature space.</p></li>
 <li><p>For feature selection, I applied <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutual_info_classif.html">mutual_info_classif</a> to retain the most informative features with respect to the target variable (ER status).</p></li>
-<li><p>To address class imbalance, I set the parameter <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html">class_weight=’balanced</a>, ensuring that the model gives appropriate attention to minority classes during training.</p></li>
+<li><p>To address class imbalance, I set the parameter <a href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html">class_weight=balanced</a> to ensure that the model gives appropriate attention to minority classes during training.</p></li>
 </ul>
 </section>
 <section id="conclusion" class="level2">

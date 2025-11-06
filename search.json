@@ -233,9 +233,9 @@
   {
     "objectID": "cancer-subtypes.html",
     "href": "cancer-subtypes.html",
-    "title": "Identification of breast cancer subtypes from a bulk RNA-Seq data via a graph-based approach",
+    "title": "Identification of breast cancer subtypes from bulk RNA-Seq data via a graph-based approach",
     "section": "",
-    "text": "Getting data\nExploratory data analysis and preprocessing\nClustering analysis - an in-house approach\nClustering analysis - the Seurat way"
+    "text": "Getting data\nExploratory data analysis and preprocessing\nClustering analysis - an in-house approach\nClustering analysis - the Seurat way\nPredicting biomarker status imputing missing values"
   },
   {
     "objectID": "index.html",
@@ -473,7 +473,7 @@
     "href": "r4_predict_erstatus.html#workflow",
     "title": "Predicting ER status imputing missing values",
     "section": "Workflow",
-    "text": "Workflow\n\nI applied three supervised learning method (logist regression, random forest, support vector machine) and optimized their hyperparameters using a grid search using balanced accurancy as evaluation metric.\nTo handle missing data, I used the KNNimputer, which imputes values based on the nearest neighbors in the feature space.\nFor feature selection, I applied mutual_info_classif to retain the most informative features with respect to the target variable (ER status).\nTo address class imbalance, I set the parameter class_weight=’balanced, ensuring that the model gives appropriate attention to minority classes during training."
+    "text": "Workflow\n\nI compared three supervised learning method (logist regression, random forest, support vector machine) optimizing their hyperparameters using a grid search with balanced accuracy as evaluation metric.\nTo handle missing data, I used the KNNimputer, which imputes values based on the nearest neighbors in the feature space.\nFor feature selection, I applied mutual_info_classif to retain the most informative features with respect to the target variable (ER status).\nTo address class imbalance, I set the parameter class_weight=balanced to ensure that the model gives appropriate attention to minority classes during training."
   },
   {
     "objectID": "r4_predict_erstatus.html#conclusion",
