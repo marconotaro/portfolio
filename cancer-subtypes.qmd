@@ -1,5 +1,5 @@
 ---
-title: "Identification of breast cancer subtypes from a bulk RNA-Seq data via a graph-based approach"
+title: "Identification of breast cancer subtypes from bulk RNA-Seq data via a graph-based approach"
 format:
   html:
     code-tools: false
@@ -9,3 +9,4 @@ format:
 - [Exploratory data analysis and preprocessing](r1_eda.qmd)
 - [Clustering analysis - an in-house approach](r2_clustering.qmd)
 - [Clustering analysis - the Seurat way](r3_clustering_seurat.qmd)
+- [Predicting biomarker status imputing missing values](r4_predict_erstatus.ipynb)
