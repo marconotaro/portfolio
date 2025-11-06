@@ -50,6 +50,8 @@ website:
     tools:
       - icon: github
         href: https://github.com/marconotaro/portfolio
+      - icon: globe-americas
+        href: https://marconotaro.github.io
   page-footer:
     left: "&copy; Copyright 2025, Marco Notaro"
     right: "[MIT License](license.md)"
