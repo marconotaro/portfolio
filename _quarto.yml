@@ -25,6 +25,8 @@ website:
             text: "Contribution to SUSHI"
       - text: "Machine Learning"
         menu:
+          - href: "biomarker-discovery-ornish.ipynb"
+            text: "Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier"
           - href: "predict-housing-prices.ipynb"
             text: "Predicting housing prices in California"
           - href: "r4_predict_erstatus.ipynb"
