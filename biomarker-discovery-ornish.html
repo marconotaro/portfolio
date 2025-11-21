@@ -460,11 +460,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="goal" class="level2">
 <h2 class="anchored" data-anchor-id="goal">Goal</h2>
-<p>The goal of this project is to find gene biomarker for weight loss response.</p>
+<p>The goal of this project is to find gene biomarker for weight loss response from a publicly available dataset. To this I trained a decision-tree method (XGBoost) using Bayesian optimization for tuning its hyperparameters. Finally I used theS HAP values to explain the results.</p>
 </section>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>I downloaded the Ornish dataset from the <a href="https://doi.org/10.1093/bioinformatics/btad384">MEvA-X tool</a>. This dataset is already <a href="https://github.com/PanKonstantinos/MEvA-X/tree/main/Data/Ornish">normalized</a> and contains microarry gene expression, with information of Age, Gender, COPD, Diabetes, and WeightLoss, making 13’520 features on 89 participants. WeightLoss is a binary variable: Responders for participants with a weight loss higher than 10% and Non_responders otherwise.</p>
+<p>I downloaded the <a href="https://github.com/PanKonstantinos/MEvA-X/tree/main/Data/Ornish">Ornish</a> dataset from the <a href="https://doi.org/10.1093/bioinformatics/btad384">MEvA-X tool</a>. This dataset is already normalized and contains microarry gene expression, with information of Age, Gender, COPD, Diabetes, and WeightLoss, making 13’520 features on 89 participants. WeightLoss is a binary variable: Responders for participants with a weight loss higher than 10% and Non_responders otherwise.</p>
 <div id="d58c13f1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>

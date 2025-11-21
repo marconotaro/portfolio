@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.31">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="dcterms.date" content="2025-07-18">
 <title>Exploratory data analysis: validation of technical replicates</title>
 <style>
 code{white-space: pre-wrap;}
@@ -100,10 +101,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script><link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.33/datatables.js"></script><script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script><script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 </head>
 <body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -417,6 +418,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 18, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -547,8 +554,8 @@ Note
 <span><span class="op">}</span></span>
 <span><span class="va">tib</span> <span class="op">|&gt;</span> <span class="fu">datatable</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-4a5f6cc663eebd909e89" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4a5f6cc663eebd909e89">{"x":{"filter":"none","vertical":false,"data":[["F8 vs F8repl","F30 vs F30repl","F49 vs F49repl","F54 vs F54repl","F69 vs F69repl","F73 vs F73repl","F112 vs F112repl","F116 vs F116repl","F184 vs F184repl","F185 vs F185repl","F187 vs F187repl","F218 vs F218repl","F229 vs F229repl","F274 vs F274repl","F282 vs F282repl","F327 vs F327repl","F405 vs F405repl","F437 vs F437repl","F445 vs F445repl","F461 vs F461repl","F498 vs F498repl","F542 vs F542repl","F545 vs F545repl","F573 vs F573repl","F574 vs F574repl","F673 vs F673repl","F679 vs F679repl","F685 vs F685repl","F713 vs F713repl","F717 vs F717repl","F724 vs F724repl","F748 vs F748repl","F766 vs F766repl","F777 vs F777repl","F781 vs F781repl","F783 vs F783repl","F784 vs F784repl","F785 vs F785repl","F799 vs F799repl","F803 vs F803repl","F804 vs F804repl","F807 vs F807repl","F813 vs F813repl","F833 vs F833repl","F847 vs F847repl","F895 vs F895repl","F912 vs F912repl","F933 vs F933repl","F934 vs F934repl","F1101 vs F1101repl","F1108 vs F1108repl","F1143 vs F1143repl","F1156 vs F1156repl","F1167 vs F1167repl","F1197 vs F1197repl","F1214 vs F1214repl","F1283 vs F1283repl","F1392 vs F1392repl","F1438 vs F1438repl","F1439 vs F1439repl","F1497 vs F1497repl","F1515 vs F1515repl","F1519 vs F1519repl","F1580 vs F1580repl","F1581 vs F1581repl","F1582 vs F1582repl","F1584 vs F1584repl","F1587 vs F1587repl","F1591 vs F1591repl","F1605 vs F1605repl","F1617 vs F1617repl","F1628 vs F1628repl","F1635 vs F1635repl","F1640 vs F1640repl","F1648 vs F1648repl","F1658 vs F1658repl","F1689 vs F1689repl","F1748 vs F1748repl","F1781 vs F1781repl","F1905 vs F1905repl","F1923 vs F1923repl","F1928 vs F1928repl","F1950 vs F1950repl","F1965 vs F1965repl","F2018 vs F2018repl","F2067 vs F2067repl","F2069 vs F2069repl","F2151 vs F2151repl","F2174 vs F2174repl","F2175 vs F2175repl","F2277 vs F2277repl","F2281 vs F2281repl","F2287 vs F2287repl","F2299 vs F2299repl","F2359 vs F2359repl","F2384 vs F2384repl","F2390 vs F2390repl","F2398 vs F2398repl","F2406 vs F2406repl","F2407 vs F2407repl","F2408 vs F2408repl","F2424 vs F2424repl","F2459 vs F2459repl","F2482 vs F2482repl","F2503 vs F2503repl","F2539 vs F2539repl","F2621 vs F2621repl","F2625 vs F2625repl","F2632 vs F2632repl","F2656 vs F2656repl","F2679 vs F2679repl","F2691 vs F2691repl","F2703 vs F2703repl","F2755 vs F2755repl","F2781 vs F2781repl","F2790 vs F2790repl","F2840 vs F2840repl","F2841 vs F2841repl","F2860 vs F2860repl","F2871 vs F2871repl","F2872 vs F2872repl","F2877 vs F2877repl","F2911 vs F2911repl","F2912 vs F2912repl","F2921 vs F2921repl","F2958 vs F2958repl","F2974 vs F2974repl","F3006 vs F3006repl","F3028 vs F3028repl","F3057 vs F3057repl","F3058 vs F3058repl","F3085 vs F3085repl","F3127 vs F3127repl","F3135 vs F3135repl","F3250 vs F3250repl","F3265 vs F3265repl"],[0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.97,0.97,0.96,0.96,0.97,0.97,0.96,0.96,0.97,0.96,0.96,0.9,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.95,0.96,0.96,0.95,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.96,0.97,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.95,0.96,0.96,0.97,0.96,0.96,0.95,0.96,0.95,0.96,0.9399999999999999,0.96,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>comparison<\/th>\n      <th>correlation<\/th>\n      <th>p_value<\/th>\n      <th>informative<\/th>\n      <th>significant<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","scrollX":true,"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2]},{"name":"comparison","targets":0},{"name":"correlation","targets":1},{"name":"p_value","targets":2},{"name":"informative","targets":3},{"name":"significant","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e25b5ce26d418e0bbad7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e25b5ce26d418e0bbad7">{"x":{"filter":"none","vertical":false,"data":[["F8 vs F8repl","F30 vs F30repl","F49 vs F49repl","F54 vs F54repl","F69 vs F69repl","F73 vs F73repl","F112 vs F112repl","F116 vs F116repl","F184 vs F184repl","F185 vs F185repl","F187 vs F187repl","F218 vs F218repl","F229 vs F229repl","F274 vs F274repl","F282 vs F282repl","F327 vs F327repl","F405 vs F405repl","F437 vs F437repl","F445 vs F445repl","F461 vs F461repl","F498 vs F498repl","F542 vs F542repl","F545 vs F545repl","F573 vs F573repl","F574 vs F574repl","F673 vs F673repl","F679 vs F679repl","F685 vs F685repl","F713 vs F713repl","F717 vs F717repl","F724 vs F724repl","F748 vs F748repl","F766 vs F766repl","F777 vs F777repl","F781 vs F781repl","F783 vs F783repl","F784 vs F784repl","F785 vs F785repl","F799 vs F799repl","F803 vs F803repl","F804 vs F804repl","F807 vs F807repl","F813 vs F813repl","F833 vs F833repl","F847 vs F847repl","F895 vs F895repl","F912 vs F912repl","F933 vs F933repl","F934 vs F934repl","F1101 vs F1101repl","F1108 vs F1108repl","F1143 vs F1143repl","F1156 vs F1156repl","F1167 vs F1167repl","F1197 vs F1197repl","F1214 vs F1214repl","F1283 vs F1283repl","F1392 vs F1392repl","F1438 vs F1438repl","F1439 vs F1439repl","F1497 vs F1497repl","F1515 vs F1515repl","F1519 vs F1519repl","F1580 vs F1580repl","F1581 vs F1581repl","F1582 vs F1582repl","F1584 vs F1584repl","F1587 vs F1587repl","F1591 vs F1591repl","F1605 vs F1605repl","F1617 vs F1617repl","F1628 vs F1628repl","F1635 vs F1635repl","F1640 vs F1640repl","F1648 vs F1648repl","F1658 vs F1658repl","F1689 vs F1689repl","F1748 vs F1748repl","F1781 vs F1781repl","F1905 vs F1905repl","F1923 vs F1923repl","F1928 vs F1928repl","F1950 vs F1950repl","F1965 vs F1965repl","F2018 vs F2018repl","F2067 vs F2067repl","F2069 vs F2069repl","F2151 vs F2151repl","F2174 vs F2174repl","F2175 vs F2175repl","F2277 vs F2277repl","F2281 vs F2281repl","F2287 vs F2287repl","F2299 vs F2299repl","F2359 vs F2359repl","F2384 vs F2384repl","F2390 vs F2390repl","F2398 vs F2398repl","F2406 vs F2406repl","F2407 vs F2407repl","F2408 vs F2408repl","F2424 vs F2424repl","F2459 vs F2459repl","F2482 vs F2482repl","F2503 vs F2503repl","F2539 vs F2539repl","F2621 vs F2621repl","F2625 vs F2625repl","F2632 vs F2632repl","F2656 vs F2656repl","F2679 vs F2679repl","F2691 vs F2691repl","F2703 vs F2703repl","F2755 vs F2755repl","F2781 vs F2781repl","F2790 vs F2790repl","F2840 vs F2840repl","F2841 vs F2841repl","F2860 vs F2860repl","F2871 vs F2871repl","F2872 vs F2872repl","F2877 vs F2877repl","F2911 vs F2911repl","F2912 vs F2912repl","F2921 vs F2921repl","F2958 vs F2958repl","F2974 vs F2974repl","F3006 vs F3006repl","F3028 vs F3028repl","F3057 vs F3057repl","F3058 vs F3058repl","F3085 vs F3085repl","F3127 vs F3127repl","F3135 vs F3135repl","F3250 vs F3250repl","F3265 vs F3265repl"],[0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.97,0.97,0.96,0.96,0.97,0.97,0.96,0.96,0.97,0.96,0.96,0.9,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.95,0.96,0.96,0.95,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.96,0.97,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.95,0.96,0.96,0.97,0.96,0.96,0.95,0.96,0.95,0.96,0.9399999999999999,0.96,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>comparison<\/th>\n      <th>correlation<\/th>\n      <th>p_value<\/th>\n      <th>informative<\/th>\n      <th>significant<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","scrollX":true,"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2]},{"name":"comparison","targets":0},{"name":"correlation","targets":1},{"name":"p_value","targets":2},{"name":"informative","targets":3},{"name":"significant","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>As an example, below I show the scatter plots of the first 12 pairs.</p>
@@ -1084,203 +1091,205 @@ Note
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exploratory data analysis: validation of technical replicates"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PCAtools)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aims </span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">GSE96058</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96058)</span> patient cohort contains 3273 samples of which 136 have technical replicates. Some of these replicates were sequenced on a different sequencer (HiSeq2000 and NextSeq500). In this report, I analyze the gene expression profiles of these technical replicates to assess their similarity. This serves as a technical validation before averaging their gene expression values.</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validation of technical replicates</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 07/18/2025</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "MMMM D, YYYY"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PCAtools)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aims </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">GSE96058</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96058)</span> patient cohort contains 3273 samples of which 136 have technical replicates. Some of these replicates were sequenced on a different sequencer (HiSeq2000 and NextSeq500). In this report, I analyze the gene expression profiles of these technical replicates to assess their similarity. This serves as a technical validation before averaging their gene expression values.</span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>The authors provided only transformed gene expression data, which I then used for downstream analysis.</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading data</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validation of technical replicates</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>The authors provided only transformed gene expression data, which I then used for downstream analysis.</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>gexp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">'data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv.gz'</span>, </span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>()</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">genes =</span> <span class="st">`</span><span class="at">...1</span><span class="st">`</span>)</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'data/metadata.csv'</span>, <span class="at">col_types =</span> <span class="fu">cols</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sampleID =</span> values, <span class="at">sampleName =</span> ind)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">'repl'</span>)) <span class="sc">|&gt;</span> <span class="fu">colnames</span>() <span class="sc">|&gt;</span> <span class="fu">str_remove</span>(<span class="st">'repl'</span>)</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>mxrep <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(genes, <span class="fu">all_of</span>(rep) <span class="sc">|</span> <span class="fu">contains</span>(<span class="st">'repl'</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>) </span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>mdrep <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span> </span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sampleID <span class="sc">%in%</span> <span class="fu">colnames</span>(mxrep)) <span class="sc">|&gt;</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sampleID, instrument_model, age_at_diagnosis, </span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>         tumor_size, lymph_node_group, lymph_node_status, </span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>         her2_status, ki67_status, pgr_status, nhg, </span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>         endocrine_treated, chemo_treated) <span class="sc">|&gt;</span> </span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### PCA</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading data</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>gexp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="st">'data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv.gz'</span>, </span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>()</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">genes =</span> <span class="st">`</span><span class="at">...1</span><span class="st">`</span>)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'data/metadata.csv'</span>, <span class="at">col_types =</span> <span class="fu">cols</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sampleID =</span> values, <span class="at">sampleName =</span> ind)</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">'repl'</span>)) <span class="sc">|&gt;</span> <span class="fu">colnames</span>() <span class="sc">|&gt;</span> <span class="fu">str_remove</span>(<span class="st">'repl'</span>)</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>mxrep <span class="ot">&lt;-</span> gexp <span class="sc">|&gt;</span> </span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(genes, <span class="fu">all_of</span>(rep) <span class="sc">|</span> <span class="fu">contains</span>(<span class="st">'repl'</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'genes'</span>) </span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>mdrep <span class="ot">&lt;-</span> meta <span class="sc">|&gt;</span> </span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sampleID <span class="sc">%in%</span> <span class="fu">colnames</span>(mxrep)) <span class="sc">|&gt;</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sampleID, instrument_model, age_at_diagnosis, </span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>         tumor_size, lymph_node_group, lymph_node_status, </span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>         her2_status, ki67_status, pgr_status, nhg, </span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>         endocrine_treated, chemo_treated) <span class="sc">|&gt;</span> </span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">'sampleID'</span>)</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>I apply a Principal Component Analysis (PCA) on the gene expression profiles of technical replicates (marked with the same color) to assess similarity in gene expression. As expected, technical replicates cluster together.</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### PCA</span></span>
 <span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 15</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 15</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>pc <span class="ot">&lt;-</span> PCAtools<span class="sc">::</span><span class="fu">pca</span>(mxrep, <span class="at">metadata =</span> mdrep, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>, <span class="at">removeVar =</span> <span class="fl">0.1</span>)</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>I apply a Principal Component Analysis (PCA) on the gene expression profiles of technical replicates (marked with the same color) to assess similarity in gene expression. As expected, technical replicates cluster together.</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.width: 15</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.height: 15</span></span>
 <span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">rownames</span>(mdrep) <span class="sc">%in%</span> <span class="fu">rownames</span>(pc<span class="sc">$</span>rotated))</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>pc <span class="ot">&lt;-</span> PCAtools<span class="sc">::</span><span class="fu">pca</span>(mxrep, <span class="at">metadata =</span> mdrep, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>, <span class="at">removeVar =</span> <span class="fl">0.1</span>)</span>
 <span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>plot_pca <span class="ot">&lt;-</span> <span class="cf">function</span>(pc, <span class="at">pcx =</span><span class="st">'PC1'</span>, <span class="at">pcy =</span> <span class="st">'PC2'</span>){</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  pc_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(pc<span class="sc">$</span>rotated[, <span class="fu">c</span>(pcx, pcy)], mdrep) <span class="sc">|&gt;</span></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">'sample'</span>)<span class="sc">|&gt;</span></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">strip_rep =</span> <span class="fu">str_replace</span>(sample, <span class="st">'repl'</span>, <span class="st">''</span>))</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>  pc_val <span class="ot">&lt;-</span> <span class="fu">round</span>(pc<span class="sc">$</span>variance[<span class="fu">c</span>(pcx, pcy)], <span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="fu">unname</span>()</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">rownames</span>(mdrep) <span class="sc">%in%</span> <span class="fu">rownames</span>(pc<span class="sc">$</span>rotated))</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>plot_pca <span class="ot">&lt;-</span> <span class="cf">function</span>(pc, <span class="at">pcx =</span><span class="st">'PC1'</span>, <span class="at">pcy =</span> <span class="st">'PC2'</span>){</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>  pc_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(pc<span class="sc">$</span>rotated[, <span class="fu">c</span>(pcx, pcy)], mdrep) <span class="sc">|&gt;</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">'sample'</span>)<span class="sc">|&gt;</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">strip_rep =</span> <span class="fu">str_replace</span>(sample, <span class="st">'repl'</span>, <span class="st">''</span>))</span>
 <span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(pc_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">!!</span><span class="fu">sym</span>(pcx), <span class="at">y =</span> <span class="sc">!!</span><span class="fu">sym</span>(pcy), <span class="at">color =</span> strip_rep, <span class="at">shape =</span> instrument_model)) <span class="sc">+</span></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>,</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, pc_val[<span class="dv">1</span>], <span class="st">"% variance)"</span>),</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, pc_val[<span class="dv">2</span>], <span class="st">"% variance)"</span>),</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>         <span class="at">shape =</span> <span class="st">"Platform"</span>,) <span class="sc">+</span></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="at">data =</span> pc_data, </span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">aes</span>(<span class="at">label =</span> sample), </span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>                    <span class="at">min.segment.length =</span> <span class="dv">5</span>, <span class="at">max.overlaps =</span> <span class="cn">Inf</span>) <span class="sc">+</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pca</span>(pc, <span class="at">pcx =</span><span class="st">'PC1'</span>, <span class="at">pcy =</span> <span class="st">'PC2'</span>)</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample correlations</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>  pc_val <span class="ot">&lt;-</span> <span class="fu">round</span>(pc<span class="sc">$</span>variance[<span class="fu">c</span>(pcx, pcy)], <span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="fu">unname</span>()</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(pc_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">!!</span><span class="fu">sym</span>(pcx), <span class="at">y =</span> <span class="sc">!!</span><span class="fu">sym</span>(pcy), <span class="at">color =</span> strip_rep, <span class="at">shape =</span> instrument_model)) <span class="sc">+</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, pc_val[<span class="dv">1</span>], <span class="st">"% variance)"</span>),</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, pc_val[<span class="dv">2</span>], <span class="st">"% variance)"</span>),</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>         <span class="at">shape =</span> <span class="st">"Platform"</span>,) <span class="sc">+</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="at">data =</span> pc_data, </span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">aes</span>(<span class="at">label =</span> sample), </span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>                    <span class="at">min.segment.length =</span> <span class="dv">5</span>, <span class="at">max.overlaps =</span> <span class="cn">Inf</span>) <span class="sc">+</span></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pca</span>(pc, <span class="at">pcx =</span><span class="st">'PC1'</span>, <span class="at">pcy =</span> <span class="st">'PC2'</span>)</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>For a quantitative overview, I compute the Spearman's rank correlation for each pair. As expected, technical replicates are strongly correlated (coefficient higher than 0.9) and their gene expression can be safely averaged for downstream analyses.</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample correlations</span></span>
 <span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r }</span></span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>mxrep_paired <span class="ot">&lt;-</span> mxrep[, <span class="fu">str_sort</span>(<span class="fu">colnames</span>(mxrep), <span class="at">numeric =</span> <span class="cn">TRUE</span>)]</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>tib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">comparison =</span> <span class="fu">character</span>(),</span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">correlation =</span> <span class="fu">numeric</span>(),</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">p_value =</span> <span class="fu">numeric</span>(),</span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>  <span class="at">informative =</span> <span class="fu">logical</span>(),</span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>  <span class="at">significant =</span> <span class="fu">logical</span>()</span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">ncol</span>(mxrep_paired)<span class="sc">-</span><span class="dv">1</span>, <span class="at">by =</span> <span class="dv">2</span>)){</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>  corr <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(mxrep_paired[, i], </span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>                   mxrep_paired[, i<span class="sc">+</span><span class="dv">1</span>], </span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">'spearman'</span>,</span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>                   <span class="at">exact =</span> <span class="cn">FALSE</span></span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>                  )</span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">comparison =</span> <span class="fu">paste</span>(<span class="fu">colnames</span>(mxrep_paired)[i<span class="sc">:</span>(i<span class="sc">+</span><span class="dv">1</span>)], <span class="at">collapse=</span><span class="st">' vs '</span>),</span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">correlation =</span> <span class="fu">round</span>(corr<span class="sc">$</span>estimate, <span class="dv">2</span>),</span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_value =</span> corr<span class="sc">$</span>p.value,</span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">informative =</span>  <span class="fu">round</span>(corr<span class="sc">$</span>estimate, <span class="dv">2</span>) <span class="sc">&gt;=</span> <span class="fl">0.90</span>,</span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>    <span class="at">significant =</span> corr<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span></span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>  tib <span class="ot">&lt;-</span> <span class="fu">rbind</span>(tib, tmp)</span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>datatable <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">row2display =</span> <span class="dv">10</span>) {</span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">nrow</span>(tib) <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(tib,</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>      <span class="at">rownames   =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>      <span class="at">options    =</span> <span class="fu">list</span>(</span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>        <span class="at">dom =</span> <span class="st">"Bfrtip"</span>,</span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>        <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>        <span class="at">pageLength =</span> row2display</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"No results"</span>)</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>tib <span class="sc">|&gt;</span> <span class="fu">datatable</span>()</span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>As an example, below I show the scatter plots of the first 12 pairs.</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>For a quantitative overview, I compute the Spearman's rank correlation for each pair. As expected, technical replicates are strongly correlated (coefficient higher than 0.9) and their gene expression can be safely averaged for downstream analyses.</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r }</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>mxrep_paired <span class="ot">&lt;-</span> mxrep[, <span class="fu">str_sort</span>(<span class="fu">colnames</span>(mxrep), <span class="at">numeric =</span> <span class="cn">TRUE</span>)]</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>tib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">comparison =</span> <span class="fu">character</span>(),</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>  <span class="at">correlation =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>  <span class="at">p_value =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>  <span class="at">informative =</span> <span class="fu">logical</span>(),</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>  <span class="at">significant =</span> <span class="fu">logical</span>()</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">ncol</span>(mxrep_paired)<span class="sc">-</span><span class="dv">1</span>, <span class="at">by =</span> <span class="dv">2</span>)){</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>  corr <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(mxrep_paired[, i], </span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>                   mxrep_paired[, i<span class="sc">+</span><span class="dv">1</span>], </span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">'spearman'</span>,</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>                   <span class="at">exact =</span> <span class="cn">FALSE</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">comparison =</span> <span class="fu">paste</span>(<span class="fu">colnames</span>(mxrep_paired)[i<span class="sc">:</span>(i<span class="sc">+</span><span class="dv">1</span>)], <span class="at">collapse=</span><span class="st">' vs '</span>),</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">correlation =</span> <span class="fu">round</span>(corr<span class="sc">$</span>estimate, <span class="dv">2</span>),</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_value =</span> corr<span class="sc">$</span>p.value,</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">informative =</span>  <span class="fu">round</span>(corr<span class="sc">$</span>estimate, <span class="dv">2</span>) <span class="sc">&gt;=</span> <span class="fl">0.90</span>,</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>    <span class="at">significant =</span> corr<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>  tib <span class="ot">&lt;-</span> <span class="fu">rbind</span>(tib, tmp)</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>datatable <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">row2display =</span> <span class="dv">10</span>) {</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">nrow</span>(tib) <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(tib,</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>      <span class="at">rownames   =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>      <span class="at">options    =</span> <span class="fu">list</span>(</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>        <span class="at">dom =</span> <span class="st">"Bfrtip"</span>,</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>        <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>        <span class="at">pageLength =</span> row2display</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"No results"</span>)</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>tib <span class="sc">|&gt;</span> <span class="fu">datatable</span>()</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>scatter_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(data, sample, replicate) {</span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">!!</span><span class="fu">sym</span>(sample), <span class="at">y =</span> <span class="sc">!!</span><span class="fu">sym</span>(replicate))) <span class="sc">+</span></span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#56B4E9"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"#D55E00"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(sample, <span class="st">"vs"</span>, replicate),</span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(data[[sample]], data[[replicate]], <span class="at">method =</span> <span class="st">"spearman"</span>), <span class="dv">3</span>))</span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)</span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>get_pair <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">npairs=</span><span class="dv">10</span>){</span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>  pairs <span class="ot">&lt;-</span> <span class="fu">str_split</span>(tib<span class="sc">$</span>comparison, <span class="st">" vs "</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span>npairs,]</span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> pairs[, <span class="dv">1</span>]</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>  replicate <span class="ot">&lt;-</span> pairs[, <span class="dv">2</span>]</span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">sample =</span> sample, <span class="at">replicate =</span> replicate))</span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>sp <span class="ot">&lt;-</span> <span class="fu">get_pair</span>(tib, <span class="at">npairs =</span> <span class="dv">12</span>)</span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map2</span>(sp<span class="sc">$</span>sample, sp<span class="sc">$</span>replicate, <span class="sc">~</span><span class="fu">scatter_plot</span>(mxrep, .x, .y))</span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## Averaging of gene expression of technical replicates</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>As an example, below I show the scatter plots of the first 12 pairs.</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>scatter_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(data, sample, replicate) {</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">!!</span><span class="fu">sym</span>(sample), <span class="at">y =</span> <span class="sc">!!</span><span class="fu">sym</span>(replicate))) <span class="sc">+</span></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#56B4E9"</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"#D55E00"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(sample, <span class="st">"vs"</span>, replicate),</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"r ="</span>, <span class="fu">round</span>(<span class="fu">cor</span>(data[[sample]], data[[replicate]], <span class="at">method =</span> <span class="st">"spearman"</span>), <span class="dv">3</span>))</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>get_pair <span class="ot">&lt;-</span> <span class="cf">function</span>(tib, <span class="at">npairs=</span><span class="dv">10</span>){</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>  pairs <span class="ot">&lt;-</span> <span class="fu">str_split</span>(tib<span class="sc">$</span>comparison, <span class="st">" vs "</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span>npairs,]</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> pairs[, <span class="dv">1</span>]</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>  replicate <span class="ot">&lt;-</span> pairs[, <span class="dv">2</span>]</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">sample =</span> sample, <span class="at">replicate =</span> replicate))</span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>sp <span class="ot">&lt;-</span> <span class="fu">get_pair</span>(tib, <span class="at">npairs =</span> <span class="dv">12</span>)</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>plist <span class="ot">&lt;-</span> <span class="fu">map2</span>(sp<span class="sc">$</span>sample, sp<span class="sc">$</span>replicate, <span class="sc">~</span><span class="fu">scatter_plot</span>(mxrep, .x, .y))</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plist, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>mxrep_averaged <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">ncol</span>(mxrep_paired)<span class="sc">-</span><span class="dv">1</span>, <span class="at">by =</span> <span class="dv">2</span>)){</span>
-<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>  mxrep_averaged <span class="ot">&lt;-</span> <span class="fu">cbind</span>(mxrep_averaged, <span class="fu">rowMeans</span>(mxrep_paired[,i<span class="sc">:</span>(i<span class="sc">+</span><span class="dv">1</span>)]))</span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cat(colnames(mxrep_paired)[i], colnames(mxrep_paired)[i+1], 'averaged\n')</span></span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>norep <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(<span class="fu">colnames</span>(mxrep_paired), <span class="st">'repl'</span>, <span class="at">negate=</span><span class="cn">TRUE</span>)</span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mxrep_averaged) <span class="ot">&lt;-</span> norep</span>
-<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>gexp_rep <span class="ot">&lt;-</span> mxrep_averaged <span class="sc">|&gt;</span> </span>
-<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">'genes'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>fout <span class="ot">&lt;-</span> <span class="st">'data/gene_expression_profile.csv.gz'</span></span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">file.exists</span>(fout)){</span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>  gexp <span class="sc">|&gt;</span> </span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(<span class="fu">colnames</span>(gexp_rep)[<span class="sc">-</span><span class="dv">1</span>])) <span class="sc">|&gt;</span> </span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(gexp_rep, <span class="at">by =</span> <span class="st">'genes'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"repl"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>    {\(s)  <span class="do">## lambda function ..</span></span>
-<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(s, genes, <span class="fu">all_of</span>(<span class="fu">str_sort</span>(<span class="fu">names</span>(<span class="fu">select</span>(s, <span class="fu">starts_with</span>(<span class="st">"F"</span>))), <span class="at">numeric =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>    }() <span class="sc">|&gt;</span></span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>    <span class="do">## %&gt;% select(., all_of(str_sort(colnames(select(., starts_with('F'))), numeric = TRUE)))</span></span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_csv</span>(fout) <span class="do">## automatically compress by readr</span></span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Averaging of gene expression of technical replicates</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>mxrep_averaged <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">ncol</span>(mxrep_paired)<span class="sc">-</span><span class="dv">1</span>, <span class="at">by =</span> <span class="dv">2</span>)){</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>  mxrep_averaged <span class="ot">&lt;-</span> <span class="fu">cbind</span>(mxrep_averaged, <span class="fu">rowMeans</span>(mxrep_paired[,i<span class="sc">:</span>(i<span class="sc">+</span><span class="dv">1</span>)]))</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cat(colnames(mxrep_paired)[i], colnames(mxrep_paired)[i+1], 'averaged\n')</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>norep <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(<span class="fu">colnames</span>(mxrep_paired), <span class="st">'repl'</span>, <span class="at">negate=</span><span class="cn">TRUE</span>)</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mxrep_averaged) <span class="ot">&lt;-</span> norep</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>gexp_rep <span class="ot">&lt;-</span> mxrep_averaged <span class="sc">|&gt;</span> </span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">'genes'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>fout <span class="ot">&lt;-</span> <span class="st">'data/gene_expression_profile.csv.gz'</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">file.exists</span>(fout)){</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>  gexp <span class="sc">|&gt;</span> </span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(<span class="fu">colnames</span>(gexp_rep)[<span class="sc">-</span><span class="dv">1</span>])) <span class="sc">|&gt;</span> </span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(gexp_rep, <span class="at">by =</span> <span class="st">'genes'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"repl"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>    {\(s)  <span class="do">## lambda function ..</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(s, genes, <span class="fu">all_of</span>(<span class="fu">str_sort</span>(<span class="fu">names</span>(<span class="fu">select</span>(s, <span class="fu">starts_with</span>(<span class="st">"F"</span>))), <span class="at">numeric =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>    }() <span class="sc">|&gt;</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>    <span class="do">## %&gt;% select(., all_of(str_sort(colnames(select(., starts_with('F'))), numeric = TRUE)))</span></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_csv</span>(fout) <span class="do">## automatically compress by readr</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
