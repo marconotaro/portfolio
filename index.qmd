@@ -26,6 +26,7 @@ format:
 
 ## Machine learning
 
+- [Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier](biomarker-discovery-ornish.ipynb)
 - [Predicting housing prices in California](predict-housing-prices.ipynb)
 - [Predicting biomarker status imputing missing values](r4_predict_erstatus.ipynb)
 - [Predicting salary and new connections from network data](ml-graph.ipynb)
