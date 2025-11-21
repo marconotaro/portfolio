@@ -3,6 +3,8 @@ title: "Identification of breast cancer subtypes from bulk RNA-Seq data via a gr
 format:
   html:
     code-tools: false
+date: 09/18/2025
+date-format: "MMMM D, YYYY"
 ---
 
 - [Getting data](r0_getdata.qmd)
