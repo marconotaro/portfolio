@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,16 +68,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4c5931b574047af1f75da836f6795c0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9c7b8fac256f71d548ed825c5e9e7f25.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-84466f93ea5b8fb721a8c142303eab4c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3974ab9ee1cb9ff59384e7f37ad48039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -493,7 +494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="loading-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="loading-libraries">Loading libraries</h2>
 <div id="654facc8-7578-450c-a0bf-116fceafa36a" class="cell" data-tags="[]" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -520,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> torch.backends.mps.is_available()</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="st">"cpu"</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Using </span><span class="sc">{</span>device<span class="sc">}</span><span class="ss"> device"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Using </span><span class="sc">{</span>device<span class="sc">}</span><span class="ss"> device"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Using cpu device</code></pre>
 </div>
@@ -529,7 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="loading-the-protein-sequences-and-labels" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-protein-sequences-and-labels">Loading the protein sequences and labels</h2>
 <div id="0443bcd6-fa2a-412e-a9f9-f1ad2d224497" class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## training data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## training data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> np.load(<span class="st">'data/reduced_train.npz'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> train[<span class="st">'X_train'</span>]</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> train[<span class="st">'y_train'</span>]</span>
@@ -539,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>validation <span class="op">=</span> np.load(<span class="st">'data/reduced_val.npz'</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>X_valid <span class="op">=</span> validation[<span class="st">'X_val'</span>]</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>y_valid <span class="op">=</span> validation[<span class="st">'y_val'</span>]</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'valid:'</span>, X_valid.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'valid:'</span>, X_valid.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>train: (2423, 400, 20)
 valid: (635, 400, 20)</code></pre>
@@ -549,7 +550,7 @@ valid: (635, 400, 20)</code></pre>
 <section id="defining-the-subcellular-localization" class="level2">
 <h2 class="anchored" data-anchor-id="defining-the-subcellular-localization">Defining the subcellular localization</h2>
 <div id="c027e0fd-67e0-46a5-a905-b646c732c9f4" class="cell" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [<span class="st">'Nucleus'</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [<span class="st">'Nucleus'</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Cytoplasm'</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Extracellular'</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Mitochondrion'</span>,</span>
@@ -562,7 +563,7 @@ valid: (635, 400, 20)</code></pre>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>dico_classes_subcell<span class="op">=</span>{i:v <span class="cf">for</span> i,v <span class="kw">in</span> <span class="bu">enumerate</span>(classes)}</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> dico_classes_subcell.keys():</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Target'</span>, i, dico_classes_subcell[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Target'</span>, i, dico_classes_subcell[i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Target 0 Nucleus
 Target 1 Cytoplasm
@@ -580,7 +581,7 @@ Target 9 Vacuole</code></pre>
 <section id="building-the-data-loaders" class="level2">
 <h2 class="anchored" data-anchor-id="building-the-data-loaders">Building the data loaders</h2>
 <div id="505cfefb-f7d3-4534-b9e3-5ba75ce8d4d3" class="cell" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">128</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># transform to torch tensor</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>X_train_tensor <span class="op">=</span> torch.Tensor(X_train) </span>
@@ -595,13 +596,13 @@ Target 9 Vacuole</code></pre>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">## create the dataloader</span></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(train_dataset, batch_size <span class="op">=</span> batch_size) </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>valid_dataloader <span class="op">=</span> DataLoader(valid_dataset, batch_size <span class="op">=</span> batch_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>valid_dataloader <span class="op">=</span> DataLoader(valid_dataset, batch_size <span class="op">=</span> batch_size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="building-the-convolutional-neural-network-cnn" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-convolutional-neural-network-cnn">Building the convolutional neural network (CNN)</h3>
 <p>This CNN uses two convolutional layers with a 3x3 kernel and a ReLU activation, followed by max pooling to downsample the sequence length while preserving the feature dimension. The resulting features are flattened and fed into a fully connected layer, which maps the extracted features to the 10 subcellular localizations.</p>
 <div id="9a9b9275-bf8f-4129-9396-d4a2204354b9" class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProteinLoc_CNN(nn.Module):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProteinLoc_CNN(nn.Module):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, seq_len<span class="op">=</span><span class="dv">400</span>, n_feat<span class="op">=</span><span class="dv">20</span>, n_class<span class="op">=</span><span class="dv">10</span>, out_channels<span class="op">=</span><span class="dv">10</span>):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        </span>
@@ -643,7 +644,7 @@ Target 9 Vacuole</code></pre>
 <span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="co"># check model</span></span>
 <span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>x, _ <span class="op">=</span> train_dataset[<span class="dv">0</span>]</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pms.summary(model, x.reshape(<span class="dv">1</span>, <span class="dv">400</span>, <span class="dv">20</span>).to(device), show_input<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pms.summary(model, x.reshape(<span class="dv">1</span>, <span class="dv">400</span>, <span class="dv">20</span>).to(device), show_input<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>ProteinLoc_CNN(
   (conv): Sequential(
@@ -682,7 +683,7 @@ Non-trainable params: 0
 <h3 class="anchored" data-anchor-id="building-the-feedforward-neural-network-fnn">Building the feedforward neural network (FNN)</h3>
 <p>Taken from the 2nd notebook of the course</p>
 <div id="2c8d43c5-53bb-4de6-bc8b-fe39ba05ee59" class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProteinLoc_FNN(torch.nn.Module):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProteinLoc_FNN(torch.nn.Module):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span> , input_dim <span class="op">=</span> <span class="dv">8000</span>, </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                         hidden_dim <span class="op">=</span> [<span class="dv">80</span>],</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                         output_dim <span class="op">=</span> <span class="dv">10</span>, </span>
@@ -717,7 +718,7 @@ Non-trainable params: 0
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model)</span>
 <span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">## check model</span></span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pms.summary(model, torch.zeros(<span class="dv">1</span>,<span class="dv">400</span>,<span class="dv">20</span>).to(device), show_input<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pms.summary(model, torch.zeros(<span class="dv">1</span>,<span class="dv">400</span>,<span class="dv">20</span>).to(device), show_input<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>ProteinLoc_FNN(
   (flatten): Flatten(start_dim=1, end_dim=-1)
@@ -748,7 +749,7 @@ Non-trainable params: 0
 <section id="trainingvalidation-and-plotting-functions" class="level2">
 <h2 class="anchored" data-anchor-id="trainingvalidation-and-plotting-functions">Training/validation and plotting functions</h2>
 <div id="a0f3dbcb-4307-439f-a846-a281a5ea3367" class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train(dataloader, model, loss_fn, optimizer, echo<span class="op">=</span><span class="va">True</span>, echo_batch<span class="op">=</span><span class="va">False</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train(dataloader, model, loss_fn, optimizer, echo<span class="op">=</span><span class="va">True</span>, echo_batch<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> <span class="bu">len</span>(dataloader.dataset) <span class="co"># how many batches do we have</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    model.train() <span class="co"># Sets the module in training mode.</span></span>
@@ -798,12 +799,12 @@ Non-trainable params: 0
 <span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> echo:</span>
 <span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\t</span><span class="ss">Valid loss: </span><span class="sc">{</span>valid_loss<span class="sc">:&gt;8f}</span><span class="ss">"</span>)</span>
 <span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>  valid_loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>  valid_loss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="utility-functions" class="level3">
 <h3 class="anchored" data-anchor-id="utility-functions">Utility functions</h3>
 <div id="4c785d72-79f5-4a18-bde8-66b3f413088d" class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## get predicted and target from the model</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## get predicted and target from the model</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_model_predictions_and_y(model, dataloader):</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    target <span class="op">=</span> np.array([], dtype<span class="op">=</span> <span class="st">'float32'</span>) <span class="co">## []</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    predicted <span class="op">=</span> np.array([], dtype<span class="op">=</span> <span class="st">'float32'</span>) <span class="co">## []</span></span>
@@ -834,13 +835,13 @@ Non-trainable params: 0
 <span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        hours <span class="op">=</span> <span class="bu">int</span>(seconds <span class="op">//</span> <span class="dv">3600</span>)</span>
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>        remaining_minutes <span class="op">=</span> <span class="bu">int</span>((seconds <span class="op">%</span> <span class="dv">3600</span>)) <span class="op">//</span> <span class="dv">60</span></span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>        remaining_seconds <span class="op">=</span> seconds <span class="op">%</span> <span class="dv">60</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>hours<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span>remaining_minutes<span class="sc">}</span><span class="ss">m and </span><span class="sc">{</span>remaining_seconds<span class="sc">:.2f}</span><span class="ss">s (</span><span class="sc">{</span>seconds<span class="sc">:.2f}</span><span class="ss">s)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>hours<span class="sc">}</span><span class="ss">h </span><span class="sc">{</span>remaining_minutes<span class="sc">}</span><span class="ss">m and </span><span class="sc">{</span>remaining_seconds<span class="sc">:.2f}</span><span class="ss">s (</span><span class="sc">{</span>seconds<span class="sc">:.2f}</span><span class="ss">s)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="plotting-functions" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-functions">Plotting functions</h3>
 <div id="1af258c5-2727-46f7-9401-9b437558c78f" class="cell" data-execution_count="61">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## plot training metrics</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## plot training metrics</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_training(train_scores, valid_scores):</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">8</span>))    </span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -878,7 +879,7 @@ Non-trainable params: 0
 <span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(ylabel)</span>
 <span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    plt.xticks(x, xlabel, rotation<span class="op">=</span><span class="dv">60</span>)</span>
 <span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(acc_score):</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>        plt.text(i, v<span class="op">-</span><span class="fl">0.07</span>, <span class="st">'</span><span class="sc">%.3f</span><span class="st">'</span><span class="op">%</span>v, color<span class="op">=</span><span class="st">'white'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>        plt.text(i, v<span class="op">-</span><span class="fl">0.07</span>, <span class="st">'</span><span class="sc">%.3f</span><span class="st">'</span><span class="op">%</span>v, color<span class="op">=</span><span class="st">'white'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="wrapper-function" class="level3">
@@ -892,7 +893,7 @@ Non-trainable params: 0
 </ul>
 <!-- We train the CNN and FNN using the default hyperparameters of the Adam optimizer ([link](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html)) -->
 <div id="e3bc5e27-3566-449d-9eb0-49771baa3405" class="cell" data-execution_count="62">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_ProteinLoc(model <span class="op">=</span> ProteinLoc_CNN().to(device), </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_ProteinLoc(model <span class="op">=</span> ProteinLoc_CNN().to(device), </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">3</span>, weight_decay<span class="op">=</span><span class="dv">0</span>, <span class="co">## default Adam parameters setting</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span><span class="dv">100</span>, patience<span class="op">=</span><span class="dv">25</span>):</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>   </span>
@@ -955,35 +956,35 @@ Non-trainable params: 0
 <span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Done!"</span>)</span>
 <span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> train_scores, valid_scores, model, CEloss, optimizer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> train_scores, valid_scores, model, CEloss, optimizer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="hyperparmeters" class="level3">
 <h3 class="anchored" data-anchor-id="hyperparmeters">Hyperparmeters</h3>
 <p>Hyperparmeters configuration used for training/testing all the models - for a fair comparison</p>
 <div id="33ceec55-6798-4b7e-9530-72a95e1a4f1d" class="cell" data-execution_count="63">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> <span class="dv">500</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>epochs <span class="op">=</span> <span class="dv">500</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="dv">10</span><span class="op">**-</span><span class="dv">4</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>weight_decay <span class="op">=</span> <span class="dv">10</span><span class="op">**-</span><span class="dv">2</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>patience <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>patience <span class="op">=</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="training-the-cnn" class="level2">
 <h2 class="anchored" data-anchor-id="training-the-cnn">Training the CNN</h2>
 <div id="364f58ed-8a40-4512-978e-a1b5f05e2611" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="64">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>train_scores_cnn, valid_scores_cnn, model_cnn, CEloss_cnn, optimizer_cnn <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    train_ProteinLoc(ProteinLoc_CNN(seq_len<span class="op">=</span><span class="dv">400</span>, n_feat<span class="op">=</span><span class="dv">20</span>, n_class<span class="op">=</span><span class="dv">10</span>, out_channels<span class="op">=</span><span class="dv">40</span>).to(device),</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span>lr, weight_decay<span class="op">=</span>weight_decay,</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span>epochs, patience<span class="op">=</span>patience)<span class="op">;</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="c64cecfc" class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>format_time(elapsed_time)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>format_time(elapsed_time)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>elapsed time: 44m 33.71s (2673.71s)</code></pre>
 </div>
@@ -991,7 +992,7 @@ Non-trainable params: 0
 <section id="evaluating-the-cnn" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-the-cnn">Evaluating the CNN</h3>
 <div id="a07e86ef-f956-4a84-9ddf-63c4e02bbd92" class="cell" data-execution_count="66">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_cnn, valid_scores_cnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_cnn, valid_scores_cnn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1005,7 +1006,7 @@ Non-trainable params: 0
 <section id="training-the-fnn" class="level2">
 <h2 class="anchored" data-anchor-id="training-the-fnn">Training the FNN</h2>
 <div id="7f33d9f7-d439-4312-b688-ca0d1b027133" class="cell" data-scrolled="true" data-tags="[]" data-execution_count="67">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>train_scores_fnn, valid_scores_fnn, model_fnn, CEloss_fnn, optimizer_fnn <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    train_ProteinLoc(ProteinLoc_FNN(input_dim<span class="op">=</span><span class="dv">8000</span>, hidden_dim<span class="op">=</span>[<span class="dv">80</span>], output_dim<span class="op">=</span><span class="dv">10</span>, </span>
@@ -1013,11 +1014,11 @@ Non-trainable params: 0
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                     lr<span class="op">=</span>lr, weight_decay<span class="op">=</span>weight_decay,</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                     epochs<span class="op">=</span>epochs, patience<span class="op">=</span>patience)</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="8874981c" class="cell" data-execution_count="68">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>format_time(elapsed_time)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>format_time(elapsed_time)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>elapsed time: 1m 34.77s (94.77s)</code></pre>
 </div>
@@ -1025,7 +1026,7 @@ Non-trainable params: 0
 <section id="evaluating-the-fnn" class="level3">
 <h3 class="anchored" data-anchor-id="evaluating-the-fnn">Evaluating the FNN</h3>
 <div id="d1e043a1-92d9-4929-a5db-452e79c1054e" class="cell" data-execution_count="69">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_fnn, valid_scores_fnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_model_training(train_scores_fnn, valid_scores_fnn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1039,13 +1040,13 @@ Non-trainable params: 0
 <section id="performance-comparison-cnn-vs-fnn" class="level2">
 <h2 class="anchored" data-anchor-id="performance-comparison-cnn-vs-fnn">Performance comparison: CNN vs FNN</h2>
 <div id="18b63a2b-d16b-4e5f-8214-f2c6f98679da" class="cell" data-execution_count="70">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>y_pred_cnn, y_cnn <span class="op">=</span> get_model_predictions_and_y(model_cnn, valid_dataloader)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y_pred_fnn, y_fnn <span class="op">=</span> get_model_predictions_and_y(model_fnn, valid_dataloader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>y_pred_cnn, y_cnn <span class="op">=</span> get_model_predictions_and_y(model_cnn, valid_dataloader)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y_pred_fnn, y_fnn <span class="op">=</span> get_model_predictions_and_y(model_fnn, valid_dataloader)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="cnn" class="level3">
 <h3 class="anchored" data-anchor-id="cnn">CNN</h3>
 <div id="c9284804-1833-48fd-bd06-315523fa8c04" class="cell" data-execution_count="71">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_cnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_cnn, X_valid_tensor, y_valid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1055,7 +1056,7 @@ Non-trainable params: 0
 </div>
 </div>
 <div id="8865cace-c501-473d-8ded-f06442064064" class="cell" data-execution_count="72">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_cnn, target_names<span class="op">=</span>classes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_cnn, target_names<span class="op">=</span>classes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 precision    recall  f1-score   support
 
@@ -1080,7 +1081,7 @@ Golgi apparatus       0.81      0.72      0.76        18
 <section id="fnn" class="level3">
 <h3 class="anchored" data-anchor-id="fnn">FNN</h3>
 <div id="830c0964-9ce4-4662-ae6f-abe26e7c6209" class="cell" data-execution_count="73">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_fnn, X_valid_tensor, y_valid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(model_fnn, X_valid_tensor, y_valid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1090,7 +1091,7 @@ Golgi apparatus       0.81      0.72      0.76        18
 </div>
 </div>
 <div id="57afe9ab-a0ab-4b29-ab31-4f3ab6546106" class="cell" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_fnn, target_names<span class="op">=</span>classes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_valid, y_pred_fnn, target_names<span class="op">=</span>classes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 precision    recall  f1-score   support
 
@@ -1116,7 +1117,7 @@ Golgi apparatus       0.74      0.78      0.76        18
 <section id="accuracy-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="accuracy-comparison">Accuracy comparison</h2>
 <div id="6bc38c65-f863-4f01-9c3c-4d0d5e56e522" class="cell" data-execution_count="75">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">## other way of computing accuracy</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">## other way of computing accuracy</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># from sklearn.metrics import confusion_matrix</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cm_fnn = confusion_matrix(y_valid, y_pred_fnn)</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># accuracy_fnn = np.trace(cm_fnn) / np.sum(cm_fnn)</span></span>
@@ -1127,7 +1128,7 @@ Golgi apparatus       0.74      0.78      0.76        18
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">## plot accuracy </span></span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>plot_accuracy(accuracy<span class="op">=</span>[accuracy_fnn, accuracy_cnn],</span>
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span>[<span class="st">'FNN'</span>,<span class="st">'CNN'</span>],</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1139,7 +1140,7 @@ Golgi apparatus       0.74      0.78      0.76        18
 <section id="balanced-accuracy-comparison" class="level3">
 <h3 class="anchored" data-anchor-id="balanced-accuracy-comparison">Balanced accuracy comparison</h3>
 <div id="5bf01bea-1f69-4603-9428-b8b00894efbb" class="cell" data-execution_count="76">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">## compute balanced accuracy over subcellular localizations (classes)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">## compute balanced accuracy over subcellular localizations (classes)</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>balanced_accuracy_cnn <span class="op">=</span> get_additional_scores(y_pred_cnn, y_cnn)[<span class="st">'balanced_accuracy'</span>]</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>balanced_accuracy_fnn <span class="op">=</span> get_additional_scores(y_pred_fnn, y_fnn)[<span class="st">'balanced_accuracy'</span>]</span>
@@ -1148,7 +1149,7 @@ Golgi apparatus       0.74      0.78      0.76        18
 <span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">## note: p -&gt; padding and s -&gt; stride </span></span>
 <span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>plot_accuracy(accuracy<span class="op">=</span>[balanced_accuracy_fnn, balanced_accuracy_cnn],</span>
 <span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span>[<span class="st">'FNN'</span>,<span class="st">'CNN'</span>],</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Balanced accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Balanced accuracy'</span>, title<span class="op">=</span><span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1165,6 +1166,22 @@ Golgi apparatus       0.74      0.78      0.76        18
 <li>CNN slightly outperforms FNN, but at a much higher computational cost: CNN took 12min while FNN took 10sec in current configuration</li>
 <li>Increasing the number of output channels (i.e.&nbsp;feature maps) boosts CNN performance, but at the cost of increased training time. For instance, a CNN with 80 output channels yielded an accuracy of around 0.82 after roughly 40 minutes of training (data not shown). <!-- - CNN performances have shown larger variation of accuracy in response to changes in Adam's learning rate compared to the FNN ones. --></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This notebook is inspired from the SIB course <a href="https://www.sib.swiss/training/course/20241108_DEEPP">Diving into deep learning - theory and applications with PyTorch</a>.</p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -1234,13 +1251,14 @@ Golgi apparatus       0.74      0.78      0.76        18
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

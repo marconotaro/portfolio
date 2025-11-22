@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2025-07-18">
 <title>Exploratory data analysis: validation of technical replicates</title>
@@ -64,16 +64,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4c5931b574047af1f75da836f6795c0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9c7b8fac256f71d548ed825c5e9e7f25.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-84466f93ea5b8fb721a8c142303eab4c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3974ab9ee1cb9ff59384e7f37ad48039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -448,16 +449,16 @@ Note
 </div>
 <section id="loading-data" class="level3"><h3 class="anchored" data-anchor-id="loading-data">Loading data</h3>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gexp</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gexp</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span></span>
 <span>  <span class="st">'data/GSE96058_gene_expression_3273_samples_and_136_replicates_transformed.csv.gz'</span>, </span>
 <span>  col_types <span class="op">=</span> <span class="fu">cols</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">rename</span><span class="op">(</span>genes <span class="op">=</span> <span class="va">`...1`</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">'data/metadata.csv'</span>, col_types <span class="op">=</span> <span class="fu">cols</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">rename</span><span class="op">(</span>sampleID <span class="op">=</span> <span class="va">values</span>, sampleName <span class="op">=</span> <span class="va">ind</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">rename</span><span class="op">(</span>sampleID <span class="op">=</span> <span class="va">values</span>, sampleName <span class="op">=</span> <span class="va">ind</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rep</span> <span class="op">&lt;-</span> <span class="va">gexp</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">'repl'</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">str_remove</span><span class="op">(</span><span class="st">'repl'</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rep</span> <span class="op">&lt;-</span> <span class="va">gexp</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="st">'repl'</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">str_remove</span><span class="op">(</span><span class="st">'repl'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">mxrep</span> <span class="op">&lt;-</span> <span class="va">gexp</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">genes</span>, <span class="fu">all_of</span><span class="op">(</span><span class="va">rep</span><span class="op">)</span> <span class="op">|</span> <span class="fu">contains</span><span class="op">(</span><span class="st">'repl'</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -469,12 +470,12 @@ Note
 <span>         <span class="va">tumor_size</span>, <span class="va">lymph_node_group</span>, <span class="va">lymph_node_status</span>, </span>
 <span>         <span class="va">her2_status</span>, <span class="va">ki67_status</span>, <span class="va">pgr_status</span>, <span class="va">nhg</span>, </span>
 <span>         <span class="va">endocrine_treated</span>, <span class="va">chemo_treated</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">column_to_rownames</span><span class="op">(</span>var <span class="op">=</span> <span class="st">'sampleID'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">column_to_rownames</span><span class="op">(</span>var <span class="op">=</span> <span class="st">'sampleID'</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="pca" class="level3"><h3 class="anchored" data-anchor-id="pca">PCA</h3>
 <p>I apply a Principal Component Analysis (PCA) on the gene expression profiles of technical replicates (marked with the same color) to assess similarity in gene expression. As expected, technical replicates cluster together.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pc</span> <span class="op">&lt;-</span> <span class="fu">PCAtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/PCAtools/man/pca.html">pca</a></span><span class="op">(</span><span class="va">mxrep</span>, metadata <span class="op">=</span> <span class="va">mdrep</span>, center <span class="op">=</span> <span class="cn">TRUE</span>, scale <span class="op">=</span> <span class="cn">FALSE</span>, removeVar <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pc</span> <span class="op">&lt;-</span> <span class="fu">PCAtools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/PCAtools/man/pca.html">pca</a></span><span class="op">(</span><span class="va">mxrep</span>, metadata <span class="op">=</span> <span class="va">mdrep</span>, center <span class="op">=</span> <span class="cn">TRUE</span>, scale <span class="op">=</span> <span class="cn">FALSE</span>, removeVar <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">mdrep</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">pc</span><span class="op">$</span><span class="va">rotated</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -499,7 +500,7 @@ Note
 <span>    <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="fu">plot_pca</span><span class="op">(</span><span class="va">pc</span>, pcx <span class="op">=</span><span class="st">'PC1'</span>, pcy <span class="op">=</span> <span class="st">'PC2'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">plot_pca</span><span class="op">(</span><span class="va">pc</span>, pcx <span class="op">=</span><span class="st">'PC1'</span>, pcy <span class="op">=</span> <span class="st">'PC2'</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="r1_eda_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="4500"></p>
@@ -510,7 +511,7 @@ Note
 </section><section id="sample-correlations" class="level3"><h3 class="anchored" data-anchor-id="sample-correlations">Sample correlations</h3>
 <p>For a quantitative overview, I compute the Spearman’s rank correlation for each pair. As expected, technical replicates are strongly correlated (coefficient higher than 0.9) and their gene expression can be safely averaged for downstream analyses.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mxrep_paired</span> <span class="op">&lt;-</span> <span class="va">mxrep</span><span class="op">[</span>, <span class="fu">str_sort</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">mxrep</span><span class="op">)</span>, numeric <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mxrep_paired</span> <span class="op">&lt;-</span> <span class="va">mxrep</span><span class="op">[</span>, <span class="fu">str_sort</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">mxrep</span><span class="op">)</span>, numeric <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span><span class="va">tib</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  comparison <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -552,7 +553,7 @@ Note
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"No results"</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span><span class="op">}</span></span>
-<span><span class="va">tib</span> <span class="op">|&gt;</span> <span class="fu">datatable</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">tib</span> <span class="op">|&gt;</span> <span class="fu">datatable</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="datatables html-widget html-fill-item" id="htmlwidget-e25b5ce26d418e0bbad7" style="width:100%;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-e25b5ce26d418e0bbad7">{"x":{"filter":"none","vertical":false,"data":[["F8 vs F8repl","F30 vs F30repl","F49 vs F49repl","F54 vs F54repl","F69 vs F69repl","F73 vs F73repl","F112 vs F112repl","F116 vs F116repl","F184 vs F184repl","F185 vs F185repl","F187 vs F187repl","F218 vs F218repl","F229 vs F229repl","F274 vs F274repl","F282 vs F282repl","F327 vs F327repl","F405 vs F405repl","F437 vs F437repl","F445 vs F445repl","F461 vs F461repl","F498 vs F498repl","F542 vs F542repl","F545 vs F545repl","F573 vs F573repl","F574 vs F574repl","F673 vs F673repl","F679 vs F679repl","F685 vs F685repl","F713 vs F713repl","F717 vs F717repl","F724 vs F724repl","F748 vs F748repl","F766 vs F766repl","F777 vs F777repl","F781 vs F781repl","F783 vs F783repl","F784 vs F784repl","F785 vs F785repl","F799 vs F799repl","F803 vs F803repl","F804 vs F804repl","F807 vs F807repl","F813 vs F813repl","F833 vs F833repl","F847 vs F847repl","F895 vs F895repl","F912 vs F912repl","F933 vs F933repl","F934 vs F934repl","F1101 vs F1101repl","F1108 vs F1108repl","F1143 vs F1143repl","F1156 vs F1156repl","F1167 vs F1167repl","F1197 vs F1197repl","F1214 vs F1214repl","F1283 vs F1283repl","F1392 vs F1392repl","F1438 vs F1438repl","F1439 vs F1439repl","F1497 vs F1497repl","F1515 vs F1515repl","F1519 vs F1519repl","F1580 vs F1580repl","F1581 vs F1581repl","F1582 vs F1582repl","F1584 vs F1584repl","F1587 vs F1587repl","F1591 vs F1591repl","F1605 vs F1605repl","F1617 vs F1617repl","F1628 vs F1628repl","F1635 vs F1635repl","F1640 vs F1640repl","F1648 vs F1648repl","F1658 vs F1658repl","F1689 vs F1689repl","F1748 vs F1748repl","F1781 vs F1781repl","F1905 vs F1905repl","F1923 vs F1923repl","F1928 vs F1928repl","F1950 vs F1950repl","F1965 vs F1965repl","F2018 vs F2018repl","F2067 vs F2067repl","F2069 vs F2069repl","F2151 vs F2151repl","F2174 vs F2174repl","F2175 vs F2175repl","F2277 vs F2277repl","F2281 vs F2281repl","F2287 vs F2287repl","F2299 vs F2299repl","F2359 vs F2359repl","F2384 vs F2384repl","F2390 vs F2390repl","F2398 vs F2398repl","F2406 vs F2406repl","F2407 vs F2407repl","F2408 vs F2408repl","F2424 vs F2424repl","F2459 vs F2459repl","F2482 vs F2482repl","F2503 vs F2503repl","F2539 vs F2539repl","F2621 vs F2621repl","F2625 vs F2625repl","F2632 vs F2632repl","F2656 vs F2656repl","F2679 vs F2679repl","F2691 vs F2691repl","F2703 vs F2703repl","F2755 vs F2755repl","F2781 vs F2781repl","F2790 vs F2790repl","F2840 vs F2840repl","F2841 vs F2841repl","F2860 vs F2860repl","F2871 vs F2871repl","F2872 vs F2872repl","F2877 vs F2877repl","F2911 vs F2911repl","F2912 vs F2912repl","F2921 vs F2921repl","F2958 vs F2958repl","F2974 vs F2974repl","F3006 vs F3006repl","F3028 vs F3028repl","F3057 vs F3057repl","F3058 vs F3058repl","F3085 vs F3085repl","F3127 vs F3127repl","F3135 vs F3135repl","F3250 vs F3250repl","F3265 vs F3265repl"],[0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.97,0.97,0.96,0.96,0.97,0.97,0.96,0.96,0.97,0.96,0.96,0.9,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.95,0.96,0.96,0.95,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.96,0.97,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.95,0.96,0.95,0.96,0.96,0.97,0.96,0.96,0.95,0.96,0.95,0.96,0.9399999999999999,0.96,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.97,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],[true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>comparison<\/th>\n      <th>correlation<\/th>\n      <th>p_value<\/th>\n      <th>informative<\/th>\n      <th>significant<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","scrollX":true,"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2]},{"name":"comparison","targets":0},{"name":"correlation","targets":1},{"name":"p_value","targets":2},{"name":"informative","targets":3},{"name":"significant","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
@@ -560,7 +561,7 @@ Note
 </div>
 <p>As an example, below I show the scatter plots of the first 12 pairs.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">scatter_plot</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">sample</span>, <span class="va">replicate</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">scatter_plot</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">sample</span>, <span class="va">replicate</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="va">data</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="op">!</span><span class="op">!</span><span class="fu">sym</span><span class="op">(</span><span class="va">sample</span><span class="op">)</span>, y <span class="op">=</span> <span class="op">!</span><span class="op">!</span><span class="fu">sym</span><span class="op">(</span><span class="va">replicate</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">geom_point</span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"#56B4E9"</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, color <span class="op">=</span> <span class="st">"#D55E00"</span>, formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, se <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
@@ -584,7 +585,7 @@ Note
 <span></span>
 <span><span class="va">sp</span> <span class="op">&lt;-</span> <span class="fu">get_pair</span><span class="op">(</span><span class="va">tib</span>, npairs <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
 <span><span class="va">plist</span> <span class="op">&lt;-</span> <span class="fu">map2</span><span class="op">(</span><span class="va">sp</span><span class="op">$</span><span class="va">sample</span>, <span class="va">sp</span><span class="op">$</span><span class="va">replicate</span>, <span class="op">~</span><span class="fu">scatter_plot</span><span class="op">(</span><span class="va">mxrep</span>, <span class="va">.x</span>, <span class="va">.y</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu">wrap_plots</span><span class="op">(</span><span class="va">plist</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">wrap_plots</span><span class="op">(</span><span class="va">plist</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="r1_eda_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="3000"></p>
@@ -594,7 +595,7 @@ Note
 </div>
 </section></section><section id="averaging-of-gene-expression-of-technical-replicates" class="level2"><h2 class="anchored" data-anchor-id="averaging-of-gene-expression-of-technical-replicates">Averaging of gene expression of technical replicates</h2>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mxrep_averaged</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mxrep_averaged</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">mxrep_paired</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">mxrep_averaged</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">mxrep_averaged</span>, <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowMeans</a></span><span class="op">(</span><span class="va">mxrep_paired</span><span class="op">[</span>,<span class="va">i</span><span class="op">:</span><span class="op">(</span><span class="va">i</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
@@ -620,7 +621,7 @@ Note
 <span>    <span class="op">}</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="co">## %&gt;% select(., all_of(str_sort(colnames(select(., starts_with('F'))), numeric = TRUE)))</span></span>
 <span>    <span class="fu">write_csv</span><span class="op">(</span><span class="va">fout</span><span class="op">)</span> <span class="co">## automatically compress by readr</span></span>
-<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -690,13 +691,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1089,7 +1091,7 @@ Note
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exploratory data analysis: validation of technical replicates"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 07/18/2025</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "MMMM D, YYYY"</span></span>
@@ -1290,7 +1292,7 @@ Note
 <span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_csv</span>(fout) <span class="do">## automatically compress by readr</span></span>
 <span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
