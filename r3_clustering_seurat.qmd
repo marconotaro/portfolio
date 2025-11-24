@@ -5,6 +5,8 @@ date: 09/05/2025
 date-format: "MMMM D, YYYY"
 author:
   - name: Marco Notaro
+execute:
+  cache: true
 ---
 
 ## Aims 
@@ -15,8 +17,6 @@ The goal of this report is to identify breast cancer subtypes by using the Seura
 ## Loading data as a Seurat object
 
 ```{r}
-#| include: false
-
 library(Matrix)
 library(Seurat)
 library(data.table)

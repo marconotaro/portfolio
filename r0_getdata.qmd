@@ -8,8 +8,6 @@ author:
 
 
 ```{r}
-#| include: false
-
 library(GEOquery)
 library(tidyverse)
 ```
