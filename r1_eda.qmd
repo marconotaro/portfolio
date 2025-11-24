@@ -2,6 +2,8 @@
 title: "Exploratory data analysis: validation of technical replicates"
 date: 07/18/2025
 date-format: "MMMM D, YYYY"
+author:
+  - name: Marco Notaro
 ---
 
 ```{r}

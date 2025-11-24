@@ -2,6 +2,8 @@
 title: "Downloading GEO data"
 date: 07/17/2025
 date-format: "MMMM D, YYYY"
+author:
+  - name: Marco Notaro
 ---
 
 
