@@ -4,11 +4,11 @@ date: 07/18/2025
 date-format: "MMMM D, YYYY"
 author:
   - name: Marco Notaro
+execute:
+  cache: true
 ---
 
 ```{r}
-#| include: false
-
 library(PCAtools)
 library(tidyverse)
 library(patchwork)

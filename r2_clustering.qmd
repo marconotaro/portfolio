@@ -4,18 +4,16 @@ date: 07/24/2025
 date-format: "MMMM D, YYYY"
 author:
   - name: Marco Notaro
+execute:
+  cache: true
 ---
 
 ```{r}
-#| include: false
-
 ## set a global seed
 set.seed(08012025)
 ```
 
 ```{r}
-#| include: false
-
 library(tidyverse)
 library(patchwork)
 library(Rtsne)
