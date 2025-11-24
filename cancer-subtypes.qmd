@@ -5,6 +5,8 @@ format:
     code-tools: false
 date: 09/18/2025
 date-format: "MMMM D, YYYY"
+author:
+  - name: Marco Notaro
 ---
 
 - [Getting data](r0_getdata.qmd)
