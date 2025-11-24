@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marco Notaro">
 <meta name="dcterms.date" content="2024-12-10">
 
 <title>Predicting salary and new connections from network data</title>
@@ -436,6 +437,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marco Notaro </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -452,26 +459,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note: data from the Coursera course <a href="https://www.coursera.org/learn/python-social-network-analysis?specialization=data-science-python">Applied Social Network Analysis in Python</a></p>
-</div>
-</div>
-<div id="cell-2" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;8555f884d1a86e615633814fe0640fa9&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-04d6d26d762f743a&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="1">
+<div id="cell-1" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;8555f884d1a86e615633814fe0640fa9&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-04d6d26d762f743a&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="2">
+<div id="cell-2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -483,7 +477,7 @@ Note
 <section id="company-emails" class="level2">
 <h2 class="anchored" data-anchor-id="company-emails">Company Emails</h2>
 <p>Here I analzye a company’s email network where a node corresponds to a person and an edge indicates that at least one email has been sent between two people. The network also contains the node attributes <code>Department</code> and <code>ManagmentSalary</code>. <code>Department</code> indicates the department in the company which the person belongs to, and <code>ManagmentSalary</code> indicates whether that person is receiving a managment position salary.</p>
-<div id="cell-5" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e722c34a6345262e25f7b6f3aa9ea24f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-8318572a20542eb0&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="7">
+<div id="cell-4" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;e722c34a6345262e25f7b6f3aa9ea24f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-8318572a20542eb0&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> pickle.load(<span class="bu">open</span>(<span class="st">'data/email_prediction.plk'</span>, <span class="st">'rb'</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Graph with </span><span class="sc">{</span><span class="bu">len</span>(nx.nodes(G))<span class="sc">}</span><span class="ss"> nodes and </span><span class="sc">{</span><span class="bu">len</span>(nx.edges(G))<span class="sc">}</span><span class="ss"> edges"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -495,7 +489,7 @@ Note
 <section id="salary-prediction" class="level2">
 <h2 class="anchored" data-anchor-id="salary-prediction">Salary Prediction</h2>
 <p>Here I aim at predicting if people whithout a <code>ManagementSalary</code> will receive a managment position salary. To this end, I train a classifier on people that have <code>ManagementSalary</code> and then I predict the probability of receiving a managment salary for those people where <code>ManagementSalary</code> is missing. Models are evaluated with different performance metrics, Area Under the ROC Curve (AUCROC), Area under the Precision Recall Curve (AUPRC) and Balanced Accuracy.</p>
-<div id="cell-7" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;d02e4f542d1aa318bbf2d31a4190f873&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5980e664930b216a&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="8">
+<div id="cell-6" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;d02e4f542d1aa318bbf2d31a4190f873&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5980e664930b216a&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(G.nodes(data<span class="op">=</span><span class="va">True</span>))[:<span class="dv">5</span>] <span class="co"># print the first 5 nodes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>[(0, {'Department': 1, 'ManagementSalary': 0.0}),
@@ -505,7 +499,7 @@ Note
  (65, {'Department': 4, 'ManagementSalary': nan})]</code></pre>
 </div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="127">
+<div id="cell-7" class="cell" data-execution_count="127">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_salary_dataset(G):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'management_salary'</span>] <span class="op">=</span> nx.get_node_attributes(G, <span class="st">'ManagementSalary'</span>)</span>
@@ -559,7 +553,7 @@ Note
 <span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>        param_grid <span class="op">=</span> {key: random.choice(value) <span class="cf">for</span> key, value <span class="kw">in</span> param_grid.items()}</span>
 <span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> GridDict(param_grid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;7923c33da469542ff6e642a304dce099&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c1ae7e7278c56f0c&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="128">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;7923c33da469542ff6e642a304dce099&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c1ae7e7278c56f0c&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:3,&quot;solution&quot;:true,&quot;task&quot;:false}}" data-execution_count="128">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## build dataset</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> build_salary_dataset(G)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> get_feature_and_label(df)</span>
@@ -570,7 +564,7 @@ Note
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>X_train, y_train <span class="op">=</span> X.loc[<span class="op">~</span>y.isna(),:], y[<span class="op">~</span>y.isna()]</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>X_test, y_test <span class="op">=</span> X.loc[y.isna(),:], y[y.isna()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-10" class="cell">
+<div id="cell-9" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> salary_predictions(X_train, y_train, X_test, y_test):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">### scale dataset</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    scaler <span class="op">=</span> StandardScaler()</span>
@@ -614,7 +608,7 @@ Length: 252, dtype: float64</code></pre>
 </div>
 <section id="performance-evaluation" class="level3">
 <h3 class="anchored" data-anchor-id="performance-evaluation">Performance evaluation</h3>
-<div id="cell-12" class="cell" data-execution_count="121">
+<div id="cell-11" class="cell" data-execution_count="121">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> <span class="op">~</span>y.isna()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>X_known, y_known <span class="op">=</span> X[mask], y[mask]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -640,7 +634,7 @@ Averaged Balanced Accuracy: 0.771</code></pre>
 <section id="new-connections-prediction" class="level2">
 <h2 class="anchored" data-anchor-id="new-connections-prediction">New Connections Prediction</h2>
 <p>Here I aim at predicting future connections between employees of the network. The future connections information is loaded into the variable <code>future_connections</code>. The index is a tuple indicating a pair of nodes that currently do not have a connection, and the <code>Future Connection</code> column indicates if an edge between those two nodes will exist in the future, where a value of 1.0 indicates a future connection.</p>
-<div id="cell-14" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;6ae78d5616c6a6fba11b22d9bf5c9bac&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-23900b187593a4a6&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="122">
+<div id="cell-13" class="cell" data-editable="false" data-quarto-private-1="{&quot;key&quot;:&quot;nbgrader&quot;,&quot;value&quot;:{&quot;cell_type&quot;:&quot;code&quot;,&quot;checksum&quot;:&quot;6ae78d5616c6a6fba11b22d9bf5c9bac&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-23900b187593a4a6&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:3,&quot;solution&quot;:false,&quot;task&quot;:false}}" data-execution_count="122">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>future_connections <span class="op">=</span> pd.read_csv(<span class="st">'data/future_connections.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>, converters<span class="op">=</span>{<span class="dv">0</span>: <span class="bu">eval</span>})</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>future_connections</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="122">
@@ -715,7 +709,7 @@ Averaged Balanced Accuracy: 0.771</code></pre>
 <li>I predict a probability of the edge being a future connection for those edges in <code>future_connections</code> where <code>Future Connection</code> is missing.</li>
 <li>I evaluate the model with different metrics - AUROC, AUPRC and Balaced Accuracy</li>
 </ol>
-<div id="cell-16" class="cell" data-execution_count="123">
+<div id="cell-15" class="cell" data-execution_count="123">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## build data</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_connection_dataset(future_connections, G):</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> future_connections.copy() <span class="co">## create a deep copy of future_connections</span></span>
@@ -743,7 +737,7 @@ Averaged Balanced Accuracy: 0.771</code></pre>
 <span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>X_train, y_train <span class="op">=</span> X.loc[<span class="op">~</span>y.isna(),:], y[<span class="op">~</span>y.isna()]</span>
 <span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>X_test, y_test <span class="op">=</span> X.loc[y.isna(),:], y[y.isna()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-17" class="cell">
+<div id="cell-16" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GridDict(<span class="bu">dict</span>):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(GridDict, <span class="va">self</span>).<span class="fu">__init__</span>(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
@@ -817,7 +811,7 @@ Length: 122112, dtype: float64</code></pre>
 </div>
 <section id="performance-evaluation-1" class="level3">
 <h3 class="anchored" data-anchor-id="performance-evaluation-1">Performance evaluation</h3>
-<div id="cell-19" class="cell">
+<div id="cell-18" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> <span class="op">~</span>y.isna()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>X_known, y_known <span class="op">=</span> X[mask], y[mask]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -836,6 +830,22 @@ Length: 122112, dtype: float64</code></pre>
 <pre><code>Averaged AUROC: 0.888
 Averaged AUPRC: 0.736
 Averaged Balanced Accuracy: 0.786</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note: data taken from the Coursera course <a href="https://www.coursera.org/learn/python-social-network-analysis?specialization=data-science-python">Applied Social Network Analysis in Python</a></p>
+</div>
 </div>
 </div>
 
