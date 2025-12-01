@@ -123,8 +123,8 @@ if(!file.exists(sfile)){
 
 sobj <- qs2::qs_read(file = 'data/seurat_object.qs2', nthreads = 10)
 
-sobj <- Seurat::ScaleData(sobj, features = rownames(sobj))
 sobj <- Seurat::FindVariableFeatures(sobj, selection.method = "vst", nfeatures = 3000)
+sobj <- Seurat::ScaleData(sobj, features = Seurat::VariableFeatures(sobj))
 
 sobj <- Seurat::RunPCA(sobj)
 sobj <- Seurat::FindNeighbors(sobj, dims = 1:25)
