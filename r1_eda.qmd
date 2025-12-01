@@ -123,18 +123,24 @@ for(i in seq(1, ncol(mxrep_paired)-1, by = 2)){
 }
 
 datatable <- function(tib, row2display = 10) {
-  if(nrow(tib) > 0){
-    DT::datatable(tib,
-      rownames   = FALSE,
-      options    = list(
-        dom = "Bfrtip",
-        scrollX = TRUE,
-        pageLength = row2display
+  DT::datatable(tib,
+    rownames   = FALSE,
+    extensions = "Buttons",
+    options    = list(
+      dom = "Bfrtip",
+      scrollX = TRUE,
+      pageLength = row2display,
+      buttons = list(
+        list(
+          extend  = "collection",
+          buttons = c("csv", "excel"),
+          text    = "Download"
+        )
       )
-    )
-  }else{
-    print("No results")
-  }
+    ),
+    class = "display",
+    style = "bootstrap"
+  )
 }
 tib |> datatable()
 ```
