@@ -128,7 +128,7 @@ top_genes <- function(mat, n_top = 500){
 }
 
 get_pc <- function(mx, md){
-  pc <- PCAtools::pca(mx, metadata = md, center = TRUE, scale = FALSE, removeVar = 0.1)
+  pc <- PCAtools::pca(mx, metadata = md, center = TRUE, scale = TRUE, removeVar = 0.1)
   return(pc)
 }
 
@@ -278,28 +278,24 @@ formatter <- function(tib, cols_to_format = "all", digits = 3){
 }
 
 datatable <- function(tib, row2display = 10) {
-  if(nrow(tib) > 0){
-    DT::datatable(tib,
-      rownames   = FALSE,
-      extensions = "Buttons",
-      options    = list(
-        dom = "Bfrtip",
-        scrollX = TRUE,
-        pageLength = row2display,
-        buttons = list(
-          list(
-            extend  = "collection",
-            buttons = c("csv", "excel"),
-            text    = "Download"
-          )
+  DT::datatable(tib,
+    rownames   = FALSE,
+    extensions = "Buttons",
+    options    = list(
+      dom = "Bfrtip",
+      scrollX = TRUE,
+      pageLength = row2display,
+      buttons = list(
+        list(
+          extend  = "collection",
+          buttons = c("csv", "excel"),
+          text    = "Download"
         )
-      ),
-      class = "display",
-      style = "bootstrap"
-    )
-  }else{
-    print("No results")
-  }
+      )
+    ),
+    class = "display",
+    style = "bootstrap"
+  )
 }
 ```
 
