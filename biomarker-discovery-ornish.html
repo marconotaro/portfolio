@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Marco Notaro">
-<meta name="dcterms.date" content="2025-11-22">
+<meta name="dcterms.date" content="2025-11-26">
 
 <title>Identifying gene expression biomarkers associated with weight loss using Bayesian-optimized XGBoost</title>
 <style>
@@ -454,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 22, 2025</p>
+      <p class="date">November 26, 2025</p>
     </div>
   </div>
   
@@ -473,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>I downloaded the <a href="https://github.com/PanKonstantinos/MEvA-X/tree/main/Data/Ornish">Ornish</a> dataset from the <a href="https://doi.org/10.1093/bioinformatics/btad384">MEvA-X tool</a>. This dataset is already normalized and contains microarry gene expression, with information of Age, Gender, COPD, Diabetes, and WeightLoss, making 13’520 features on 89 participants. WeightLoss is a binary variable: Responders for participants with a weight loss higher than 10% and Non_responders otherwise.</p>
-<div id="d58c13f1" class="cell" data-execution_count="13">
+<div id="d58c13f1" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">## diet dataset</span></span>
@@ -495,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.join(labels)</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -799,7 +799,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Then I encode WeightLoss to numeric [0,1] values</p>
-<div id="d0d4b862-7450-444b-b522-ebad4947f8ad" class="cell" data-execution_count="14">
+<div id="d0d4b862-7450-444b-b522-ebad4947f8ad" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'WeightLoss'</span>])</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mapping <span class="op">=</span> {<span class="st">'Non_responders'</span>: <span class="dv">0</span>, <span class="st">'Responders'</span>:<span class="dv">1</span>}</span>
@@ -819,7 +819,7 @@ Name: count, dtype: int64</code></pre>
 <section id="exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <p>Gene expression profile over participants</p>
-<div id="661ce8e5" class="cell" data-execution_count="15">
+<div id="661ce8e5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -843,7 +843,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>PCA on gene expression data showing the distribution of participants colored by response status along the first two principal components.</p>
-<div id="25224a89" class="cell" data-execution_count="16">
+<div id="25224a89" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -889,7 +889,7 @@ Name: count, dtype: int64</code></pre>
 <p>Note: I did not scale data because MI and tree-based methods (as XGBoost) are invariant to scale. Moreover, the dataset is already <a href="https://github.com/PanKonstantinos/MEvA-X/tree/main/Data/Ornish">normalized</a>.</p>
 <section id="splitting-the-dataset-in-training-and-test-set" class="level3">
 <h3 class="anchored" data-anchor-id="splitting-the-dataset-in-training-and-test-set">Splitting the dataset in training and test set</h3>
-<div id="81b8baa8" class="cell" data-execution_count="17">
+<div id="81b8baa8" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, Y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -897,7 +897,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="feature-selection-by-mi" class="level3">
 <h3 class="anchored" data-anchor-id="feature-selection-by-mi">Feature selection by MI</h3>
-<div id="a216e21b" class="cell" data-execution_count="18">
+<div id="a216e21b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> mutual_info_classif</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -922,7 +922,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="training-and-evaluating-xgboost" class="level3">
 <h3 class="anchored" data-anchor-id="training-and-evaluating-xgboost">Training and evaluating XGBoost</h3>
-<div id="67e30c77" class="cell" data-execution_count="19">
+<div id="67e30c77" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score, average_precision_score</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xgboost <span class="im">as</span> xgb </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -959,11 +959,11 @@ AUPRC: 0.8260</code></pre>
 <p>Each dot represents a participant, while the color indicates gene expression level. Darker blue indicates lower expression, while darker red indicates higher expression.</p>
 <p>Positive SHAP values indicate a higher probability of a participant of being a responder (weight loss), while negative SHAP values indicate a higher probability of being a non-responder (no weight loss).</p>
 <p>Looking at the plot, we can conclude for example that participants with low levels of CDH13 and high levels of PIK3R2 and PSMC2 are associated with weight loss.</p>
-<div id="3f15d8e4" class="cell" data-execution_count="20">
+<div id="3f15d8e4" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shap</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.Explainer(xgb_model)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>shap_values <span class="op">=</span> explainer(X_train_filtered)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.Explainer(xgb_model, X_train_filtered)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>shap_values <span class="op">=</span> explainer(X_test_filtered)</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>shap.plots.beeswarm(shap_values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -973,7 +973,7 @@ AUPRC: 0.8260</code></pre>
 </div>
 </div>
 </div>
-<div id="4416734f" class="cell" data-execution_count="9">
+<div id="4416734f" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>shap.plots.violin(shap_values, max_display<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -984,7 +984,7 @@ AUPRC: 0.8260</code></pre>
 </div>
 </div>
 <p>Below we show the importance of the top biomarkers in predicting weight loss response.</p>
-<div id="fa3c5d81" class="cell" data-execution_count="10">
+<div id="fa3c5d81" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>shap.plots.bar(shap_values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -999,7 +999,7 @@ AUPRC: 0.8260</code></pre>
 <section id="tuning-xgboost-hyperparameters" class="level2">
 <h2 class="anchored" data-anchor-id="tuning-xgboost-hyperparameters">Tuning XGBoost hyperparameters</h2>
 <p>Starting from the ‘vanilla’ XGBoost model, I tuned the relevant hyperparameters using Bayesian optimization. To prevent data leakage, the supervised feature selection was performed within the cross-validation. Folds were stratified to balance participants labeled with the responder and non-responder class. As expected, the tuned XGBoost version outperformed the ‘vanilla’ baseline.</p>
-<div id="2bcae1d7" class="cell" data-execution_count="21">
+<div id="2bcae1d7" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">## ignore: UserWarning: pkg_resources is deprecated as an API</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">UserWarning</span>, module<span class="op">=</span><span class="st">'hyperopt.atpe'</span>) </span>
@@ -1037,7 +1037,7 @@ AUPRC: 0.8260</code></pre>
 <span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'status'</span>: STATUS_OK</span>
 <span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="c8b78490" class="cell" data-execution_count="14">
+<div id="c8b78490" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hyperspace <span class="op">=</span> {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'eta'</span>: hp.loguniform(<span class="st">'eta'</span> , np.log(<span class="dv">10</span><span class="op">**-</span><span class="dv">2</span>) , np.log(<span class="dv">1</span>)),</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'subsample'</span>: hp.uniform(<span class="st">'subsample'</span>, <span class="fl">0.3</span>, <span class="dv">1</span>),</span>
@@ -1054,12 +1054,12 @@ AUPRC: 0.8260</code></pre>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>            <span class="co"># https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.random.html</span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>            rstate<span class="op">=</span>np.random.default_rng(<span class="dv">0</span>))  <span class="co">## important for reproducibility </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>100%|██████████| 10/10 [12:49&lt;00:00, 76.98s/trial, best loss: -0.8078696700125271]</code></pre>
+<pre><code>100%|██████████| 10/10 [12:40&lt;00:00, 76.04s/trial, best loss: -0.8078696700125271]</code></pre>
 </div>
 </div>
 <section id="fit-the-best-model" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-best-model">Fit the best model</h3>
-<div id="e6850001" class="cell" data-execution_count="15">
+<div id="e6850001" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> space_eval(hyperspace, best)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>best_model <span class="op">=</span> build_pipeline(best_params)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>best_model.fit(X_train, y_train)</span>
@@ -1078,7 +1078,7 @@ AUPRC: 0.8358</code></pre>
 <section id="xgboost-interpretability-1" class="level3">
 <h3 class="anchored" data-anchor-id="xgboost-interpretability-1">XGBoost interpretability</h3>
 <p>Most of the top biomarkers identified by the baseline and tuned models overlap (CDH13, HADHAP1, PIK3R2, RRP15, PSMC2, MYLK3), though their rankings differ (except for CDH13 which ranks first in both). However, the tuned model better clusters participants with high versus low gene expression, suggesting more robust predictions.</p>
-<div id="9af9c8cf" class="cell" data-execution_count="16">
+<div id="9af9c8cf" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>selector <span class="op">=</span> best_model.named_steps[<span class="st">'feature_selection'</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>classifier <span class="op">=</span> best_model.named_steps[<span class="st">'classifier'</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1087,8 +1087,8 @@ AUPRC: 0.8358</code></pre>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                columns<span class="op">=</span>top_feat_idx,</span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                                index<span class="op">=</span>X_train.index)</span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.Explainer(classifier)</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>shap_values <span class="op">=</span> explainer(X_train_filtered)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.Explainer(classifier, X_train_filtered)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>shap_values <span class="op">=</span> explainer(X_test_filtered)</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>shap.plots.beeswarm(shap_values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1099,7 +1099,7 @@ AUPRC: 0.8358</code></pre>
 </div>
 </div>
 </div>
-<div id="09af589a" class="cell" data-execution_count="17">
+<div id="09af589a" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>shap.plots.violin(shap_values, max_display<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1109,7 +1109,7 @@ AUPRC: 0.8358</code></pre>
 </div>
 </div>
 </div>
-<div id="aaec5ccd" class="cell" data-execution_count="18">
+<div id="aaec5ccd" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>shap.plots.bar(shap_values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
