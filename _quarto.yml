@@ -7,6 +7,7 @@ project:
 
 website:
   # title: ""
+  # favicon: favicon/favicon.png
   search: true
   page-navigation: true
   navbar:
@@ -71,6 +72,10 @@ format:
     code-fold: false
     code-tools: true
     embed-resources: false
+    include-in-header:
+      - text: |
+          <link href="favicon/favicon.png" rel="icon">
+          <link href="favicon/apple-touch-icon.png" rel="apple-touch-icon">
 
 execute:
   freeze: auto
