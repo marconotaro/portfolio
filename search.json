@@ -396,14 +396,14 @@
     "href": "biomarker-discovery-ornish.html",
     "title": "Identifying gene expression biomarkers associated with weight loss using Bayesian-optimized XGBoost",
     "section": "",
-    "text": "The goal of this project is to find gene biomarker for weight loss response from a publicly available dataset. To this I trained a decision-tree method (XGBoost) using Bayesian optimization for tuning its hyperparameters. Finally I used theS HAP values to explain the results."
+    "text": "The goal of this project is to find gene biomarker for weight loss response from a publicly available dataset. To this I trained a decision-tree method (XGBoost) using Bayesian optimization for tuning its hyperparameters. Finally I used the SHAP values to explain the results."
   },
   {
     "objectID": "biomarker-discovery-ornish.html#goal",
     "href": "biomarker-discovery-ornish.html#goal",
     "title": "Identifying gene expression biomarkers associated with weight loss using Bayesian-optimized XGBoost",
     "section": "",
-    "text": "The goal of this project is to find gene biomarker for weight loss response from a publicly available dataset. To this I trained a decision-tree method (XGBoost) using Bayesian optimization for tuning its hyperparameters. Finally I used theS HAP values to explain the results."
+    "text": "The goal of this project is to find gene biomarker for weight loss response from a publicly available dataset. To this I trained a decision-tree method (XGBoost) using Bayesian optimization for tuning its hyperparameters. Finally I used the SHAP values to explain the results."
   },
   {
     "objectID": "biomarker-discovery-ornish.html#dataset",
