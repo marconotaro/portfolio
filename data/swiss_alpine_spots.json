@@ -1,0 +1,157 @@
+{
+  "Hörnlihütte": {
+    "Latitude": 45.9821974,
+    "Longitude": 7.6770109,
+    "Elevation": 3274
+  },
+  "Schönbielhütte": {
+    "Latitude": 46.00198,
+    "Longitude": 7.6289566,
+    "Elevation": 2639
+  },
+  "Gandegghütte": {
+    "Latitude": 45.9641383,
+    "Longitude": 7.7256494,
+    "Elevation": 2960
+  },
+  "Berggasthaus Trift": {
+    "Latitude": 46.0300393,
+    "Longitude": 7.7210708,
+    "Elevation": 2334
+  },
+  "Rothornhütte": {
+    "Latitude": 46.0481793,
+    "Longitude": 7.697287,
+    "Elevation": 3220
+  },
+  "Brunnihütte": {
+    "Latitude": 46.841153,
+    "Longitude": 8.4109691,
+    "Elevation": 1842
+  },
+  "Lobhornhütte": {
+    "Latitude": 46.6184883,
+    "Longitude": 7.8689998,
+    "Elevation": 1910
+  },
+  "Sidelenhütte": {
+    "Latitude": 46.5974645,
+    "Longitude": 8.4267493,
+    "Elevation": 2685
+  },
+  "Albert-Heim-Hütte": {
+    "Latitude": 46.6087398,
+    "Longitude": 8.4638903,
+    "Elevation": 2492
+  },
+  "Trifthütte": {
+    "Latitude": 46.6779142,
+    "Longitude": 8.3766586,
+    "Elevation": 2489
+  },
+  "Tierberglihütte": {
+    "Latitude": 46.7020308,
+    "Longitude": 8.4142126,
+    "Elevation": 2777
+  },
+  "Blüemlisalphütte": {
+    "Latitude": 46.5101555,
+    "Longitude": 7.7716385,
+    "Elevation": 2848
+  },
+  "Gelmerhütte": {
+    "Latitude": 46.6312578,
+    "Longitude": 8.3427823,
+    "Elevation": 2421
+  },
+  "Lämmerenhütte": {
+    "Latitude": 46.4002937,
+    "Longitude": 7.5744861,
+    "Elevation": 2505
+  },
+  "Planurahütte": {
+    "Latitude": 46.8200048,
+    "Longitude": 8.8804074,
+    "Elevation": 2910
+  },
+  "Hüfihütte": {
+    "Latitude": 46.8018251,
+    "Longitude": 8.8189945,
+    "Elevation": 2302
+  },
+  "Muttseehütte": {
+    "Latitude": 46.8575077,
+    "Longitude": 9.0187789,
+    "Elevation": 2486
+  },
+  "Leglerhütte": {
+    "Latitude": 46.9274338,
+    "Longitude": 9.080091,
+    "Elevation": 2206
+  },
+  "Hüfifirn": {
+    "Latitude": 46.8248495,
+    "Longitude": 8.8604865,
+    "Elevation": 2735
+  },
+  "Aletsch Glacier": {
+    "Latitude": 46.4516324,
+    "Longitude": 8.0775081,
+    "Elevation": 2357
+  },
+  "Rhône Glacier": {
+    "Latitude": 46.6188466,
+    "Longitude": 8.4000567,
+    "Elevation": 2837
+  },
+  "Zinal Glacier": {
+    "Latitude": 46.0594087,
+    "Longitude": 7.6396426,
+    "Elevation": 2552
+  },
+  "Wildstrubelgletscher": {
+    "Latitude": 46.4023117,
+    "Longitude": 7.5357568,
+    "Elevation": 3108
+  },
+  "Jöriseen": {
+    "Latitude": 46.7794232,
+    "Longitude": 9.970663,
+    "Elevation": 2485
+  },
+  "Oeschinensee": {
+    "Latitude": 46.4984951,
+    "Longitude": 7.7268429,
+    "Elevation": 1569
+  },
+  "Caumasee": {
+    "Latitude": 46.8202064,
+    "Longitude": 9.2963026,
+    "Elevation": 994
+  },
+  "Silvaplana": {
+    "Latitude": 46.4599334,
+    "Longitude": 9.7959165,
+    "Elevation": 1808
+  },
+  "Zermatt": {
+    "Latitude": 46.0212076,
+    "Longitude": 7.749254,
+    "Elevation": 1610
+  },
+  "Davos": {
+    "Latitude": 46.796198,
+    "Longitude": 9.8236892,
+    "Elevation": 1546
+  },
+  "Saint Moritz": {
+    "Latitude": 46.4978958,
+    "Longitude": 9.8392428,
+    "Elevation": 1825
+  },
+  "Lauterbrunnen": {
+    "Latitude": 46.5939043,
+    "Longitude": 7.9078016,
+    "Elevation": 816
+  }
+}

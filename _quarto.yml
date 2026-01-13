@@ -48,6 +48,7 @@ website:
             text: "A RAG framework for bioinformatics applications"
       - text: "Data Viz"
         menu:
+          - href: swissalps_map.ipynb
           - href: "weather-records.ipynb"
           - href: "detroit-wiki.ipynb"
     tools:
