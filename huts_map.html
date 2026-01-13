@@ -1,0 +1,3298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Marco Notaro">
+<meta name="dcterms.date" content="2026-01-08">
+
+<title>Interactive map of remote alpine spots I visited</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-84466f93ea5b8fb721a8c142303eab4c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3974ab9ee1cb9ff59384e7f37ad48039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<link href="favicon/favicon.png" rel="icon">
+<link href="favicon/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+</head>
+
+<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-software-library" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Software Library</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-software-library">    
+        <li>
+    <a class="dropdown-item" href="https://hemdag.readthedocs.io/en/latest/">
+ <span class="dropdown-text">HEMDAG</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://obogaf-parser.readthedocs.io/en/latest/">
+ <span class="dropdown-text">obogaf-parser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/uzh/ezRun/commits?author=marconotaro">
+ <span class="dropdown-text">Contribution to ezRun</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/uzh/sushi/commits?author=marconotaro">
+ <span class="dropdown-text">Contribution to SUSHI</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-machine-learning" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Machine Learning</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-machine-learning">    
+        <li>
+    <a class="dropdown-item" href="./biomarker-discovery-ornish.html">
+ <span class="dropdown-text">Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./predict-housing-prices.html">
+ <span class="dropdown-text">Predicting housing prices in California</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./r4_predict_erstatus.html">
+ <span class="dropdown-text">Predicting biomarker status imputing missing values</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cnn_vs_fnn.html">
+ <span class="dropdown-text">Predicting protein localizations with pythorch</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ml-graph.html">
+ <span class="dropdown-text">Predicting salary and new connections with scikit-learn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ml-video.html">
+ <span class="dropdown-text">Predicting viewer engagement with scikit-learn</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-genomics" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Genomics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-genomics">    
+        <li>
+    <a class="dropdown-item" href="./cancer-subtypes.html">
+ <span class="dropdown-text">Identification of breast cancer subtypes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ai-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AI tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ai-tools">    
+        <li>
+    <a class="dropdown-item" href="https://github.com/marconotaro/llm-sib">
+ <span class="dropdown-text">A RAG framework for bioinformatics applications</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-viz" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Viz</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-viz">    
+        <li>
+    <a class="dropdown-item" href="./weather-records.html">
+ <span class="dropdown-text">Visualization of Michigan’s temperature records</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./detroit-wiki.html">
+ <span class="dropdown-text">Visualization of Detroit’s sports teams win percentages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/marconotaro/portfolio" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://marconotaro.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe-americas"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">Aim</a></li>
+  <li><a href="#annex" id="toc-annex" class="nav-link" data-scroll-target="#annex">Annex</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Interactive map of remote alpine spots I visited</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marco Notaro </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 8, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="aim" class="level2">
+<h2 class="anchored" data-anchor-id="aim">Aim</h2>
+<p>Here I built an interactive map showing remote alpine huts, lakes, and glaciers I visited.</p>
+<p>To make geolocation more efficient, retrieved location coordinates are stored in a JSON file.</p>
+<p>On the map, markers are color-coded following the <a href="https://www.sac-cas.ch/en/ausbildung-und-sicherheit/tourenplanung/grading-systems/">Swiss Alpine Club grading system</a>: red for hikes up to T3, blue for hikes up to T6, dark blue for glacier hikes and magenta for alpine lakes.</p>
+<div id="cell-2" class="cell" data-execution_count="118">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> geopy.geocoders <span class="im">import</span> Nominatim</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> geopy.extra.rate_limiter <span class="im">import</span> RateLimiter</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">20</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.reset_option('display.max_rows')</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-3" class="cell" data-execution_count="119">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## path level define marker color</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>alpine_spots <span class="op">=</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Zermatt</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hörnlihütte"</span>: [<span class="st">"T3"</span>, <span class="st">"Trail Hike"</span>], <span class="co">## {"path": "T3", "type": "hike"}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Schönbielhütte"</span>: [<span class="st">"T3"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Gandegghütte"</span>: [<span class="st">"T3"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Berggasthaus Trift"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rothornhütte"</span>: [<span class="st">"T3"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Engelberg</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Brunnihütte"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Lauterbrunnen</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lobhornhütte"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Uri</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Sidelenhütte"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Albert-Heim-Hütte"</span>: [<span class="st">"T4"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Bern</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Trifthütte"</span>: [<span class="st">"T4"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Tierberglihütte"</span>: [<span class="st">"T4"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Blüemlisalphütte"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Gelmerhütte"</span>: [<span class="st">"T3"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lämmerenhütte"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Glarus  </span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Planurahütte"</span>: [<span class="st">"WS"</span>, <span class="st">"Glacier Hike"</span>],</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hüfihütte"</span>: [<span class="st">"WS"</span>, <span class="st">"Glacier Hike"</span>],</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Muttseehütte"</span>: [<span class="st">"T3"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Leglerhütte"</span>: [<span class="st">"T2"</span>, <span class="st">"Trail Hike"</span>],</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Glaciers</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hüfifirn"</span>: [<span class="st">"WS"</span>, <span class="st">"Glacier Crossing"</span>],</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Aletsch Glacier"</span>: [<span class="st">"WS"</span>, <span class="st">"Glacier Crossing"</span>],</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rhône"</span>: [<span class="st">"WS"</span>, <span class="st">"Glacier Crossing"</span>],</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Zinal Glacier"</span>: [<span class="st">"WS"</span>, <span class="st">"Glacier Crossing"</span>],</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Lakes</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Jöriseen"</span>: [<span class="st">"T3"</span>, <span class="st">"Lake"</span>],</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Oeschinensee"</span>: [<span class="st">"T2"</span>, <span class="st">"Lake"</span>],</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Caumasee"</span>: [<span class="st">"T2"</span>, <span class="st">"Lake"</span>],</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Silvaplana"</span>: [<span class="st">"-"</span>, <span class="st">"Lake"</span>],</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="co">## Alpine cities</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Zermatt"</span>: [<span class="st">"-"</span>, <span class="st">"City"</span>],</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Davos"</span>: [<span class="st">"-"</span>, <span class="st">"City"</span>],</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Saint Moritz"</span>: [<span class="st">"-"</span>, <span class="st">"City"</span>],</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Chamonix Mont Blanc"</span>: [<span class="st">"-"</span>, <span class="st">"City"</span>],</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lauterbrunnen"</span>: [<span class="st">"-"</span>, <span class="st">"City"</span>]</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="120">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use Open-Elevation to get elevation, since Nominatim doesn't have an API for this</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_elevation(lat, lon):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">  Fetch elevation from Open-Elevation API</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  url <span class="op">=</span> <span class="ss">f"https://api.open-elevation.com/api/v1/lookup?locations=</span><span class="sc">{</span>lat<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>lon<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.ok: <span class="co">## when response fails (404) doesn't raise any exception</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> response.json()[<span class="st">"results"</span>][<span class="dv">0</span>][<span class="st">"elevation"</span>]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span>:</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co">## bad http status</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">None</span> <span class="co"># Handles both failures</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="121">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_coordinates(spots, cachefile):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Retrieve coordinates of alpine spots with caching</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  cachefile <span class="op">=</span> Path(cachefile)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  cache <span class="op">=</span> {}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># load cache</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> cachefile.exists():</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(cachefile, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      cache <span class="op">=</span> json.load(f)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fetch not cached spots</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  spots_to_fetch <span class="op">=</span> [s <span class="cf">for</span> s <span class="kw">in</span> spots <span class="cf">if</span> s <span class="kw">not</span> <span class="kw">in</span> cache]</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> spots_to_fetch:</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    geolocator <span class="op">=</span> Nominatim(user_agent<span class="op">=</span><span class="st">"alpine_spot_finder"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    geocode <span class="op">=</span> RateLimiter(geolocator.geocode, min_delay_seconds<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> spot <span class="kw">in</span> spots_to_fetch:</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># location = geocode(f"{spot}")</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      location <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> country <span class="kw">in</span> [<span class="st">"Switzerland"</span>, <span class="st">"Italy"</span>, <span class="st">"France"</span>]:</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        location <span class="op">=</span> geocode(<span class="ss">f"</span><span class="sc">{</span>spot<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>country<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">## search spot in Switzerland, if spot not found continue to Italy</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> location: </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>          <span class="cf">break</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> location:</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        cache[spot] <span class="op">=</span> {</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Latitude"</span>: location.latitude,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Longitude"</span>: location.longitude,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Elevation"</span>: <span class="bu">round</span>(get_elevation(location.latitude, location.longitude))</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>:</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Could not find coordinates for: </span><span class="sc">{</span>spot<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>        cache[spot] <span class="op">=</span> {</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Latitude"</span>: <span class="va">None</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Longitude"</span>: <span class="va">None</span>,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Elevation"</span>: <span class="va">None</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># update cache</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(cachefile, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>      json.dump(cache, f, indent<span class="op">=</span><span class="dv">2</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># build dataframe from cache</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> [{<span class="st">"Name"</span>: spot, <span class="op">**</span>cache[spot]} <span class="cf">for</span> spot <span class="kw">in</span> spots]</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> pd.DataFrame(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="122">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>spot_name <span class="op">=</span> <span class="bu">list</span>(alpine_spots.keys())</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cachefile <span class="op">=</span> <span class="st">"data/coordinates.json"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> get_coordinates(spots <span class="op">=</span> spot_name, cachefile <span class="op">=</span> cachefile)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># map path level</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># df['Path'] = df["Name"].map(spots)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Path'</span>] <span class="op">=</span> df[<span class="st">"Name"</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: spots[x][<span class="dv">0</span>])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Type'</span>] <span class="op">=</span> df[<span class="st">"Name"</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: spots[x][<span class="dv">1</span>])</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="122">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Latitude</th>
+<th data-quarto-table-cell-role="th">Longitude</th>
+<th data-quarto-table-cell-role="th">Elevation</th>
+<th data-quarto-table-cell-role="th">Path</th>
+<th data-quarto-table-cell-role="th">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Hörnlihütte</td>
+<td>45.982197</td>
+<td>7.677011</td>
+<td>3274</td>
+<td>T3</td>
+<td>Trail Hike</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Schönbielhütte</td>
+<td>46.001980</td>
+<td>7.628957</td>
+<td>2639</td>
+<td>T3</td>
+<td>Trail Hike</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Gandegghütte</td>
+<td>45.964138</td>
+<td>7.725649</td>
+<td>2960</td>
+<td>T3</td>
+<td>Trail Hike</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Berggasthaus Trift</td>
+<td>46.030039</td>
+<td>7.721071</td>
+<td>2334</td>
+<td>T2</td>
+<td>Trail Hike</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Rothornhütte</td>
+<td>46.048179</td>
+<td>7.697287</td>
+<td>3220</td>
+<td>T3</td>
+<td>Trail Hike</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>Zermatt</td>
+<td>46.021208</td>
+<td>7.749254</td>
+<td>1610</td>
+<td>-</td>
+<td>City</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">27</th>
+<td>Davos</td>
+<td>46.796198</td>
+<td>9.823689</td>
+<td>1546</td>
+<td>-</td>
+<td>City</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">28</th>
+<td>Saint Moritz</td>
+<td>46.497896</td>
+<td>9.839243</td>
+<td>1825</td>
+<td>-</td>
+<td>City</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>Chamonix Mont Blanc</td>
+<td>45.924670</td>
+<td>6.872751</td>
+<td>1037</td>
+<td>-</td>
+<td>City</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">30</th>
+<td>Lauterbrunnen</td>
+<td>46.593904</td>
+<td>7.907802</td>
+<td>816</td>
+<td>-</td>
+<td>City</td>
+</tr>
+</tbody>
+</table>
+
+<p>31 rows × 6 columns</p>
+</div>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="106">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> folium.plugins <span class="im">import</span> MarkerCluster, Geocoder</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>center_lat <span class="op">=</span> df[<span class="st">"Latitude"</span>].mean()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>center_lon <span class="op">=</span> df[<span class="st">"Longitude"</span>].mean()</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># initialize map</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> folium.Map(</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  location<span class="op">=</span>[center_lat, center_lon],</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  zoom_start<span class="op">=</span><span class="dv">7</span>, </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  tiles<span class="op">=</span><span class="st">"OpenStreetMap"</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>markers <span class="op">=</span> MarkerCluster(</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  options<span class="op">=</span>{</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"maxClusterRadius"</span>: <span class="dv">30</span>, <span class="co"># def: 80, smaller less grouping</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"disableClusteringAtZoom"</span>: <span class="dv">10</span>  <span class="co"># no clustering at this zoom and higher</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>).add_to(m)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_marker_color(spot):</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> spot[<span class="st">"Type"</span>] <span class="op">==</span> <span class="st">"Lake"</span>:</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"purple"</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> spot[<span class="st">"Type"</span>] <span class="op">==</span> <span class="st">"City"</span>:</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"orange"</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> spot[<span class="st">"Type"</span>] <span class="op">==</span> <span class="st">"Trail Hike"</span>:</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> spot[<span class="st">"Path"</span>] <span class="kw">in</span> [<span class="st">"T2"</span>, <span class="st">"T3"</span>]:</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="st">"red"</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> spot[<span class="st">"Path"</span>] <span class="op">==</span> <span class="st">"T4"</span>:</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="st">"blue"</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> re.search(<span class="vs">r"Glacier"</span>, spot[<span class="st">"Type"</span>]):</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"darkblue"</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"gray"</span>  <span class="co"># fallback</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Add markers for each spot</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _, spot <span class="kw">in</span> df.iterrows():</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  folium.Marker(</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    location<span class="op">=</span>[spot[<span class="st">"Latitude"</span>], spot[<span class="st">"Longitude"</span>]],</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    popup<span class="op">=</span>spot[<span class="st">"Name"</span>],</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>spot[<span class="st">'Name'</span>]<span class="sc">}</span><span class="ss"> &lt;br&gt; Path: </span><span class="sc">{</span>spot[<span class="st">'Path'</span>]<span class="sc">}</span><span class="ss"> &lt;br&gt; Elevation: </span><span class="sc">{</span>spot[<span class="st">'Elevation'</span>]<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    icon<span class="op">=</span>folium.Icon(color<span class="op">=</span>get_marker_color(spot), icon<span class="op">=</span><span class="st">"home"</span>)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>  ).add_to(markers)</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Add search bar</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>Geocoder(</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  collapsed<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  position<span class="op">=</span><span class="st">'topright'</span>,</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  add_marker<span class="op">=</span><span class="va">False</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>).add_to(m)</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="106">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_374539f8ca19c80b1f9a8ee1b4f39068 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css&quot;/>
+    <script src=&quot;https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css&quot;/>
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_374539f8ca19c80b1f9a8ee1b4f39068&quot; ></div>
+        
+</body>
+<script>
+    
+    
+            var map_374539f8ca19c80b1f9a8ee1b4f39068 = L.map(
+                &quot;map_374539f8ca19c80b1f9a8ee1b4f39068&quot;,
+                {
+                    center: [46.495724993548386, 8.382541619354837],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;maxBounds&quot;: null,
+  &quot;zoom&quot;: 7,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_894a657f87bd4fa70121f7f7e9e28ab3 = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_894a657f87bd4fa70121f7f7e9e28ab3.addTo(map_374539f8ca19c80b1f9a8ee1b4f39068);
+        
+    
+            var marker_cluster_ac51896332a07019678da06fbbd09376 = L.markerClusterGroup(
+                {
+  &quot;maxClusterRadius&quot;: 30,
+  &quot;disableClusteringAtZoom&quot;: 10,
+}
+            );
+        
+    
+            var marker_c654ee39e2b0257c35e10b3f9badd21a = L.marker(
+                [45.9821974, 7.6770109],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_11a35db286d0b4b7f25dea89f575f3d1 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_c654ee39e2b0257c35e10b3f9badd21a.setIcon(icon_11a35db286d0b4b7f25dea89f575f3d1);
+        
+    
+        var popup_e6a0e93ec97bd17b8e293c7d83e1730b = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_c98ddc83f8751f9b66e2201cda7fa240 = $(`<div id=&quot;html_c98ddc83f8751f9b66e2201cda7fa240&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Hörnlihütte</div>`)[0];
+                popup_e6a0e93ec97bd17b8e293c7d83e1730b.setContent(html_c98ddc83f8751f9b66e2201cda7fa240);
+            
+        
+
+        marker_c654ee39e2b0257c35e10b3f9badd21a.bindPopup(popup_e6a0e93ec97bd17b8e293c7d83e1730b)
+        ;
+
+        
+    
+    
+            marker_c654ee39e2b0257c35e10b3f9badd21a.bindTooltip(
+                `<div>
+                     Hörnlihütte <br> Path: T3 <br> Elevation: 3274
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_19b6547c183878dd042da36df818ffe9 = L.marker(
+                [46.00198, 7.6289566],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_449310045620b1c488ede09911b560e9 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_19b6547c183878dd042da36df818ffe9.setIcon(icon_449310045620b1c488ede09911b560e9);
+        
+    
+        var popup_6e7ba0af0c67f2ef804dd83c537fd438 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_a742e6ef8db8bfdde2a1efedc7da0e97 = $(`<div id=&quot;html_a742e6ef8db8bfdde2a1efedc7da0e97&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Schönbielhütte</div>`)[0];
+                popup_6e7ba0af0c67f2ef804dd83c537fd438.setContent(html_a742e6ef8db8bfdde2a1efedc7da0e97);
+            
+        
+
+        marker_19b6547c183878dd042da36df818ffe9.bindPopup(popup_6e7ba0af0c67f2ef804dd83c537fd438)
+        ;
+
+        
+    
+    
+            marker_19b6547c183878dd042da36df818ffe9.bindTooltip(
+                `<div>
+                     Schönbielhütte <br> Path: T3 <br> Elevation: 2639
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_079f4eca4a07a84fcffb557afae4f081 = L.marker(
+                [45.9641383, 7.7256494],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_1c98a7f7794526cf542e7e3042e39e6e = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_079f4eca4a07a84fcffb557afae4f081.setIcon(icon_1c98a7f7794526cf542e7e3042e39e6e);
+        
+    
+        var popup_a10b9931ed73c7dab702edd454536a86 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_9dacad93d63df98096415c070b63db77 = $(`<div id=&quot;html_9dacad93d63df98096415c070b63db77&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Gandegghütte</div>`)[0];
+                popup_a10b9931ed73c7dab702edd454536a86.setContent(html_9dacad93d63df98096415c070b63db77);
+            
+        
+
+        marker_079f4eca4a07a84fcffb557afae4f081.bindPopup(popup_a10b9931ed73c7dab702edd454536a86)
+        ;
+
+        
+    
+    
+            marker_079f4eca4a07a84fcffb557afae4f081.bindTooltip(
+                `<div>
+                     Gandegghütte <br> Path: T3 <br> Elevation: 2960
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_d70817cee97eed3889636cb6cbfc9a25 = L.marker(
+                [46.0300393, 7.7210708],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_3917d357eb339363329bdecfc286e24a = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_d70817cee97eed3889636cb6cbfc9a25.setIcon(icon_3917d357eb339363329bdecfc286e24a);
+        
+    
+        var popup_ee6765022a3d9a1c736eb1e0ea115c5f = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_faa4d4dac22e21927e900e371d773a35 = $(`<div id=&quot;html_faa4d4dac22e21927e900e371d773a35&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Berggasthaus Trift</div>`)[0];
+                popup_ee6765022a3d9a1c736eb1e0ea115c5f.setContent(html_faa4d4dac22e21927e900e371d773a35);
+            
+        
+
+        marker_d70817cee97eed3889636cb6cbfc9a25.bindPopup(popup_ee6765022a3d9a1c736eb1e0ea115c5f)
+        ;
+
+        
+    
+    
+            marker_d70817cee97eed3889636cb6cbfc9a25.bindTooltip(
+                `<div>
+                     Berggasthaus Trift <br> Path: T2 <br> Elevation: 2334
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_d1312eee1bab58a1a11a6abf07f7e09f = L.marker(
+                [46.0481793, 7.697287],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_ff1a3822857913085dcc10891232063c = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_d1312eee1bab58a1a11a6abf07f7e09f.setIcon(icon_ff1a3822857913085dcc10891232063c);
+        
+    
+        var popup_ac2e7350dd5af3dede0cf6b78b49544b = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_f467dedb1913097d3ddc109d8846d2dc = $(`<div id=&quot;html_f467dedb1913097d3ddc109d8846d2dc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Rothornhütte</div>`)[0];
+                popup_ac2e7350dd5af3dede0cf6b78b49544b.setContent(html_f467dedb1913097d3ddc109d8846d2dc);
+            
+        
+
+        marker_d1312eee1bab58a1a11a6abf07f7e09f.bindPopup(popup_ac2e7350dd5af3dede0cf6b78b49544b)
+        ;
+
+        
+    
+    
+            marker_d1312eee1bab58a1a11a6abf07f7e09f.bindTooltip(
+                `<div>
+                     Rothornhütte <br> Path: T3 <br> Elevation: 3220
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_f1a5e311162485d4fe22da525a80fa31 = L.marker(
+                [46.841153, 8.4109691],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_091aa411e6341ac84e06818a737ae0b1 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_f1a5e311162485d4fe22da525a80fa31.setIcon(icon_091aa411e6341ac84e06818a737ae0b1);
+        
+    
+        var popup_034d36e9d346ec7f7ce172a98ba54ccd = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_72aab808c0eec3eb22d70c00a6394cb1 = $(`<div id=&quot;html_72aab808c0eec3eb22d70c00a6394cb1&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Brunnihütte</div>`)[0];
+                popup_034d36e9d346ec7f7ce172a98ba54ccd.setContent(html_72aab808c0eec3eb22d70c00a6394cb1);
+            
+        
+
+        marker_f1a5e311162485d4fe22da525a80fa31.bindPopup(popup_034d36e9d346ec7f7ce172a98ba54ccd)
+        ;
+
+        
+    
+    
+            marker_f1a5e311162485d4fe22da525a80fa31.bindTooltip(
+                `<div>
+                     Brunnihütte <br> Path: T2 <br> Elevation: 1842
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_0a42f2e63d00fa47545404613710d855 = L.marker(
+                [46.6184883, 7.8689998],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_0b213cf6878ef3d40b584ec34f53fa56 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_0a42f2e63d00fa47545404613710d855.setIcon(icon_0b213cf6878ef3d40b584ec34f53fa56);
+        
+    
+        var popup_45d49282b7e2a035e99748c63d7d0fa4 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_2b4652dbe8673b2f14682c5a78ad652f = $(`<div id=&quot;html_2b4652dbe8673b2f14682c5a78ad652f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Lobhornhütte</div>`)[0];
+                popup_45d49282b7e2a035e99748c63d7d0fa4.setContent(html_2b4652dbe8673b2f14682c5a78ad652f);
+            
+        
+
+        marker_0a42f2e63d00fa47545404613710d855.bindPopup(popup_45d49282b7e2a035e99748c63d7d0fa4)
+        ;
+
+        
+    
+    
+            marker_0a42f2e63d00fa47545404613710d855.bindTooltip(
+                `<div>
+                     Lobhornhütte <br> Path: T2 <br> Elevation: 1910
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_5cc1884a3b8390e7e2a582cb9db6364d = L.marker(
+                [46.5974645, 8.4267493],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_743e5b1217470714e7347e23440a7d50 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_5cc1884a3b8390e7e2a582cb9db6364d.setIcon(icon_743e5b1217470714e7347e23440a7d50);
+        
+    
+        var popup_647879398dae6aaf9363a0846e6facad = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_442c8e490dabd48428a14f5c34388472 = $(`<div id=&quot;html_442c8e490dabd48428a14f5c34388472&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Sidelenhütte</div>`)[0];
+                popup_647879398dae6aaf9363a0846e6facad.setContent(html_442c8e490dabd48428a14f5c34388472);
+            
+        
+
+        marker_5cc1884a3b8390e7e2a582cb9db6364d.bindPopup(popup_647879398dae6aaf9363a0846e6facad)
+        ;
+
+        
+    
+    
+            marker_5cc1884a3b8390e7e2a582cb9db6364d.bindTooltip(
+                `<div>
+                     Sidelenhütte <br> Path: T2 <br> Elevation: 2685
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_5225e42624da4f249226c26a5b774341 = L.marker(
+                [46.6087398, 8.4638903],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_0d4e2880628c5a77985d0897b9912dba = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_5225e42624da4f249226c26a5b774341.setIcon(icon_0d4e2880628c5a77985d0897b9912dba);
+        
+    
+        var popup_716004f57cd2f84c62b642c3e691e4b9 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_2d01e7cd5da5a6e97657d58dd269f157 = $(`<div id=&quot;html_2d01e7cd5da5a6e97657d58dd269f157&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Albert-Heim-Hütte</div>`)[0];
+                popup_716004f57cd2f84c62b642c3e691e4b9.setContent(html_2d01e7cd5da5a6e97657d58dd269f157);
+            
+        
+
+        marker_5225e42624da4f249226c26a5b774341.bindPopup(popup_716004f57cd2f84c62b642c3e691e4b9)
+        ;
+
+        
+    
+    
+            marker_5225e42624da4f249226c26a5b774341.bindTooltip(
+                `<div>
+                     Albert-Heim-Hütte <br> Path: T4 <br> Elevation: 2492
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_ca6e408fb92f1d72e5fb1b1827628d6a = L.marker(
+                [46.6779142, 8.3766586],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_d20a7f9d1f8bea1ae7babe5d32526d07 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_ca6e408fb92f1d72e5fb1b1827628d6a.setIcon(icon_d20a7f9d1f8bea1ae7babe5d32526d07);
+        
+    
+        var popup_36985c805b54c29719eae66403b42ef6 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_9bc63c222aa8af7e8a7153df12eeb1b6 = $(`<div id=&quot;html_9bc63c222aa8af7e8a7153df12eeb1b6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Trifthütte</div>`)[0];
+                popup_36985c805b54c29719eae66403b42ef6.setContent(html_9bc63c222aa8af7e8a7153df12eeb1b6);
+            
+        
+
+        marker_ca6e408fb92f1d72e5fb1b1827628d6a.bindPopup(popup_36985c805b54c29719eae66403b42ef6)
+        ;
+
+        
+    
+    
+            marker_ca6e408fb92f1d72e5fb1b1827628d6a.bindTooltip(
+                `<div>
+                     Trifthütte <br> Path: T4 <br> Elevation: 2489
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_124f2215e869a5e07e882d9ca818bea2 = L.marker(
+                [46.7020308, 8.4142126],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_a9b6c17b7ff7239722553b42c3099de5 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_124f2215e869a5e07e882d9ca818bea2.setIcon(icon_a9b6c17b7ff7239722553b42c3099de5);
+        
+    
+        var popup_5e6b5bbb7e1c967205aa7248fcc7041a = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_e665f20158bcae2b400caba8cb887e6b = $(`<div id=&quot;html_e665f20158bcae2b400caba8cb887e6b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Tierberglihütte</div>`)[0];
+                popup_5e6b5bbb7e1c967205aa7248fcc7041a.setContent(html_e665f20158bcae2b400caba8cb887e6b);
+            
+        
+
+        marker_124f2215e869a5e07e882d9ca818bea2.bindPopup(popup_5e6b5bbb7e1c967205aa7248fcc7041a)
+        ;
+
+        
+    
+    
+            marker_124f2215e869a5e07e882d9ca818bea2.bindTooltip(
+                `<div>
+                     Tierberglihütte <br> Path: T4 <br> Elevation: 2777
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_dae29d49ff74a982cb0c2200dc97e065 = L.marker(
+                [46.5101555, 7.7716385],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_15e337fdbb029ffeb5f737f5f2f1b282 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_dae29d49ff74a982cb0c2200dc97e065.setIcon(icon_15e337fdbb029ffeb5f737f5f2f1b282);
+        
+    
+        var popup_af42069f8f7374a565c2dbd13ba55294 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_2245f5588dc5d47d16d379e3efda58f5 = $(`<div id=&quot;html_2245f5588dc5d47d16d379e3efda58f5&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Blüemlisalphütte</div>`)[0];
+                popup_af42069f8f7374a565c2dbd13ba55294.setContent(html_2245f5588dc5d47d16d379e3efda58f5);
+            
+        
+
+        marker_dae29d49ff74a982cb0c2200dc97e065.bindPopup(popup_af42069f8f7374a565c2dbd13ba55294)
+        ;
+
+        
+    
+    
+            marker_dae29d49ff74a982cb0c2200dc97e065.bindTooltip(
+                `<div>
+                     Blüemlisalphütte <br> Path: T2 <br> Elevation: 2848
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_0cfe449cd0546ef24658200e0a143f00 = L.marker(
+                [46.6312578, 8.3427823],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_6de039c69ec41f610e3c1bb47c2c2952 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_0cfe449cd0546ef24658200e0a143f00.setIcon(icon_6de039c69ec41f610e3c1bb47c2c2952);
+        
+    
+        var popup_5d145239edf6bf5539c8559078ea4665 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_33ab762a75a87ecfd2b3c2657d115847 = $(`<div id=&quot;html_33ab762a75a87ecfd2b3c2657d115847&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Gelmerhütte</div>`)[0];
+                popup_5d145239edf6bf5539c8559078ea4665.setContent(html_33ab762a75a87ecfd2b3c2657d115847);
+            
+        
+
+        marker_0cfe449cd0546ef24658200e0a143f00.bindPopup(popup_5d145239edf6bf5539c8559078ea4665)
+        ;
+
+        
+    
+    
+            marker_0cfe449cd0546ef24658200e0a143f00.bindTooltip(
+                `<div>
+                     Gelmerhütte <br> Path: T3 <br> Elevation: 2421
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_a82414c20fb432ff8898f558808b7619 = L.marker(
+                [46.4002937, 7.5744861],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_9b69be710edf0861a4db80181b0e46e2 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_a82414c20fb432ff8898f558808b7619.setIcon(icon_9b69be710edf0861a4db80181b0e46e2);
+        
+    
+        var popup_0ecefa5ff223c3b0a17f253bb1873684 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_2213c3c30222c98e706134342f5a24b8 = $(`<div id=&quot;html_2213c3c30222c98e706134342f5a24b8&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Lämmerenhütte</div>`)[0];
+                popup_0ecefa5ff223c3b0a17f253bb1873684.setContent(html_2213c3c30222c98e706134342f5a24b8);
+            
+        
+
+        marker_a82414c20fb432ff8898f558808b7619.bindPopup(popup_0ecefa5ff223c3b0a17f253bb1873684)
+        ;
+
+        
+    
+    
+            marker_a82414c20fb432ff8898f558808b7619.bindTooltip(
+                `<div>
+                     Lämmerenhütte <br> Path: T2 <br> Elevation: 2505
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_006657ede960dc744473bdf399e67b7b = L.marker(
+                [46.8200048, 8.8804074],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_573b65c10b4da907a93039b3fbdf9d3e = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;darkblue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_006657ede960dc744473bdf399e67b7b.setIcon(icon_573b65c10b4da907a93039b3fbdf9d3e);
+        
+    
+        var popup_d729612d4fb72a780d50cfc71e008fdf = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_d920d0a2e0505a546b4fe6b2aba361f0 = $(`<div id=&quot;html_d920d0a2e0505a546b4fe6b2aba361f0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Planurahütte</div>`)[0];
+                popup_d729612d4fb72a780d50cfc71e008fdf.setContent(html_d920d0a2e0505a546b4fe6b2aba361f0);
+            
+        
+
+        marker_006657ede960dc744473bdf399e67b7b.bindPopup(popup_d729612d4fb72a780d50cfc71e008fdf)
+        ;
+
+        
+    
+    
+            marker_006657ede960dc744473bdf399e67b7b.bindTooltip(
+                `<div>
+                     Planurahütte <br> Path: WS <br> Elevation: 2910
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_e7331ba557d5c237c7f9d9a414d5ce2b = L.marker(
+                [46.8018251, 8.8189945],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_9942a2ad4960d59fc78af22278387f85 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;darkblue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_e7331ba557d5c237c7f9d9a414d5ce2b.setIcon(icon_9942a2ad4960d59fc78af22278387f85);
+        
+    
+        var popup_f41d28be0573b4ec99bc4af770c4ec6b = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_e6e33089e4904ff4cc0d90ddc9387121 = $(`<div id=&quot;html_e6e33089e4904ff4cc0d90ddc9387121&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Hüfihütte</div>`)[0];
+                popup_f41d28be0573b4ec99bc4af770c4ec6b.setContent(html_e6e33089e4904ff4cc0d90ddc9387121);
+            
+        
+
+        marker_e7331ba557d5c237c7f9d9a414d5ce2b.bindPopup(popup_f41d28be0573b4ec99bc4af770c4ec6b)
+        ;
+
+        
+    
+    
+            marker_e7331ba557d5c237c7f9d9a414d5ce2b.bindTooltip(
+                `<div>
+                     Hüfihütte <br> Path: WS <br> Elevation: 2302
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_1f568a786cc61fea3dad0531f134d689 = L.marker(
+                [46.8575077, 9.0187789],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_10629dd5365b7288ab3388564dc0430e = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_1f568a786cc61fea3dad0531f134d689.setIcon(icon_10629dd5365b7288ab3388564dc0430e);
+        
+    
+        var popup_71bb9e64c077d9a798b11d5489499da1 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_d8ab2273225c3b97524e9b3f51e9ea08 = $(`<div id=&quot;html_d8ab2273225c3b97524e9b3f51e9ea08&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Muttseehütte</div>`)[0];
+                popup_71bb9e64c077d9a798b11d5489499da1.setContent(html_d8ab2273225c3b97524e9b3f51e9ea08);
+            
+        
+
+        marker_1f568a786cc61fea3dad0531f134d689.bindPopup(popup_71bb9e64c077d9a798b11d5489499da1)
+        ;
+
+        
+    
+    
+            marker_1f568a786cc61fea3dad0531f134d689.bindTooltip(
+                `<div>
+                     Muttseehütte <br> Path: T3 <br> Elevation: 2486
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_761e159756c2ff4a3470a25aef6a4443 = L.marker(
+                [46.9274338, 9.080091],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_24913f1778b3351c9ad521d1879c0fab = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_761e159756c2ff4a3470a25aef6a4443.setIcon(icon_24913f1778b3351c9ad521d1879c0fab);
+        
+    
+        var popup_98a4a75969e250a0c75b326a25a75960 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_1cddba25d05934da6364149b798d0582 = $(`<div id=&quot;html_1cddba25d05934da6364149b798d0582&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Leglerhütte</div>`)[0];
+                popup_98a4a75969e250a0c75b326a25a75960.setContent(html_1cddba25d05934da6364149b798d0582);
+            
+        
+
+        marker_761e159756c2ff4a3470a25aef6a4443.bindPopup(popup_98a4a75969e250a0c75b326a25a75960)
+        ;
+
+        
+    
+    
+            marker_761e159756c2ff4a3470a25aef6a4443.bindTooltip(
+                `<div>
+                     Leglerhütte <br> Path: T2 <br> Elevation: 2206
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_dabc3e8a2a24095d8382c04a4e3437b9 = L.marker(
+                [46.8248495, 8.8604865],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_92832bd03725caebc7fb72225f8cad4b = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;darkblue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_dabc3e8a2a24095d8382c04a4e3437b9.setIcon(icon_92832bd03725caebc7fb72225f8cad4b);
+        
+    
+        var popup_9d736467a313418688af28fe7e0150b4 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_fac2a6b52c23fd24fc7e98955cd5351a = $(`<div id=&quot;html_fac2a6b52c23fd24fc7e98955cd5351a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Hüfifirn</div>`)[0];
+                popup_9d736467a313418688af28fe7e0150b4.setContent(html_fac2a6b52c23fd24fc7e98955cd5351a);
+            
+        
+
+        marker_dabc3e8a2a24095d8382c04a4e3437b9.bindPopup(popup_9d736467a313418688af28fe7e0150b4)
+        ;
+
+        
+    
+    
+            marker_dabc3e8a2a24095d8382c04a4e3437b9.bindTooltip(
+                `<div>
+                     Hüfifirn <br> Path: WS <br> Elevation: 2735
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_622a05adfd9b0ea005118212e3a2b418 = L.marker(
+                [46.4516324, 8.0775081],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_0a5beedda9bfe9ac4ed9c1963cd0f8c5 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;darkblue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_622a05adfd9b0ea005118212e3a2b418.setIcon(icon_0a5beedda9bfe9ac4ed9c1963cd0f8c5);
+        
+    
+        var popup_fb3334bc044224e266b98a6d28120562 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_604668a4081b3775c48f563727d07b2d = $(`<div id=&quot;html_604668a4081b3775c48f563727d07b2d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Aletsch Glacier</div>`)[0];
+                popup_fb3334bc044224e266b98a6d28120562.setContent(html_604668a4081b3775c48f563727d07b2d);
+            
+        
+
+        marker_622a05adfd9b0ea005118212e3a2b418.bindPopup(popup_fb3334bc044224e266b98a6d28120562)
+        ;
+
+        
+    
+    
+            marker_622a05adfd9b0ea005118212e3a2b418.bindTooltip(
+                `<div>
+                     Aletsch Glacier <br> Path: WS <br> Elevation: 2357
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_99a7ce023d1f60530127af1b434617bd = L.marker(
+                [46.6188466, 8.4000567],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_455ed3da731066bfe998e52edcc848e7 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;darkblue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_99a7ce023d1f60530127af1b434617bd.setIcon(icon_455ed3da731066bfe998e52edcc848e7);
+        
+    
+        var popup_175277e1e56bd87a771a61e2abb5512f = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_47a481a3bbb1dc0792caa4bd85481009 = $(`<div id=&quot;html_47a481a3bbb1dc0792caa4bd85481009&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Rhône</div>`)[0];
+                popup_175277e1e56bd87a771a61e2abb5512f.setContent(html_47a481a3bbb1dc0792caa4bd85481009);
+            
+        
+
+        marker_99a7ce023d1f60530127af1b434617bd.bindPopup(popup_175277e1e56bd87a771a61e2abb5512f)
+        ;
+
+        
+    
+    
+            marker_99a7ce023d1f60530127af1b434617bd.bindTooltip(
+                `<div>
+                     Rhône <br> Path: WS <br> Elevation: 2837
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_2313466d23a00911dce9673021f22b32 = L.marker(
+                [46.0594087, 7.6396426],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_f12b2061cfd138a2a6e65c1d588c81d6 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;darkblue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_2313466d23a00911dce9673021f22b32.setIcon(icon_f12b2061cfd138a2a6e65c1d588c81d6);
+        
+    
+        var popup_2578144a02daad9e4f42db3547a392b8 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_529e8e66736f372a5d3fe7e7331e5f5b = $(`<div id=&quot;html_529e8e66736f372a5d3fe7e7331e5f5b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Zinal Glacier</div>`)[0];
+                popup_2578144a02daad9e4f42db3547a392b8.setContent(html_529e8e66736f372a5d3fe7e7331e5f5b);
+            
+        
+
+        marker_2313466d23a00911dce9673021f22b32.bindPopup(popup_2578144a02daad9e4f42db3547a392b8)
+        ;
+
+        
+    
+    
+            marker_2313466d23a00911dce9673021f22b32.bindTooltip(
+                `<div>
+                     Zinal Glacier <br> Path: WS <br> Elevation: 2552
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_2d880c03c7f432c1d26033e381913da6 = L.marker(
+                [46.7794232, 9.970663],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_8a6aeeef2f3f2a78d5d321672a2c2fe7 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;purple&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_2d880c03c7f432c1d26033e381913da6.setIcon(icon_8a6aeeef2f3f2a78d5d321672a2c2fe7);
+        
+    
+        var popup_7801b1f36e37c40e5e919acb8f6554aa = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_60a78dcd0dab780cacbb3bfdfff747a6 = $(`<div id=&quot;html_60a78dcd0dab780cacbb3bfdfff747a6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Jöriseen</div>`)[0];
+                popup_7801b1f36e37c40e5e919acb8f6554aa.setContent(html_60a78dcd0dab780cacbb3bfdfff747a6);
+            
+        
+
+        marker_2d880c03c7f432c1d26033e381913da6.bindPopup(popup_7801b1f36e37c40e5e919acb8f6554aa)
+        ;
+
+        
+    
+    
+            marker_2d880c03c7f432c1d26033e381913da6.bindTooltip(
+                `<div>
+                     Jöriseen <br> Path: T3 <br> Elevation: 2485
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_3a5c2fe4a8c4231cdcfc07ab5b4dc190 = L.marker(
+                [46.4984951, 7.7268429],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_a5de83d8c373b3e6d88ea4b419eb2126 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;purple&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_3a5c2fe4a8c4231cdcfc07ab5b4dc190.setIcon(icon_a5de83d8c373b3e6d88ea4b419eb2126);
+        
+    
+        var popup_5a3ff05cc28784ace48f55420e8c16ac = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_b0aa357b7b260c0db710d542e11a5bbb = $(`<div id=&quot;html_b0aa357b7b260c0db710d542e11a5bbb&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Oeschinensee</div>`)[0];
+                popup_5a3ff05cc28784ace48f55420e8c16ac.setContent(html_b0aa357b7b260c0db710d542e11a5bbb);
+            
+        
+
+        marker_3a5c2fe4a8c4231cdcfc07ab5b4dc190.bindPopup(popup_5a3ff05cc28784ace48f55420e8c16ac)
+        ;
+
+        
+    
+    
+            marker_3a5c2fe4a8c4231cdcfc07ab5b4dc190.bindTooltip(
+                `<div>
+                     Oeschinensee <br> Path: T2 <br> Elevation: 1569
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_37a41f76687a62596be33ab66fa49dd5 = L.marker(
+                [46.8202064, 9.2963026],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_89865b9864082368a0a39e7e1f213eda = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;purple&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_37a41f76687a62596be33ab66fa49dd5.setIcon(icon_89865b9864082368a0a39e7e1f213eda);
+        
+    
+        var popup_53f4eba567cd856e49e87a981c399c15 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_d79555fe71d7d60f83e815ce4208c377 = $(`<div id=&quot;html_d79555fe71d7d60f83e815ce4208c377&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Caumasee</div>`)[0];
+                popup_53f4eba567cd856e49e87a981c399c15.setContent(html_d79555fe71d7d60f83e815ce4208c377);
+            
+        
+
+        marker_37a41f76687a62596be33ab66fa49dd5.bindPopup(popup_53f4eba567cd856e49e87a981c399c15)
+        ;
+
+        
+    
+    
+            marker_37a41f76687a62596be33ab66fa49dd5.bindTooltip(
+                `<div>
+                     Caumasee <br> Path: T2 <br> Elevation: 994
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_c923981370516a05a853cecb3ceac9bf = L.marker(
+                [46.4599334, 9.7959165],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_6000731283c45054c80c5131e80a562e = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;purple&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_c923981370516a05a853cecb3ceac9bf.setIcon(icon_6000731283c45054c80c5131e80a562e);
+        
+    
+        var popup_698bd7008a94e0818bb9e52815886388 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_0f46fa06be184578a4af55dad4bd6a9c = $(`<div id=&quot;html_0f46fa06be184578a4af55dad4bd6a9c&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Silvaplana</div>`)[0];
+                popup_698bd7008a94e0818bb9e52815886388.setContent(html_0f46fa06be184578a4af55dad4bd6a9c);
+            
+        
+
+        marker_c923981370516a05a853cecb3ceac9bf.bindPopup(popup_698bd7008a94e0818bb9e52815886388)
+        ;
+
+        
+    
+    
+            marker_c923981370516a05a853cecb3ceac9bf.bindTooltip(
+                `<div>
+                     Silvaplana <br> Path: - <br> Elevation: 1808
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_cf751f26575db8f751edd161335fc12d = L.marker(
+                [46.0212076, 7.749254],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_00e57bf15843316b31aacf216a6fb61d = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_cf751f26575db8f751edd161335fc12d.setIcon(icon_00e57bf15843316b31aacf216a6fb61d);
+        
+    
+        var popup_143232b306fcefe5aab612104dde197d = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_13a4f88fbc4765569f4504d4ef6da93d = $(`<div id=&quot;html_13a4f88fbc4765569f4504d4ef6da93d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Zermatt</div>`)[0];
+                popup_143232b306fcefe5aab612104dde197d.setContent(html_13a4f88fbc4765569f4504d4ef6da93d);
+            
+        
+
+        marker_cf751f26575db8f751edd161335fc12d.bindPopup(popup_143232b306fcefe5aab612104dde197d)
+        ;
+
+        
+    
+    
+            marker_cf751f26575db8f751edd161335fc12d.bindTooltip(
+                `<div>
+                     Zermatt <br> Path: - <br> Elevation: 1610
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_d415e9a4e6d5468933c7dd4645d06d32 = L.marker(
+                [46.796198, 9.8236892],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_3b9d1611ca0980990167c89a0bdd2d08 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_d415e9a4e6d5468933c7dd4645d06d32.setIcon(icon_3b9d1611ca0980990167c89a0bdd2d08);
+        
+    
+        var popup_6678c0364d786d7d8830d56c4fd1eab0 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_2a99e90cef9fb84bbc9368c1a06e9e08 = $(`<div id=&quot;html_2a99e90cef9fb84bbc9368c1a06e9e08&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Davos</div>`)[0];
+                popup_6678c0364d786d7d8830d56c4fd1eab0.setContent(html_2a99e90cef9fb84bbc9368c1a06e9e08);
+            
+        
+
+        marker_d415e9a4e6d5468933c7dd4645d06d32.bindPopup(popup_6678c0364d786d7d8830d56c4fd1eab0)
+        ;
+
+        
+    
+    
+            marker_d415e9a4e6d5468933c7dd4645d06d32.bindTooltip(
+                `<div>
+                     Davos <br> Path: - <br> Elevation: 1546
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_16e25d38572fc89347f0ef3a178ee790 = L.marker(
+                [46.4978958, 9.8392428],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_5679cafd59bbd8449e72e199af0cbd71 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_16e25d38572fc89347f0ef3a178ee790.setIcon(icon_5679cafd59bbd8449e72e199af0cbd71);
+        
+    
+        var popup_2b71f38580291ed0407695c95d7f3ec9 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_38cfc72b4e2d29a4047c0828497daac0 = $(`<div id=&quot;html_38cfc72b4e2d29a4047c0828497daac0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Saint Moritz</div>`)[0];
+                popup_2b71f38580291ed0407695c95d7f3ec9.setContent(html_38cfc72b4e2d29a4047c0828497daac0);
+            
+        
+
+        marker_16e25d38572fc89347f0ef3a178ee790.bindPopup(popup_2b71f38580291ed0407695c95d7f3ec9)
+        ;
+
+        
+    
+    
+            marker_16e25d38572fc89347f0ef3a178ee790.bindTooltip(
+                `<div>
+                     Saint Moritz <br> Path: - <br> Elevation: 1825
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_6762b501283e1da4e21a35d464b95644 = L.marker(
+                [45.9246705, 6.8727506],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_1713b84e4edeec3b1d685d1f66e467c2 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_6762b501283e1da4e21a35d464b95644.setIcon(icon_1713b84e4edeec3b1d685d1f66e467c2);
+        
+    
+        var popup_847e8ca06f73ecedee3bcf28321fb1c8 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_4fea78f62c7e72ed2a4fea23fabfaa06 = $(`<div id=&quot;html_4fea78f62c7e72ed2a4fea23fabfaa06&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Chamonix Mont Blanc</div>`)[0];
+                popup_847e8ca06f73ecedee3bcf28321fb1c8.setContent(html_4fea78f62c7e72ed2a4fea23fabfaa06);
+            
+        
+
+        marker_6762b501283e1da4e21a35d464b95644.bindPopup(popup_847e8ca06f73ecedee3bcf28321fb1c8)
+        ;
+
+        
+    
+    
+            marker_6762b501283e1da4e21a35d464b95644.bindTooltip(
+                `<div>
+                     Chamonix Mont Blanc <br> Path: - <br> Elevation: 1037
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_49ad0b5ca6951cd7ebafddb332d3a966 = L.marker(
+                [46.5939043, 7.9078016],
+                {
+  &quot;draggable&quot;: null,
+  &quot;autoPan&quot;: null,
+}
+            ).addTo(marker_cluster_ac51896332a07019678da06fbbd09376);
+        
+    
+            var icon_aba0ea58178bd73439cd92562abc4542 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+            marker_49ad0b5ca6951cd7ebafddb332d3a966.setIcon(icon_aba0ea58178bd73439cd92562abc4542);
+        
+    
+        var popup_74b94e3c4fd14ea23426b2e4fa04e9b7 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+  &quot;autoClose&quot;: null,
+  &quot;closeOnClick&quot;: null,
+});
+
+        
+            
+                var html_bca8867632e05d81d5d7da41051fd313 = $(`<div id=&quot;html_bca8867632e05d81d5d7da41051fd313&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>Lauterbrunnen</div>`)[0];
+                popup_74b94e3c4fd14ea23426b2e4fa04e9b7.setContent(html_bca8867632e05d81d5d7da41051fd313);
+            
+        
+
+        marker_49ad0b5ca6951cd7ebafddb332d3a966.bindPopup(popup_74b94e3c4fd14ea23426b2e4fa04e9b7)
+        ;
+
+        
+    
+    
+            marker_49ad0b5ca6951cd7ebafddb332d3a966.bindTooltip(
+                `<div>
+                     Lauterbrunnen <br> Path: - <br> Elevation: 816
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            marker_cluster_ac51896332a07019678da06fbbd09376.addTo(map_374539f8ca19c80b1f9a8ee1b4f39068);
+        
+    
+
+            var geocoderOpts_geocoder_f18844a79787400368bdb4c1e18dfdb3 = {
+  &quot;collapsed&quot;: false,
+  &quot;position&quot;: &quot;topright&quot;,
+  &quot;defaultMarkGeocode&quot;: false,
+  &quot;zoom&quot;: 11,
+  &quot;provider&quot;: &quot;nominatim&quot;,
+  &quot;providerOptions&quot;: {
+},
+};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_f18844a79787400368bdb4c1e18dfdb3 = geocoderOpts_geocoder_f18844a79787400368bdb4c1e18dfdb3[&quot;provider&quot;];
+
+            var customGeocoder_geocoder_f18844a79787400368bdb4c1e18dfdb3 = L.Control.Geocoder[ geocoderName_geocoder_f18844a79787400368bdb4c1e18dfdb3 ](
+                geocoderOpts_geocoder_f18844a79787400368bdb4c1e18dfdb3['providerOptions']
+            );
+            geocoderOpts_geocoder_f18844a79787400368bdb4c1e18dfdb3[&quot;geocoder&quot;] = customGeocoder_geocoder_f18844a79787400368bdb4c1e18dfdb3;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_f18844a79787400368bdb4c1e18dfdb3
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_f18844a79787400368bdb4c1e18dfdb3['zoom'] || map_374539f8ca19c80b1f9a8ee1b4f39068.getZoom();
+                map_374539f8ca19c80b1f9a8ee1b4f39068.setView(e.geocode.center, zoom);
+            }).addTo(map_374539f8ca19c80b1f9a8ee1b4f39068);
+
+        
+</script>
+</html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
+</div>
+</div>
+</section>
+<section id="annex" class="level2">
+<h2 class="anchored" data-anchor-id="annex">Annex</h2>
+<div id="cell-9" class="cell" data-execution_count="110">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## utils to clean cache file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_cache_file(cache_file <span class="op">=</span> <span class="st">'data/coordinates.json'</span>, spots<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> spots <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> Path(cache_file).exists():</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      os.remove(cache_file)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="ss">f"cache_file </span><span class="sc">{</span>cache_file<span class="sc">}</span><span class="ss"> deleted"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(spots, <span class="bu">str</span>):</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      spots <span class="op">=</span> [spots]</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(cache_file, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      data <span class="op">=</span> json.load(f)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> hut <span class="kw">in</span> spots:</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> hut <span class="kw">in</span> data:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">del</span> data[hut]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>hut<span class="sc">}</span><span class="ss"> deleted"</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>:</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>hut<span class="sc">}</span><span class="ss"> not found in cache"</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(cache_file, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      json.dump(data, f, indent<span class="op">=</span><span class="dv">2</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># clean_cache_file()</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># clean_cache_file(spots=["Davos"])</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="111">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dd <span class="op">=</span> df.copy() </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">## retrieval too fast, NaN return </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>dd[<span class="st">"Altitude"</span>] <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> row: get_elevation(row[<span class="st">"Latitude"</span>], row[<span class="st">"Longitude"</span>]), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>dd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="111">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Latitude</th>
+<th data-quarto-table-cell-role="th">Longitude</th>
+<th data-quarto-table-cell-role="th">Elevation</th>
+<th data-quarto-table-cell-role="th">Path</th>
+<th data-quarto-table-cell-role="th">Type</th>
+<th data-quarto-table-cell-role="th">Altitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Hörnlihütte</td>
+<td>45.982197</td>
+<td>7.677011</td>
+<td>3274</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>3274.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Schönbielhütte</td>
+<td>46.001980</td>
+<td>7.628957</td>
+<td>2639</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>2639.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Gandegghütte</td>
+<td>45.964138</td>
+<td>7.725649</td>
+<td>2960</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>2960.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Berggasthaus Trift</td>
+<td>46.030039</td>
+<td>7.721071</td>
+<td>2334</td>
+<td>T2</td>
+<td>Trail Hike</td>
+<td>2334.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Rothornhütte</td>
+<td>46.048179</td>
+<td>7.697287</td>
+<td>3220</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>Zermatt</td>
+<td>46.021208</td>
+<td>7.749254</td>
+<td>1610</td>
+<td>-</td>
+<td>City</td>
+<td>1610.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">27</th>
+<td>Davos</td>
+<td>46.796198</td>
+<td>9.823689</td>
+<td>1546</td>
+<td>-</td>
+<td>City</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">28</th>
+<td>Saint Moritz</td>
+<td>46.497896</td>
+<td>9.839243</td>
+<td>1825</td>
+<td>-</td>
+<td>City</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>Chamonix Mont Blanc</td>
+<td>45.924670</td>
+<td>6.872751</td>
+<td>1037</td>
+<td>-</td>
+<td>City</td>
+<td>1037.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">30</th>
+<td>Lauterbrunnen</td>
+<td>46.593904</td>
+<td>7.907802</td>
+<td>816</td>
+<td>-</td>
+<td>City</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>31 rows × 7 columns</p>
+</div>
+</div>
+</div>
+<div id="cell-11" class="cell" data-execution_count="112">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_elevation_with_delay(hut):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  time.sleep(<span class="dv">1</span>)  <span class="co"># need to avoid rate limit</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">round</span>(get_elevation(hut[<span class="st">"Latitude"</span>], hut[<span class="st">"Longitude"</span>]))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>dd[<span class="st">"Altitude2"</span>] <span class="op">=</span> dd.<span class="bu">apply</span>(get_elevation_with_delay, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>display(dd)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>elapsed_time <span class="op">=</span> end_time <span class="op">-</span> start_time</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"elapsed time: </span><span class="sc">{</span>elapsed_time<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Latitude</th>
+<th data-quarto-table-cell-role="th">Longitude</th>
+<th data-quarto-table-cell-role="th">Elevation</th>
+<th data-quarto-table-cell-role="th">Path</th>
+<th data-quarto-table-cell-role="th">Type</th>
+<th data-quarto-table-cell-role="th">Altitude</th>
+<th data-quarto-table-cell-role="th">Altitude2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Hörnlihütte</td>
+<td>45.982197</td>
+<td>7.677011</td>
+<td>3274</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>3274.0</td>
+<td>3274</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Schönbielhütte</td>
+<td>46.001980</td>
+<td>7.628957</td>
+<td>2639</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>2639.0</td>
+<td>2639</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Gandegghütte</td>
+<td>45.964138</td>
+<td>7.725649</td>
+<td>2960</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>2960.0</td>
+<td>2960</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Berggasthaus Trift</td>
+<td>46.030039</td>
+<td>7.721071</td>
+<td>2334</td>
+<td>T2</td>
+<td>Trail Hike</td>
+<td>2334.0</td>
+<td>2334</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Rothornhütte</td>
+<td>46.048179</td>
+<td>7.697287</td>
+<td>3220</td>
+<td>T3</td>
+<td>Trail Hike</td>
+<td>NaN</td>
+<td>3220</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>Zermatt</td>
+<td>46.021208</td>
+<td>7.749254</td>
+<td>1610</td>
+<td>-</td>
+<td>City</td>
+<td>1610.0</td>
+<td>1610</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">27</th>
+<td>Davos</td>
+<td>46.796198</td>
+<td>9.823689</td>
+<td>1546</td>
+<td>-</td>
+<td>City</td>
+<td>NaN</td>
+<td>1546</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">28</th>
+<td>Saint Moritz</td>
+<td>46.497896</td>
+<td>9.839243</td>
+<td>1825</td>
+<td>-</td>
+<td>City</td>
+<td>NaN</td>
+<td>1825</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>Chamonix Mont Blanc</td>
+<td>45.924670</td>
+<td>6.872751</td>
+<td>1037</td>
+<td>-</td>
+<td>City</td>
+<td>1037.0</td>
+<td>1037</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">30</th>
+<td>Lauterbrunnen</td>
+<td>46.593904</td>
+<td>7.907802</td>
+<td>816</td>
+<td>-</td>
+<td>City</td>
+<td>NaN</td>
+<td>816</td>
+</tr>
+</tbody>
+</table>
+
+<p>31 rows × 8 columns</p>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>elapsed time: 33.22</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Marco Notaro</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><a href="license.md">MIT License</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
