@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Marco Notaro">
-<meta name="dcterms.date" content="2026-01-13">
+<meta name="dcterms.date" content="2026-01-22">
 
 <title>Interactive map of remote alpine spots that I visited in Switzerland</title>
 <style>
@@ -415,6 +415,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">Aim</a></li>
+  <li><a href="#get-spots" id="toc-get-spots" class="nav-link" data-scroll-target="#get-spots">Get spots</a></li>
+  <li><a href="#get-coordinates" id="toc-get-coordinates" class="nav-link" data-scroll-target="#get-coordinates">Get coordinates</a></li>
+  <li><a href="#build-map" id="toc-build-map" class="nav-link" data-scroll-target="#build-map">Build map</a></li>
   <li><a href="#annex" id="toc-annex" class="nav-link" data-scroll-target="#annex">Annex</a></li>
   </ul>
 </nav>
@@ -446,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 13, 2026</p>
+      <p class="date">January 22, 2026</p>
     </div>
   </div>
   
@@ -477,6 +480,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">20</span>)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.reset_option('display.max_rows')</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="get-spots" class="level2">
+<h2 class="anchored" data-anchor-id="get-spots">Get spots</h2>
 <p>Alpine spots to geolocalize</p>
 <div id="cell-4" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## path level define marker color</span></span>
@@ -532,6 +538,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lauterbrunnen"</span>: [<span class="st">"-"</span>, <span class="st">"City"</span>]</span>
 <span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="get-coordinates" class="level2">
+<h2 class="anchored" data-anchor-id="get-coordinates">Get coordinates</h2>
 <p>Get elevation and coordinates of alpine spots caching results in a JSON file</p>
 <div id="cell-6" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use Open-Elevation to get elevation, since Nominatim doesn't have an API for this</span></span>
@@ -738,6 +747,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="build-map" class="level2">
+<h2 class="anchored" data-anchor-id="build-map">Build map</h2>
 <p>Make an interactive and color-coded map to display alpine spots</p>
 <div id="cell-10" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
