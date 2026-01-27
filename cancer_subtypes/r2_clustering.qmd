@@ -24,6 +24,10 @@ library(gganimate)
 library(ggrepel)
 library(PCAtools)
 library(scales)
+
+# required for code linking 
+require(downlit)
+require(xml2)
 ```
 
 ## Aims 
@@ -466,6 +470,9 @@ Clusters detected at each resolutions are marked in different colors. Patients i
 #| fig.width: 8
 #| fig.height: 8
 
+# for rendering
+require(gifski)
+
 # loop for resolutions
 resolutions <- c(0.1, 0.3, 0.6, 1, 1.5)
 
@@ -523,7 +530,7 @@ animate(
   nframes = 300,
   fps = 30,
   device = "ragg_png",
-  renderer = gifski_renderer()
+  renderer = gganimate::gifski_renderer()
 )
 ```
 

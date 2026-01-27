@@ -227,6 +227,9 @@ Moreover, we visualize the gene expression profile of some breast cancer biomark
 ### Upregulated biomarkers of the Basal cluster
 
 ```{r}
+## much faster implementation of the Wilcoxon Rank Sum Test 
+require(presto)
+
 basal_markers_up <- Seurat::FindMarkers(
   sobj, layer = "data", 
   ident.1 = 5,
