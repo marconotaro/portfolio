@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marconotaro.github.io/portfolio/weather-records.html</loc>
-    <lastmod>2025-11-24T10:33:19.276Z</lastmod>
+    <loc>https://marconotaro.github.io/portfolio/swissalps_map.html</loc>
+    <lastmod>2026-01-27T14:03:27.518Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/r4_predict_erstatus.html</loc>
-    <lastmod>2025-11-24T10:33:10.036Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-video.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/ml-video.html</loc>
     <lastmod>2025-11-24T12:51:48.455Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/detroit-wiki.html</loc>
-    <lastmod>2025-11-24T10:32:06.451Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/biomarker-discovery-ornish.html</loc>
-    <lastmod>2025-12-10T09:11:36.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/r2_clustering.html</loc>
-    <lastmod>2025-12-01T15:34:00.315Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/r0_getdata.html</loc>
-    <lastmod>2025-12-01T15:33:43.443Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/cancer-subtypes.html</loc>
-    <lastmod>2025-11-24T10:33:35.840Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/index.html</loc>
-    <lastmod>2026-01-13T14:31:43.014Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/r1_eda.html</loc>
-    <lastmod>2025-12-01T15:33:26.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/r3_clustering_seurat.html</loc>
-    <lastmod>2025-12-01T15:34:10.271Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/cnn_vs_fnn.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/cnn_vs_fnn.html</loc>
     <lastmod>2025-11-24T10:31:46.931Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-graph.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/dataviz/weather-records.html</loc>
+    <lastmod>2025-11-24T10:33:19.276Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/r4_predict_erstatus.html</loc>
+    <lastmod>2026-01-25T16:05:41.312Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/toc.html</loc>
+    <lastmod>2026-01-25T16:05:53.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/r2_clustering.html</loc>
+    <lastmod>2026-01-27T10:59:07.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/r0_getdata.html</loc>
+    <lastmod>2026-01-25T16:05:00.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/r1_eda.html</loc>
+    <lastmod>2026-01-25T16:05:11.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/r3_clustering_seurat.html</loc>
+    <lastmod>2026-01-27T11:06:48.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/index.html</loc>
+    <lastmod>2026-01-27T13:26:56.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/dataviz/detroit-wiki.html</loc>
+    <lastmod>2025-11-24T10:32:06.451Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/biomarker-discovery-ornish.html</loc>
+    <lastmod>2025-12-10T09:11:36.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/ml-graph.html</loc>
     <lastmod>2025-11-24T12:29:52.289Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/predict-housing-prices.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/predict-housing-prices.html</loc>
     <lastmod>2025-11-24T10:32:58.307Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/swissalps_map.html</loc>
-    <lastmod>2026-01-22T10:29:06.372Z</lastmod>
   </url>
 </urlset>
