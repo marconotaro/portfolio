@@ -2289,13 +2289,7 @@
       "Repository": "Bioconductor 3.22",
       "NeedsCompilation": "no",
       "Author": "Aaron Lun [cre, aut]",
-      "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
-      "RemoteType": "bioc",
-      "RemotePkgRef": "bioc::assorthead",
-      "RemoteRef": "bioc::assorthead",
-      "RemoteRepos": "https://bioconductor.org/packages/3.22/bioc",
-      "RemotePkgPlatform": "source",
-      "RemoteSha": "1.4.0"
+      "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>"
     },
     "backports": {
       "Package": "backports",
@@ -2383,13 +2377,7 @@
       "git_last_commit_date": "2025-10-29",
       "Repository": "Bioconductor 3.22",
       "Author": "Aaron Lun [aut, cre], Hervé Pagès [aut], Mike Smith [aut]",
-      "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
-      "RemoteType": "bioc",
-      "RemotePkgRef": "bioc::beachmat",
-      "RemoteRef": "bioc::beachmat",
-      "RemoteRepos": "https://bioconductor.org/packages/3.22/bioc",
-      "RemotePkgPlatform": "source",
-      "RemoteSha": "2.26.0"
+      "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>"
     },
     "bit": {
       "Package": "bit",
@@ -7173,7 +7161,7 @@
       "RemoteUsername": "pwwang",
       "RemotePkgRef": "pwwang/plotthis",
       "RemoteRef": "HEAD",
-      "RemoteSha": "8a1fdb846150fe82a25d7cb344fd26d354e6b4f1",
+      "RemoteSha": "0e3e5f4a3ae6bafd63cdf6cd1ad5ed457159ce8c",
       "NeedsCompilation": "no",
       "Author": "Panwen Wang [aut, cre] (ORCID: <https://orcid.org/0000-0002-4614-8970>)",
       "Maintainer": "Panwen Wang <pwwang@pwwang.com>"
