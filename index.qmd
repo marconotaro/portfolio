@@ -21,20 +21,20 @@ format:
 
 ## Genomics
 
-- [Identification of breast cancer subtypes via a graph-based approach](cancer-subtypes.qmd)
+- [Identification of breast cancer subtypes via a graph-based approach](cancer_subtypes/toc.qmd)
 
 
 ## Machine learning
 
-- [Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier](biomarker-discovery-ornish.ipynb)
-- [Predicting housing prices in California](predict-housing-prices.ipynb)
-- [Predicting biomarker status imputing missing values](r4_predict_erstatus.ipynb)
-- [Predicting salary and new connections from network data](ml-graph.ipynb)
-- [Predicting viewer engagement with educational videos](ml-video.ipynb)
+- [Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier](ml-nb/biomarker-discovery-ornish.ipynb)
+- [Predicting housing prices in California](ml-nb/predict-housing-prices.ipynb)
+- [Predicting biomarker status imputing missing values](cancer_subtypes/r4_predict_erstatus.ipynb)
+- [Predicting salary and new connections from network data](ml-nb/ml-graph.ipynb)
+- [Predicting viewer engagement with educational videos](ml-nb/ml-video.ipynb)
 
 ## Deep learning
 
-- [Predicting protein subcellular localization from aminoacid sequences with PyTorch](cnn_vs_fnn.ipynb)
+- [Predicting protein subcellular localization from aminoacid sequences with PyTorch](ml-nb/cnn_vs_fnn.ipynb)
 
 
 ## AI-powered tools
@@ -45,6 +45,6 @@ format:
 ## DataViz
 
 - [Interactive map of remote alpine spots that I visited in Switzerland](swissalps_map.ipynb)
-- [Visualization of Michigan's temperature records](weather-records.ipynb)
-- [Visualization of Detroit's sports teams win percentages](detroit-wiki.ipynb)
+- [Visualization of Michigan's temperature records](dataviz/weather-records.ipynb)
+- [Visualization of Detroit's sports teams win percentages](dataviz/detroit-wiki.ipynb)
 

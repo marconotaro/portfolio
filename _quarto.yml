@@ -26,21 +26,21 @@ website:
             text: "Contribution to SUSHI"
       - text: "Machine Learning"
         menu:
-          - href: "biomarker-discovery-ornish.ipynb"
+          - href: "ml-nb/biomarker-discovery-ornish.ipynb"
             text: "Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier"
-          - href: "predict-housing-prices.ipynb"
+          - href: "ml-nb/predict-housing-prices.ipynb"
             text: "Predicting housing prices in California"
-          - href: "r4_predict_erstatus.ipynb"
+          - href: "cancer_subtypes/r4_predict_erstatus.ipynb"
             text: "Predicting biomarker status imputing missing values"
-          - href: "cnn_vs_fnn.ipynb"
+          - href: "ml-nb/cnn_vs_fnn.ipynb"
             text: "Predicting protein localizations with pythorch"
-          - href: "ml-graph.ipynb"
+          - href: "ml-nb/ml-graph.ipynb"
             text: "Predicting salary and new connections with scikit-learn"
-          - href: "ml-video.ipynb"
+          - href: "ml-nb/ml-video.ipynb"
             text: "Predicting viewer engagement with scikit-learn"
       - text: "Genomics"
         menu:
-          - href: "cancer-subtypes.qmd"
+          - href: "cancer_subtypes/toc.qmd"
             text: "Identification of breast cancer subtypes"
       - text: "AI tools"
         menu:
@@ -48,9 +48,9 @@ website:
             text: "A RAG framework for bioinformatics applications"
       - text: "Data Viz"
         menu:
-          - href: swissalps_map.ipynb
-          - href: "weather-records.ipynb"
-          - href: "detroit-wiki.ipynb"
+          - href: "swissalps_map.ipynb"
+          - href: "dataviz/weather-records.ipynb"
+          - href: "dataviz/detroit-wiki.ipynb"
     tools:
       - icon: github
         href: https://github.com/marconotaro/portfolio
@@ -58,7 +58,7 @@ website:
         href: https://marconotaro.github.io
   page-footer:
     left: "&copy; Copyright 2025, Marco Notaro"
-    right: "[MIT License](license.md)"
+    right: "[MIT License](/license.md)"
 
 format:
   html:
@@ -75,8 +75,8 @@ format:
     embed-resources: false
     include-in-header:
       - text: |
-          <link href="favicon/favicon.png" rel="icon">
-          <link href="favicon/apple-touch-icon.png" rel="apple-touch-icon">
+          <link href="/favicon/favicon.png" rel="icon">
+          <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon">
 
 execute:
   freeze: auto
