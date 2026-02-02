@@ -26,15 +26,15 @@ format:
 
 ## Machine learning
 
-- [Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier](ml-nb/biomarker-discovery-ornish.ipynb)
-- [Predicting housing prices in California](ml-nb/predict-housing-prices.ipynb)
+- [Identifying biomarkers associated with weight loss using a Bayesian-optimized classifier](ml-nb/shap/biomarker_discovery_ornish.ipynb)
+- [Predicting housing prices in California](ml-nb/classic/housing_prices.ipynb)
 - [Predicting biomarker status imputing missing values](cancer_subtypes/r4_predict_erstatus.ipynb)
-- [Predicting salary and new connections from network data](ml-nb/ml-graph.ipynb)
-- [Predicting viewer engagement with educational videos](ml-nb/ml-video.ipynb)
+- [Predicting salary and new connections from network data](ml-nb/classic/ml_salary.ipynb)
+- [Predicting viewer engagement with educational videos](ml-nb/classic/ml_video.ipynb)
 
 ## Deep learning
 
-- [Predicting protein subcellular localization from aminoacid sequences with PyTorch](ml-nb/cnn_vs_fnn.ipynb)
+- [Predicting protein subcellular localization from aminoacid sequences with PyTorch](ml-nb/deeplearning/cnn_vs_fnn.ipynb)
 
 
 ## AI-powered tools
