@@ -44,7 +44,7 @@ format:
 
 ## DataViz
 
-- [Interactive map of remote alpine spots that I visited in Switzerland](swissalps_map.ipynb)
+- [Interactive map of remote alpine spots that I visited in Switzerland](dataviz/swissalps_map.ipynb)
 - [Visualization of Michigan's temperature records](dataviz/weather-records.ipynb)
 - [Visualization of Detroit's sports teams win percentages](dataviz/detroit-wiki.ipynb)
 
