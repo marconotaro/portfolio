@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marconotaro.github.io/portfolio/swissalps_map.html</loc>
-    <lastmod>2026-01-27T14:03:27.518Z</lastmod>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/shap/biomarker_discovery_ornish.html</loc>
+    <lastmod>2026-02-02T15:11:53.589Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-nb/deeplearning/cnn_vs_fnn.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/classic/ml_video.html</loc>
     <lastmod>2026-02-02T15:11:53.529Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-nb/classic/ml_salary.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/classic/housing_prices.html</loc>
     <lastmod>2026-02-02T15:11:53.525Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/dataviz/weather-records.html</loc>
-    <lastmod>2026-02-02T14:44:21.388Z</lastmod>
+    <loc>https://marconotaro.github.io/portfolio/dataviz/swissalps_map.html</loc>
+    <lastmod>2026-02-11T16:44:28.854Z</lastmod>
   </url>
   <url>
     <loc>https://marconotaro.github.io/portfolio/cancer_subtypes/r4_predict_erstatus.html</loc>
@@ -42,22 +42,22 @@
   </url>
   <url>
     <loc>https://marconotaro.github.io/portfolio/index.html</loc>
-    <lastmod>2026-02-02T15:14:13.864Z</lastmod>
+    <lastmod>2026-02-11T16:21:55.082Z</lastmod>
   </url>
   <url>
     <loc>https://marconotaro.github.io/portfolio/dataviz/detroit-wiki.html</loc>
     <lastmod>2026-02-02T14:44:21.384Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-nb/classic/housing_prices.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/dataviz/weather-records.html</loc>
+    <lastmod>2026-02-02T14:44:21.388Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/classic/ml_salary.html</loc>
     <lastmod>2026-02-02T15:11:53.525Z</lastmod>
   </url>
   <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-nb/classic/ml_video.html</loc>
+    <loc>https://marconotaro.github.io/portfolio/ml-nb/deeplearning/cnn_vs_fnn.html</loc>
     <lastmod>2026-02-02T15:11:53.529Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marconotaro.github.io/portfolio/ml-nb/shap/biomarker_discovery_ornish.html</loc>
-    <lastmod>2026-02-02T15:11:53.589Z</lastmod>
   </url>
 </urlset>
